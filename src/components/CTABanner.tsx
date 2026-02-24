@@ -67,31 +67,11 @@ export default function CTABanner() {
             position: 'relative',
             flexWrap: 'wrap',
           }}>
-            <a href="https://app.baynix.ai" style={{
-              padding: '0.8rem 2rem',
-              fontSize: '0.95rem',
-              fontWeight: 500,
-              color: '#fff',
-              background: 'var(--accent)',
-              borderRadius: 10,
-              textDecoration: 'none',
-              boxShadow: '0 0 30px rgba(59,130,246,0.4)',
-              transition: 'all 0.25s',
-            }}>
-              Start for Free →
+            <a href="https://app.baynix.ai" className="glass-btn glass-btn-primary">
+            Start for Free →
             </a>
-            <a href="/contact" style={{
-              padding: '0.8rem 2rem',
-              fontSize: '0.95rem',
-              fontWeight: 500,
-              color: 'var(--text)',
-              background: 'rgba(255,255,255,0.05)',
-              border: '1px solid var(--border2)',
-              borderRadius: 10,
-              textDecoration: 'none',
-              transition: 'all 0.25s',
-            }}>
-              Contact an Expert
+            <a href="/contact" className="glass-btn glass-btn-secondary">
+            Contact an Expert
             </a>
           </div>
         </div>

@@ -20,6 +20,7 @@ const splits = [
     reverse: false,
     accentColor: '#3b82f6',
     glowColor: 'rgba(59,130,246,0.15)',
+    btnClass: 'glass-btn-primary'
   },
   {
     tag: 'URL Tracker',
@@ -31,6 +32,7 @@ const splits = [
     reverse: true,
     accentColor: '#22d3ee',
     glowColor: 'rgba(34,211,238,0.15)',
+    btnClass: 'glass-btn-cyan'
   },
   {
     tag: 'Campaigns',
@@ -42,6 +44,7 @@ const splits = [
     reverse: false,
     accentColor: '#a78bfa',
     glowColor: 'rgba(167,139,250,0.15)',
+    btnClass: 'glass-btn-purple',
   },
 ]
 
@@ -386,33 +389,9 @@ export default function FeatureSplits() {
                 )}
 
                 <div style={{ marginTop: '2rem' }}>
-                  <a
-                    href="https://app.baynix.ai"
-                    style={{
-                      padding: '0.8rem 2rem',
-                      fontSize: '0.9rem',
-                      fontWeight: 600,
-                      color: '#fff',
-                      background: `linear-gradient(135deg, ${s.accentColor}, ${s.accentColor}99)`,
-                      borderRadius: 10,
-                      textDecoration: 'none',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '0.5rem',
-                      boxShadow: `0 0 24px ${s.glowColor}`,
-                      transition: 'all 0.25s',
-                    }}
-                    onMouseEnter={e => {
-                      e.currentTarget.style.transform = 'translateY(-2px)'
-                      e.currentTarget.style.boxShadow = `0 8px 30px ${s.glowColor}`
-                    }}
-                    onMouseLeave={e => {
-                      e.currentTarget.style.transform = 'translateY(0)'
-                      e.currentTarget.style.boxShadow = `0 0 24px ${s.glowColor}`
-                    }}
-                  >
-                    Get Started →
-                  </a>
+                  <a href="https://app.baynix.ai" className={`glass-btn ${s.btnClass}`}>
+                Get Started →
+                </a>
                 </div>
               </div>
 

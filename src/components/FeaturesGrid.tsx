@@ -8,6 +8,7 @@ const features = [
     desc: 'Send high-volume transactional and promotional messages with guaranteed delivery rates and real-time tracking.',
     href: '/bulk-sms',
     stat: '99.9% delivery',
+    btnClass: 'glass-btn-primary'
   },
   {
     icon: '📱',
@@ -16,6 +17,7 @@ const features = [
     desc: 'Reach customers on the world\'s most popular messaging platform. Official API with full feature access and chatbot support.',
     href: '/whatsapp-api',
     stat: '2B+ users reached',
+    btnClass: 'glass-btn-green'
   },
   {
     icon: '🌐',
@@ -24,6 +26,7 @@ const features = [
     desc: 'Next-generation rich messaging with images, carousels, quick replies, and read receipts — beyond standard SMS.',
     href: '/rcs-messaging',
     stat: 'Next-gen channel',
+    btnClass: 'glass-btn-purple'
   },
   {
     icon: '🔒',
@@ -32,6 +35,7 @@ const features = [
     desc: 'Secure your users with one-time passwords delivered instantly via SMS, Voice, or WhatsApp with 99.9% uptime.',
     href: '/otp',
     stat: '1.2s avg delivery',
+    btnClass: 'glass-btn-cyan'
   },
   {
     icon: '📞',
@@ -40,6 +44,7 @@ const features = [
     desc: 'IVR systems, outbound dialing, inbound handling, voice OTP, and number masking — full voice communication stack.',
     href: '/voice',
     stat: '24/7 uptime',
+    btnClass: 'glass-btn-orange'
   },
   {
     icon: '✉️',
@@ -48,6 +53,7 @@ const features = [
     desc: 'Efficient transactional and marketing email delivery at scale. Deep analytics and integration-ready infrastructure.',
     href: '/email-api',
     stat: '98% inbox rate',
+    btnClass: 'glass-btn-primary'
   },
 ]
 
@@ -267,17 +273,12 @@ export default function FeaturesGrid() {
                   {f.desc}
                 </p>
 
-                <a href={f.href} style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.3rem',
-                  fontSize: '0.8rem',
-                  color: c.text,
-                  textDecoration: 'none',
-                  fontWeight: 500,
-                  transition: 'gap 0.2s',
+                <a href={f.href} className={`glass-btn ${f.btnClass}`} style={{
+                fontSize: '0.82rem',
+                padding: '0.4rem 1rem',
+                borderRadius: 8,
                 }}>
-                  Learn more →
+                Learn more →
                 </a>
               </div>
             )

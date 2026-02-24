@@ -14,8 +14,45 @@ export default function IndustriesGrid() {
       background: 'var(--bg2)',
       borderTop: '1px solid var(--border)',
       padding: '6rem 2rem',
+      position: 'relative',
+      overflow: 'hidden',
     }}>
-      <div style={{ maxWidth: 1100, margin: '0 auto' }} className="reveal">
+
+      {/* Aurora blobs */}
+      <div style={{
+        position: 'absolute',
+        width: 600, height: 600,
+        background: 'radial-gradient(circle, rgba(99,102,241,0.2) 0%, transparent 70%)',
+        top: '50%', left: '30%',
+        transform: 'translate(-50%, -50%)',
+        pointerEvents: 'none',
+        zIndex: 0,
+      }} />
+      <div style={{
+        position: 'absolute',
+        width: 500, height: 500,
+        background: 'radial-gradient(circle, rgba(59,130,246,0.15) 0%, transparent 70%)',
+        top: '50%', left: '70%',
+        transform: 'translate(-50%, -50%)',
+        pointerEvents: 'none',
+        zIndex: 0,
+      }} />
+      <div style={{
+        position: 'absolute',
+        width: 300, height: 300,
+        background: 'radial-gradient(circle, rgba(34,211,238,0.12) 0%, transparent 70%)',
+        top: '20%', left: '50%',
+        transform: 'translate(-50%, -50%)',
+        pointerEvents: 'none',
+        zIndex: 0,
+      }} />
+
+      <div style={{
+        maxWidth: 1100,
+        margin: '0 auto',
+        position: 'relative',
+        zIndex: 1,
+      }} className="reveal">
 
         <div style={{
           display: 'inline-flex',
@@ -27,14 +64,18 @@ export default function IndustriesGrid() {
           color: 'var(--accent)',
           marginBottom: '1rem',
         }}>
-          <span style={{ width: 18, height: 1, background: 'var(--accent)', display: 'inline-block' }} />
+          <span style={{
+            width: 18, height: 1,
+            background: 'var(--accent)',
+            display: 'inline-block',
+          }} />
           Solutions
         </div>
 
         <h2 style={{
           fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)',
-          fontWeight: 700,
-          letterSpacing: '-0.025em',
+          fontWeight: 800,
+          letterSpacing: '-0.03em',
           lineHeight: 1.15,
           color: 'var(--text)',
           marginBottom: '1rem',
@@ -50,49 +91,63 @@ export default function IndustriesGrid() {
           fontWeight: 300,
           marginBottom: '3rem',
         }}>
-          Tailored communication solutions for the sectors that need reliable, scalable messaging the most.
+          Tailored communication solutions for the sectors that need
+          reliable, scalable messaging the most.
         </p>
 
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(5, 1fr)',
-          gap: '1rem',
-        }}
-        className="industries-grid"
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(5, 1fr)',
+            gap: '1rem',
+          }}
+          className="industries-grid"
         >
           {industries.map((ind) => (
             <a
               key={ind.name}
               href={ind.href}
+              className="industry-glass"
               style={{
-                padding: '1.5rem 1rem',
-                background: 'rgba(13,18,32,0.6)',
-                backdropFilter: 'blur(20px)',
-                WebkitBackdropFilter: 'blur(20px)',
-                border: '1px solid var(--border)',
-                borderRadius: 14,
+                padding: '2rem 1rem',
+                background: 'rgba(255,255,255,0.06)',
+                backdropFilter: 'blur(40px)',
+                WebkitBackdropFilter: 'blur(40px)',
+                borderRadius: 16,
                 textAlign: 'center',
                 textDecoration: 'none',
-                transition: 'all 0.25s',
+                transition: 'all 0.3s ease',
                 display: 'block',
+                position: 'relative',
+                overflow: 'hidden',
+                boxShadow: '0 4px 24px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.12)',
               }}
               onMouseEnter={e => {
-                e.currentTarget.style.borderColor = 'var(--accent)'
-                e.currentTarget.style.background = 'rgba(59,130,246,0.05)'
-                e.currentTarget.style.transform = 'translateY(-3px)'
-                e.currentTarget.style.boxShadow = '0 8px 24px rgba(59,130,246,0.12)'
+                e.currentTarget.style.background = 'rgba(255,255,255,0.1)'
+                e.currentTarget.style.transform = 'translateY(-5px)'
+                e.currentTarget.style.boxShadow = '0 16px 48px rgba(99,102,241,0.25), inset 0 1px 0 rgba(255,255,255,0.2)'
               }}
               onMouseLeave={e => {
-                e.currentTarget.style.borderColor = 'var(--border)'
-                e.currentTarget.style.background = 'rgba(13,18,32,0.6)'
+                e.currentTarget.style.background = 'rgba(255,255,255,0.06)'
                 e.currentTarget.style.transform = 'translateY(0)'
-                e.currentTarget.style.boxShadow = 'none'
+                e.currentTarget.style.boxShadow = '0 4px 24px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.12)'
               }}
             >
-              <span style={{ fontSize: '1.8rem', display: 'block', marginBottom: '0.6rem' }}>
+
+              <span style={{
+                fontSize: '2rem',
+                display: 'block',
+                marginBottom: '0.75rem',
+                filter: 'drop-shadow(0 0 8px rgba(255,255,255,0.3))',
+              }}>
                 {ind.emoji}
               </span>
-              <div style={{ fontSize: '0.8rem', color: 'var(--text2)', fontWeight: 500 }}>
+              <div style={{
+                fontSize: '0.82rem',
+                color: 'var(--text2)',
+                fontWeight: 500,
+                letterSpacing: '0.01em',
+              }}>
                 {ind.name}
               </div>
             </a>

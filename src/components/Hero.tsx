@@ -135,57 +135,15 @@ export default function Hero() {
           animation: 'fadeUp 0.6s 0.3s ease both',
           flexWrap: 'wrap',
         }}>
-          <a href="https://app.baynix.ai" style={{
-            padding: '0.85rem 2.2rem',
-            fontSize: '0.95rem',
-            fontWeight: 600,
-            color: '#fff',
-            background: 'linear-gradient(135deg, #3b82f6, #6366f1)',
-            borderRadius: 10,
-            textDecoration: 'none',
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '0.5rem',
-            boxShadow: '0 0 40px rgba(99,102,241,0.4), inset 0 1px 0 rgba(255,255,255,0.15)',
-            transition: 'all 0.25s',
-          }}
-          onMouseEnter={e => {
-            e.currentTarget.style.transform = 'translateY(-2px)'
-            e.currentTarget.style.boxShadow = '0 8px 40px rgba(99,102,241,0.6), inset 0 1px 0 rgba(255,255,255,0.15)'
-          }}
-          onMouseLeave={e => {
-            e.currentTarget.style.transform = 'translateY(0)'
-            e.currentTarget.style.boxShadow = '0 0 40px rgba(99,102,241,0.4), inset 0 1px 0 rgba(255,255,255,0.15)'
-          }}
-          >
-            Start for Free
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </a>
-          <a href="/contact" style={{
-            padding: '0.85rem 2.2rem',
-            fontSize: '0.95rem',
-            fontWeight: 500,
-            color: 'var(--text)',
-            background: 'rgba(255,255,255,0.04)',
-            border: '1px solid rgba(255,255,255,0.1)',
-            borderRadius: 10,
-            textDecoration: 'none',
-            backdropFilter: 'blur(10px)',
-            transition: 'all 0.25s',
-          }}
-          onMouseEnter={e => {
-            e.currentTarget.style.background = 'rgba(255,255,255,0.08)'
-            e.currentTarget.style.transform = 'translateY(-2px)'
-          }}
-          onMouseLeave={e => {
-            e.currentTarget.style.background = 'rgba(255,255,255,0.04)'
-            e.currentTarget.style.transform = 'translateY(0)'
-          }}
-          >
-            Talk to Sales
-          </a>
+          <a href="https://app.baynix.ai" className="glass-btn glass-btn-primary">
+        Start for Free
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+        </a>
+        <a href="/contact" className="glass-btn glass-btn-secondary">
+        Talk to Sales
+        </a>
         </div>
 
         {/* Stats strip */}
@@ -198,20 +156,21 @@ export default function Hero() {
           animation: 'fadeUp 0.6s 0.5s ease both',
           flexWrap: 'wrap',
         }}>
-          <div style={{
+          <div className="stats-glass" style={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             padding: '1.5rem 2.5rem',
-            background: 'rgba(13,18,32,0.7)',
+            background: 'rgba(255,255,255,0.04)',
             backdropFilter: 'blur(24px)',
             WebkitBackdropFilter: 'blur(24px)',
-            border: '1px solid rgba(255,255,255,0.08)',
             borderRadius: 16,
-            boxShadow: '0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.05)',
             flexWrap: 'wrap',
             gap: '0',
-          }}>
+            position: 'relative',
+            overflow: 'hidden',
+            boxShadow: '0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.1)',
+            }}>
             {[
               { num: '450B+', label: 'Interactions / year', color: '#60a5fa' },
               { num: '900+', label: 'Global Connections', color: '#a78bfa' },

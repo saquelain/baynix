@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Geist, Manrope } from 'next/font/google'
 import './globals.css'
 import ScrollReveal from '@/components/ScrollReveal'
 
-const inter = Inter({
+const inter = Manrope({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700', '800'],
-  variable: '--font-inter',
+  variable: '--font-manrope',
   display: 'swap',
 })
 

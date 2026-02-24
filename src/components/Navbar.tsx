@@ -79,51 +79,11 @@ export default function Navbar() {
 
       {/* Actions */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-        <a href="https://app.baynix.ai/login" style={{
-          padding: '0.45rem 1.1rem',
-          fontSize: '0.875rem',
-          color: 'var(--text2)',
-          background: 'transparent',
-          border: '1px solid var(--border2)',
-          borderRadius: '8px',
-          cursor: 'pointer',
-          textDecoration: 'none',
-          transition: 'all 0.2s',
-        }}
-        onMouseEnter={e => {
-          e.currentTarget.style.color = 'var(--text)'
-          e.currentTarget.style.background = 'rgba(255,255,255,0.04)'
-        }}
-        onMouseLeave={e => {
-          e.currentTarget.style.color = 'var(--text2)'
-          e.currentTarget.style.background = 'transparent'
-        }}
-        >
-          Login
+        <a href="https://app.baynix.ai/login" className="glass-btn glass-btn-secondary glass-btn-sm">
+        Login
         </a>
-        <a href="https://app.baynix.ai" style={{
-          padding: '0.45rem 1.25rem',
-          fontSize: '0.875rem',
-          fontWeight: 500,
-          color: '#fff',
-          background: 'var(--accent)',
-          border: 'none',
-          borderRadius: '8px',
-          cursor: 'pointer',
-          textDecoration: 'none',
-          boxShadow: '0 0 20px rgba(59,130,246,0.3)',
-          transition: 'all 0.2s',
-        }}
-        onMouseEnter={e => {
-          e.currentTarget.style.background = '#2563eb'
-          e.currentTarget.style.boxShadow = '0 0 28px rgba(59,130,246,0.5)'
-        }}
-        onMouseLeave={e => {
-          e.currentTarget.style.background = 'var(--accent)'
-          e.currentTarget.style.boxShadow = '0 0 20px rgba(59,130,246,0.3)'
-        }}
-        >
-          Sign Up
+        <a href="https://app.baynix.ai" className="glass-btn glass-btn-primary glass-btn-sm">
+        Sign Up
         </a>
       </div>
     </nav>

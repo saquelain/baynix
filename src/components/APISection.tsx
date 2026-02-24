@@ -182,32 +182,12 @@ export default function APISection() {
             </p>
 
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-              <a href="https://developers.baynix.ai" style={{
-                padding: '0.8rem 2rem',
-                fontSize: '0.9rem',
-                fontWeight: 500,
-                color: '#fff',
-                background: 'var(--accent)',
-                borderRadius: 10,
-                textDecoration: 'none',
-                boxShadow: '0 0 24px rgba(59,130,246,0.3)',
-                transition: 'all 0.25s',
-              }}>
-                See Documentation →
-              </a>
-              <a href="/api-reference" style={{
-                padding: '0.8rem 2rem',
-                fontSize: '0.9rem',
-                fontWeight: 500,
-                color: 'var(--text)',
-                background: 'rgba(255,255,255,0.05)',
-                border: '1px solid var(--border2)',
-                borderRadius: 10,
-                textDecoration: 'none',
-                transition: 'all 0.25s',
-              }}>
-                API Reference
-              </a>
+              <a href="https://developers.baynix.ai" className="glass-btn glass-btn-primary">
+            See Documentation →
+            </a>
+            <a href="/api-reference" className="glass-btn glass-btn-secondary">
+            API Reference
+            </a>
             </div>
           </div>
         </div>
