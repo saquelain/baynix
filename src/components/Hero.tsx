@@ -1,21 +1,9 @@
 'use client'
 
 import Image from 'next/image'
-import { useEffect, useRef } from 'react'
 
 export default function Hero() {
-  const statsRef = useRef<HTMLDivElement>(null)
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => entries.forEach(e => {
-        if (e.isIntersecting) e.target.classList.add('visible')
-      }),
-      { threshold: 0.1 }
-    )
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el))
-    return () => observer.disconnect()
-  }, [])
 
   return (
     <section style={{
@@ -184,7 +172,7 @@ export default function Hero() {
         </div>
 
         {/* Stats strip — glass */}
-        <div ref={statsRef} style={{
+        <div style={{
           marginTop: '4rem',
           display: 'flex',
           alignItems: 'center',

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import ScrollReveal from '@/components/ScrollReveal'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -30,10 +31,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body className={inter.className}>
-        {/* Aurora background blobs */}
         <div className="aurora-1" />
         <div className="aurora-2" />
         <div className="aurora-3" />
+        <ScrollReveal />
         {children}
       </body>
     </html>
