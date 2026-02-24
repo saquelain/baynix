@@ -169,31 +169,12 @@ export default function FeatureSplits() {
               className="float-anim"
               >
                 {/* Placeholder until Figma images are ready */}
-                <div style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  gap: '1rem',
-                  color: 'var(--text3)',
-                  fontSize: '0.85rem',
-                }}>
-                  <div style={{
-                    width: 48, height: 48,
-                    borderRadius: 12,
-                    background: 'rgba(59,130,246,0.1)',
-                    border: '1px solid rgba(59,130,246,0.2)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '1.5rem',
-                  }}>
-                    {i === 0 ? '💬' : i === 1 ? '🔗' : '🎯'}
-                  </div>
-                  {s.tag} illustration
-                  <span style={{ fontSize: '0.75rem', color: 'var(--text3)', opacity: 0.6 }}>
-                    Replace with Figma export
-                  </span>
-                </div>
+                <Image
+  src={s.image}
+  alt={s.alt}
+  fill
+  style={{ objectFit: 'cover', borderRadius: 20 }}
+/>
               </div>
             </div>
           </div>
