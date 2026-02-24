@@ -45,19 +45,45 @@ const splits = [
   },
 ]
 
-// Placeholder visuals shown until Figma/Gemini images are ready
-const PlaceholderVisuals = [
-  // One Inbox placeholder
+function ImageWithFallback({
+  src,
+  alt,
+  fallback,
+}: {
+  src: string
+  alt: string
+  fallback: React.ReactNode
+}) {
+  const [error, setError] = useState(false)
+
+  if (error) return <>{fallback}</>
+
+  return (
+    <div style={{
+      position: 'absolute',
+      inset: 0,
+    }}>
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        style={{ objectFit: 'cover' }}
+        onError={() => setError(true)}
+      />
+    </div>
+  )
+}
+
+// Fallback placeholders if images fail to load
+const Placeholders = [
   () => (
     <div style={{ width: '90%', maxWidth: 380 }}>
-      {/* Mock inbox UI */}
       <div style={{
         background: 'rgba(17,24,39,0.9)',
         border: '1px solid rgba(255,255,255,0.1)',
         borderRadius: 14,
         overflow: 'hidden',
       }}>
-        {/* Header */}
         <div style={{
           padding: '0.75rem 1rem',
           borderBottom: '1px solid rgba(255,255,255,0.06)',
@@ -66,14 +92,13 @@ const PlaceholderVisuals = [
           gap: '0.5rem',
           background: 'rgba(255,255,255,0.03)',
         }}>
-          {['#ef4444','#f59e0b','#22c55e'].map(c => (
+          {['#ef4444', '#f59e0b', '#22c55e'].map(c => (
             <div key={c} style={{ width: 8, height: 8, borderRadius: '50%', background: c }} />
           ))}
           <span style={{ fontSize: '0.7rem', color: 'var(--text3)', marginLeft: 4 }}>
             Baynix One Inbox
           </span>
         </div>
-        {/* Messages */}
         {[
           { ch: 'W', color: '#25d366', bg: 'rgba(37,211,102,0.15)', name: 'Rahul M.', msg: 'Hi! What are your SMS prices?', time: '2m' },
           { ch: 'S', color: '#3b82f6', bg: 'rgba(59,130,246,0.15)', name: 'Priya K.', msg: 'Order confirmed ✓', time: '5m' },
@@ -113,7 +138,6 @@ const PlaceholderVisuals = [
     </div>
   ),
 
-  // URL Tracker placeholder
   () => (
     <div style={{ width: '90%', maxWidth: 380 }}>
       <div style={{
@@ -122,7 +146,6 @@ const PlaceholderVisuals = [
         borderRadius: 14,
         padding: '1.5rem',
       }}>
-        {/* URL bar */}
         <div style={{
           display: 'flex',
           alignItems: 'center',
@@ -136,8 +159,6 @@ const PlaceholderVisuals = [
           <span style={{ fontSize: '0.75rem', color: '#22d3ee', fontWeight: 600 }}>bnx.ai/abc123</span>
           <span style={{ marginLeft: 'auto', fontSize: '0.65rem', color: 'var(--text3)' }}>📋 Copy</span>
         </div>
-
-        {/* Stats row */}
         <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '1.5rem' }}>
           {[
             { label: 'Total Clicks', val: '2,418', color: '#22d3ee' },
@@ -157,27 +178,24 @@ const PlaceholderVisuals = [
             </div>
           ))}
         </div>
-
-        {/* Mini chart */}
         <div style={{ position: 'relative', height: 60 }}>
           <svg width="100%" height="60" viewBox="0 0 300 60" preserveAspectRatio="none">
             <defs>
               <linearGradient id="lineGrad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#22d3ee" stopOpacity="0.3"/>
-                <stop offset="100%" stopColor="#22d3ee" stopOpacity="0"/>
+                <stop offset="0%" stopColor="#22d3ee" stopOpacity="0.3" />
+                <stop offset="100%" stopColor="#22d3ee" stopOpacity="0" />
               </linearGradient>
             </defs>
             <path d="M0,45 C30,40 60,35 90,25 C120,15 150,30 180,20 C210,10 240,15 300,5"
-              fill="none" stroke="#22d3ee" strokeWidth="2"/>
+              fill="none" stroke="#22d3ee" strokeWidth="2" />
             <path d="M0,45 C30,40 60,35 90,25 C120,15 150,30 180,20 C210,10 240,15 300,5 L300,60 L0,60 Z"
-              fill="url(#lineGrad)"/>
+              fill="url(#lineGrad)" />
           </svg>
         </div>
       </div>
     </div>
   ),
 
-  // Campaigns placeholder
   () => (
     <div style={{ width: '90%', maxWidth: 380 }}>
       <div style={{
@@ -186,13 +204,12 @@ const PlaceholderVisuals = [
         borderRadius: 14,
         padding: '1.5rem',
       }}>
-        {/* Donut chart */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', marginBottom: '1.5rem' }}>
           <svg width="80" height="80" viewBox="0 0 80 80">
-            <circle cx="40" cy="40" r="30" fill="none" stroke="rgba(167,139,250,0.6)" strokeWidth="12" strokeDasharray="75 113"/>
-            <circle cx="40" cy="40" r="30" fill="none" stroke="rgba(59,130,246,0.6)" strokeWidth="12" strokeDasharray="45 143" strokeDashoffset="-75"/>
-            <circle cx="40" cy="40" r="30" fill="none" stroke="rgba(34,211,238,0.6)" strokeWidth="12" strokeDasharray="30 158" strokeDashoffset="-120"/>
-            <circle cx="40" cy="40" r="30" fill="none" stroke="rgba(16,185,129,0.6)" strokeWidth="12" strokeDasharray="37 151" strokeDashoffset="-150"/>
+            <circle cx="40" cy="40" r="30" fill="none" stroke="rgba(167,139,250,0.6)" strokeWidth="12" strokeDasharray="75 113" />
+            <circle cx="40" cy="40" r="30" fill="none" stroke="rgba(59,130,246,0.6)" strokeWidth="12" strokeDasharray="45 143" strokeDashoffset="-75" />
+            <circle cx="40" cy="40" r="30" fill="none" stroke="rgba(34,211,238,0.6)" strokeWidth="12" strokeDasharray="30 158" strokeDashoffset="-120" />
+            <circle cx="40" cy="40" r="30" fill="none" stroke="rgba(16,185,129,0.6)" strokeWidth="12" strokeDasharray="37 151" strokeDashoffset="-150" />
           </svg>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
             {[
@@ -209,8 +226,6 @@ const PlaceholderVisuals = [
             ))}
           </div>
         </div>
-
-        {/* Filter chips */}
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginBottom: '1.2rem' }}>
           {[
             { label: 'Age: 25–45', color: '#a78bfa' },
@@ -230,8 +245,6 @@ const PlaceholderVisuals = [
             </div>
           ))}
         </div>
-
-        {/* Stats */}
         <div style={{
           padding: '0.75rem',
           background: 'rgba(255,255,255,0.03)',
@@ -263,12 +276,26 @@ export default function FeatureSplits() {
       borderTop: '1px solid var(--border)',
     }}>
       {splits.map((s, i) => {
-        const Placeholder = PlaceholderVisuals[i]
+        const Placeholder = Placeholders[i]
         return (
           <div key={s.tag} style={{
             borderBottom: '1px solid var(--border)',
             padding: '6rem 2rem',
+            position: 'relative',
+            overflow: 'hidden',
           }}>
+
+            {/* Section background glow */}
+            <div style={{
+              position: 'absolute',
+              width: 600, height: 600,
+              background: `radial-gradient(circle, ${s.glowColor} 0%, transparent 70%)`,
+              top: '50%',
+              left: s.reverse ? '20%' : '80%',
+              transform: 'translate(-50%, -50%)',
+              pointerEvents: 'none',
+            }} />
+
             <div
               style={{
                 maxWidth: 1100,
@@ -278,6 +305,8 @@ export default function FeatureSplits() {
                 gap: '5rem',
                 alignItems: 'center',
                 direction: s.reverse ? 'rtl' : 'ltr',
+                position: 'relative',
+                zIndex: 1,
               }}
               className="reveal split-grid"
             >
@@ -303,9 +332,9 @@ export default function FeatureSplits() {
 
                 <h2 style={{
                   fontSize: 'clamp(1.6rem, 3vw, 2.4rem)',
-                  fontWeight: 700,
-                  letterSpacing: '-0.025em',
-                  lineHeight: 1.2,
+                  fontWeight: 800,
+                  letterSpacing: '-0.03em',
+                  lineHeight: 1.15,
                   color: 'var(--text)',
                   marginBottom: '1rem',
                 }}>
@@ -340,8 +369,9 @@ export default function FeatureSplits() {
                         borderRadius: 100,
                         fontSize: '0.78rem',
                         color: 'var(--text2)',
-                        background: 'rgba(255,255,255,0.03)',
+                        background: 'rgba(255,255,255,0.04)',
                         backdropFilter: 'blur(10px)',
+                        WebkitBackdropFilter: 'blur(10px)',
                       }}>
                         <div style={{
                           width: 6, height: 6,
@@ -356,28 +386,30 @@ export default function FeatureSplits() {
                 )}
 
                 <div style={{ marginTop: '2rem' }}>
-                  <a href="https://app.baynix.ai" style={{
-                    padding: '0.8rem 2rem',
-                    fontSize: '0.9rem',
-                    fontWeight: 500,
-                    color: '#fff',
-                    background: `linear-gradient(135deg, ${s.accentColor}, ${s.accentColor}cc)`,
-                    borderRadius: 10,
-                    textDecoration: 'none',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '0.5rem',
-                    boxShadow: `0 0 24px ${s.glowColor}`,
-                    transition: 'all 0.25s',
-                  }}
-                  onMouseEnter={e => {
-                    e.currentTarget.style.transform = 'translateY(-2px)'
-                    e.currentTarget.style.boxShadow = `0 8px 30px ${s.glowColor}`
-                  }}
-                  onMouseLeave={e => {
-                    e.currentTarget.style.transform = 'translateY(0)'
-                    e.currentTarget.style.boxShadow = `0 0 24px ${s.glowColor}`
-                  }}
+                  <a
+                    href="https://app.baynix.ai"
+                    style={{
+                      padding: '0.8rem 2rem',
+                      fontSize: '0.9rem',
+                      fontWeight: 600,
+                      color: '#fff',
+                      background: `linear-gradient(135deg, ${s.accentColor}, ${s.accentColor}99)`,
+                      borderRadius: 10,
+                      textDecoration: 'none',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.5rem',
+                      boxShadow: `0 0 24px ${s.glowColor}`,
+                      transition: 'all 0.25s',
+                    }}
+                    onMouseEnter={e => {
+                      e.currentTarget.style.transform = 'translateY(-2px)'
+                      e.currentTarget.style.boxShadow = `0 8px 30px ${s.glowColor}`
+                    }}
+                    onMouseLeave={e => {
+                      e.currentTarget.style.transform = 'translateY(0)'
+                      e.currentTarget.style.boxShadow = `0 0 24px ${s.glowColor}`
+                    }}
                   >
                     Get Started →
                   </a>
@@ -389,30 +421,43 @@ export default function FeatureSplits() {
                 <div
                   className="float-anim"
                   style={{
-                    background: 'rgba(13,18,32,0.6)',
+                    background: 'rgba(13,18,32,0.5)',
                     backdropFilter: 'blur(24px)',
                     WebkitBackdropFilter: 'blur(24px)',
-                    border: `1px solid ${s.accentColor}22`,
+                    border: `1px solid ${s.accentColor}33`,
                     borderRadius: 20,
                     overflow: 'hidden',
                     aspectRatio: '4/3',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    boxShadow: `0 24px 64px rgba(0,0,0,0.4), 0 0 60px ${s.glowColor}, inset 0 1px 0 rgba(255,255,255,0.05)`,
+                    boxShadow: `0 24px 80px rgba(0,0,0,0.5), 0 0 80px ${s.glowColor}, inset 0 1px 0 rgba(255,255,255,0.07)`,
                     position: 'relative',
                   }}
                 >
+                  {/* Top glow line on card */}
+                  <div style={{
+                    position: 'absolute',
+                    top: 0, left: '10%', right: '10%',
+                    height: 1,
+                    background: `linear-gradient(90deg, transparent, ${s.accentColor}88, transparent)`,
+                    pointerEvents: 'none',
+                  }} />
+
                   {/* Corner glow */}
                   <div style={{
                     position: 'absolute',
-                    top: -60, right: -60,
-                    width: 200, height: 200,
+                    top: -40, right: -40,
+                    width: 160, height: 160,
                     background: `radial-gradient(circle, ${s.glowColor} 0%, transparent 70%)`,
                     pointerEvents: 'none',
                   }} />
 
-                  <Placeholder />
+                  <ImageWithFallback
+                    src={s.image}
+                    alt={s.alt}
+                    fallback={<Placeholder />}
+                  />
                 </div>
               </div>
             </div>
