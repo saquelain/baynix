@@ -9,6 +9,7 @@ import IndustriesGrid from '@/components/IndustriesGrid'
 import FAQ from '@/components/FAQ'
 import CTABanner from '@/components/CTABanner'
 import Footer from '@/components/Footer'
+import Pricing from '@/components/Pricing'
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <APISection />
       <IndustriesGrid />
       <FAQ />
+      <Pricing />
       <CTABanner />
       <Footer />
     </main>
