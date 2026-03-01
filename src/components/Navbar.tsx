@@ -36,7 +36,7 @@ export default function Navbar() {
         { label: 'WhatsApp Business API', href: '/whatsapp-api', emoji: '💚' },
         { label: 'WhatsApp CRM', href: '/whatsapp-crm', emoji: '🗂️' },
         { label: 'WhatsApp Chatbot', href: '/whatsapp-chatbot', emoji: '🤖' },
-        { label: 'Conversational AI Chatbot', href: '/ai-chatbot', emoji: '✨' },
+        { label: 'Conversational AI Chatbot', href: '/conversational-ai-chatbot', emoji: '✨' },
         ],
     },
     {
