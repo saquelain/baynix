@@ -44,10 +44,10 @@ export default function Navbar() {
         links: [
         { label: 'RCS Messaging', href: '/rcs-messaging', emoji: '📨' },
         { label: 'Bulk SMS', href: '/bulk-sms', emoji: '📱' },
-        { label: 'OTP Authenticator', href: '/otp-api', emoji: '🔐' },
-        { label: 'Short Code', href: '/short-code', emoji: '🔢' },
+        { label: 'OTP Authenticator', href: '/otp-authenticator', emoji: '🔐' },
+        { label: 'Short Code', href: '/shortcode', emoji: '🔢' },
         { label: 'Email to SMS', href: '/email-to-sms', emoji: '📧' },
-        { label: 'Long Code', href: '/long-code', emoji: '📟' },
+        { label: 'Long Code', href: '/longcode', emoji: '📟' },
         ],
     },
     {
