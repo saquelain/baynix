@@ -295,7 +295,7 @@ export default function ShortCodePage() {
 
               {/* Image right */}
               <div
-                style={{ height: 420, borderRadius: 20, position: 'relative', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.08)', boxShadow: '0 24px 60px rgba(0,0,0,0.4)', transition: 'transform 0.4s ease', background: 'linear-gradient(135deg, rgba(236,72,153,0.1), rgba(99,102,241,0.07))', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' as const, gap: '0.75rem', position: 'sticky' as const, top: '6rem' }}
+                style={{ height: 420, borderRadius: 20, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.08)', boxShadow: '0 24px 60px rgba(0,0,0,0.4)', transition: 'transform 0.4s ease', background: 'linear-gradient(135deg, rgba(236,72,153,0.1), rgba(99,102,241,0.07))', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' as const, gap: '0.75rem', position: 'sticky' as const, top: '6rem' }}
                 onMouseEnter={e => { e.currentTarget.style.transform = 'scale(0.97)' }}
                 onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)' }}
               >
