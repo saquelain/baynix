@@ -8,6 +8,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [companyOpen, setCompanyOpen] = useState(false)
   const [devOpen, setDevOpen] = useState(false)
+  const [productsOpen, setProductsOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -16,11 +17,52 @@ export default function Navbar() {
   }, [])
 
   const navLinks = [
-    { label: 'Products', href: '#products' },
     { label: 'Solutions', href: '#solutions' },
     { label: 'Industries', href: '#industries' },
     { label: 'Pricing', href: '#pricing' },
-  ]
+    ]
+
+    const productSections = [
+    {
+        heading: 'Integrations',
+        links: [
+        { label: 'Click to WhatsApp Ads', href: '/click-to-whatsapp-ads', emoji: '🔗' },
+        { label: 'SMPP Platform', href: '/smpp-platform', emoji: '⚙️' },
+        ],
+    },
+    {
+        heading: 'WhatsApp',
+        links: [
+        { label: 'WhatsApp Business API', href: '/whatsapp-api', emoji: '💚' },
+        { label: 'WhatsApp CRM', href: '/whatsapp-crm', emoji: '🗂️' },
+        { label: 'WhatsApp Chatbot', href: '/whatsapp-chatbot', emoji: '🤖' },
+        { label: 'Conversational AI Chatbot', href: '/ai-chatbot', emoji: '✨' },
+        ],
+    },
+    {
+        heading: 'SMS Messaging',
+        links: [
+        { label: 'RCS Messaging', href: '/rcs-messaging', emoji: '📨' },
+        { label: 'Bulk SMS', href: '/bulk-sms', emoji: '📱' },
+        { label: 'OTP Authenticator', href: '/otp-api', emoji: '🔐' },
+        { label: 'Short Code', href: '/short-code', emoji: '🔢' },
+        { label: 'Email to SMS', href: '/email-to-sms', emoji: '📧' },
+        { label: 'Long Code', href: '/long-code', emoji: '📟' },
+        ],
+    },
+    {
+        heading: 'Voice Solutions',
+        links: [
+        { label: 'Voice', href: '/voice-api', emoji: '🎙️' },
+        { label: 'Voice OTP', href: '/voice-otp', emoji: '🔔' },
+        { label: 'IVR System', href: '/ivr', emoji: '📞' },
+        { label: 'Outbound Dialing Service', href: '/obd', emoji: '📤' },
+        { label: 'Inbound Dialing Service', href: '/ibd', emoji: '📥' },
+        { label: 'Missed Call Service', href: '/missed-call', emoji: '📵' },
+        { label: 'Number Masking', href: '/number-masking', emoji: '🎭' },
+        ],
+    },
+    ]
 
   const companyLinks = [
     { label: 'About Us', href: '/about', emoji: '🏢' },
@@ -186,6 +228,91 @@ export default function Navbar() {
               </a>
             ))}
           </div>
+        </li>
+
+        {/* Products dropdown */}
+        <li
+        className="nav-link-item"
+        style={{ display: 'none', position: 'relative' }}
+        onMouseEnter={() => setProductsOpen(true)}
+        onMouseLeave={() => setProductsOpen(false)}
+        >
+        <button style={{
+            display: 'flex', alignItems: 'center', gap: '0.3rem',
+            fontSize: '0.875rem',
+            color: productsOpen ? '#fff' : 'var(--text2)',
+            background: 'transparent', border: 'none', cursor: 'pointer',
+            fontFamily: 'Inter, sans-serif', fontWeight: 400,
+            padding: '0.4rem 0.85rem', borderRadius: 8, transition: 'all 0.2s',
+        }}>
+            Products
+            {chevron(productsOpen)}
+        </button>
+
+        {/* Wide mega-dropdown */}
+        <div style={{
+            position: 'absolute', top: 'calc(100%)', left: '50%',
+            transform: productsOpen
+            ? 'translateX(-50%) translateY(0)'
+            : 'translateX(-50%) translateY(-8px)',
+            width: 720,
+            background: 'rgba(13,18,32,0.95)',
+            backdropFilter: 'blur(32px)', WebkitBackdropFilter: 'blur(32px)',
+            border: '1px solid rgba(255,255,255,0.1)',
+            borderRadius: 20,
+            padding: '1.5rem',
+            boxShadow: '0 24px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.08)',
+            opacity: productsOpen ? 1 : 0,
+            pointerEvents: productsOpen ? 'auto' : 'none',
+            transition: 'all 0.2s cubic-bezier(0.34,1.56,0.64,1)',
+            zIndex: 200,
+        }}>
+            {/* Top glow */}
+            <div style={{
+            position: 'absolute', top: 0, left: '20%', right: '20%', height: 1,
+            background: 'linear-gradient(90deg, transparent, rgba(59,130,246,0.5), transparent)',
+            }} />
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.25rem' }}>
+            {productSections.map((section) => (
+                <div key={section.heading}>
+                <div style={{
+                    fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.1em',
+                    textTransform: 'uppercase' as const, color: 'var(--text3)',
+                    padding: '0.25rem 0.85rem', marginBottom: '0.25rem',
+                }}>
+                    {section.heading}
+                </div>
+                {section.links.map((link) => (
+                    <a
+                        key={link.label}
+                        href={link.href}
+                        style={dropdownLinkStyle}
+                        onMouseEnter={e => {
+                            e.currentTarget.style.background = 'rgba(255,255,255,0.06)'
+                            e.currentTarget.style.color = '#fff'
+                        }}
+                        onMouseLeave={e => {
+                            e.currentTarget.style.background = 'transparent'
+                            e.currentTarget.style.color = 'var(--text2)'
+                        }}
+                        >
+                        <span style={{
+                            width: 26, height: 26, borderRadius: 7, flexShrink: 0,
+                            background: 'rgba(59,130,246,0.08)',
+                            border: '1px solid rgba(59,130,246,0.15)',
+                            display: 'flex', alignItems: 'center', justifyContent: 'center',
+                            fontSize: '0.75rem',
+                        }}>
+                            {link.emoji}
+                        </span>
+                        {link.label}
+                    </a>
+                ))}
+                </div>
+            ))}
+            </div>
+        </div>
         </li>
 
         {/* Developers dropdown */}
