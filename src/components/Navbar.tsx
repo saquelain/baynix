@@ -53,12 +53,12 @@ export default function Navbar() {
     {
         heading: 'Voice Solutions',
         links: [
-        { label: 'Voice', href: '/voice-api', emoji: '🎙️' },
+        { label: 'Voice', href: '/voice', emoji: '🎙️' },
         { label: 'Voice OTP', href: '/voice-otp', emoji: '🔔' },
-        { label: 'IVR System', href: '/ivr', emoji: '📞' },
-        { label: 'Outbound Dialing Service', href: '/obd', emoji: '📤' },
-        { label: 'Inbound Dialing Service', href: '/ibd', emoji: '📥' },
-        { label: 'Missed Call Service', href: '/missed-call', emoji: '📵' },
+        { label: 'IVR System', href: '/ivr-system', emoji: '📞' },
+        { label: 'Outbound Dialing Service', href: '/outbound-dialing-service', emoji: '📤' },
+        { label: 'Inbound Dialing Service', href: '/inbound-dialing-service', emoji: '📥' },
+        { label: 'Missed Call Service', href: '/missed-call-service', emoji: '📵' },
         { label: 'Number Masking', href: '/number-masking', emoji: '🎭' },
         ],
     },
