@@ -185,9 +185,9 @@ export default function APISection() {
               <a href="https://developers.baynix.ai" className="glass-btn glass-btn-primary">
             See Documentation →
             </a>
-            <a href="/api-reference" className="glass-btn glass-btn-secondary">
+            {/* <a href="/api-reference" className="glass-btn glass-btn-secondary">
             API Reference
-            </a>
+            </a> */}
             </div>
           </div>
         </div>

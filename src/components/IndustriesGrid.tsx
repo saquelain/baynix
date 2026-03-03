@@ -1,11 +1,11 @@
 'use client'
 
 const industries = [
-  { emoji: '🛒', name: 'E-Commerce & D2C', href: '/e-commerce' },
-  { emoji: '🏦', name: 'BFSI & Fintech', href: '/fintech' },
+  { emoji: '🛒', name: 'E-Commerce & D2C', href: '/e-commerce-d2c' },
+  { emoji: '🏦', name: 'BFSI & Fintech', href: '/bsfi-fintech' },
   { emoji: '🎓', name: 'EdTech', href: '/edtech' },
   { emoji: '🚚', name: 'Logistics', href: '/logistics' },
-  { emoji: '🏥', name: 'Healthcare', href: '/healthcare' },
+  { emoji: '🏥', name: 'Healthcare', href: '/health-care' },
 ]
 
 export default function IndustriesGrid() {

@@ -33,7 +33,7 @@ const features = [
     color: 'cyan',
     title: 'OTP Authenticator',
     desc: 'Secure your users with one-time passwords delivered instantly via SMS, Voice, or WhatsApp with 99.9% uptime.',
-    href: '/otp',
+    href: '/otp-authenticator',
     stat: '1.2s avg delivery',
     btnClass: 'glass-btn-cyan'
   },
