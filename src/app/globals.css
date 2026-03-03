@@ -172,6 +172,7 @@ html::-webkit-scrollbar {
 .glass-btn {
   appearance: none;
   all: unset;
+  box-sizing: border-box;
   position: relative;
   display: inline-flex;
   align-items: center;
