@@ -377,7 +377,7 @@ export default function WhatsAppApiPage() {
                 onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)' }}
               >
                 {/* Uncomment and add your image file when ready */}
-                <Image src={split.image} alt={split.badge} fill style={{ objectFit: 'cover' }} />
+                <Image src={split.image} alt={split.badge} fill style={{ objectFit: 'contain' }} />
                 {/* <div style={{
                   width: 56, height: 56, borderRadius: 14,
                   background: `${split.color}20`, border: `1px solid ${split.color}30`,

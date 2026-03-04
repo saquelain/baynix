@@ -532,7 +532,7 @@ export default function ConversationalAiChatbotPage() {
               flexDirection: 'column' as const, gap: '0.75rem',
             }}>
               {/* Uncomment when ready: */}
-              <Image src="/images/ai-chatbot-cta.svg" alt="Create AI Chatbot" fill style={{ objectFit: 'contain', padding: '2rem' }} />
+              <Image src="/images/ai-chatbot-cta.png" alt="Create AI Chatbot" fill style={{ objectFit: 'cover', padding: '2rem' }} />
               <div style={{
                 width: 64, height: 64, borderRadius: 16,
                 background: 'rgba(99,102,241,0.15)', border: '1px solid rgba(99,102,241,0.2)',
