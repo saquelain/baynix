@@ -344,7 +344,7 @@ export default function WhatsAppCrmPage() {
               onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)' }}
             >
               {/* Uncomment when ready: */}
-              <Image src="/images/wa-crm-commerce.png" alt="WhatsApp Commerce" fill style={{ objectFit: 'cover' }} />
+              <Image src="/images/wa-crm-commerce.png" alt="WhatsApp Commerce" fill style={{ objectFit: 'contain' }} />
               <div style={{
                 width: 56, height: 56, borderRadius: 14,
                 background: 'rgba(37,211,102,0.2)', border: '1px solid rgba(37,211,102,0.3)',
