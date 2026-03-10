@@ -218,7 +218,7 @@ export default function WhatsAppCrmPage() {
               flexDirection: 'column' as const, gap: '0.75rem',
             }}>
               {/* Uncomment when ready: */}
-              <Image src="/images/wa-crm-hero.png" alt="WhatsApp CRM" fill style={{ objectFit: 'cover', borderRadius: 24 }} />
+              <Image src="/images/wa-crm-hero.png" alt="WhatsApp CRM" fill style={{ objectFit: 'contain', borderRadius: 24 }} />
               <div style={{
                 width: 64, height: 64, borderRadius: 16,
                 background: 'rgba(37,211,102,0.15)', border: '1px solid rgba(37,211,102,0.2)',
