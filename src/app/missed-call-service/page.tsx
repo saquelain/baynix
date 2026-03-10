@@ -266,7 +266,7 @@ export default function MissedCallPage() {
               onMouseEnter={e => { e.currentTarget.style.transform = 'scale(0.97)' }}
               onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)' }}
             >
-              <Image src="/images/missed-call-smart.svg" alt="Smart Voice Solutions" fill style={{ objectFit: 'contain', padding: '2rem' }} />
+              <Image src="/images/missed-call-smart.png" alt="Smart Voice Solutions" fill style={{ objectFit: 'contain', padding: '2rem' }} />
               <div style={{ width: 64, height: 64, borderRadius: 16, background: `rgba(${accentRgb},0.15)`, border: `1px solid rgba(${accentRgb},0.2)`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.8rem' }}>💡</div>
               <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.15)', fontWeight: 500 }}>missed-call-smart.png</div>
               <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(circle at 60% 40%, rgba(${accentRgb},0.12), transparent 60%)`, pointerEvents: 'none' }} />

@@ -260,7 +260,7 @@ export default function WhatsAppChatbotPage() {
               onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)' }}
             >
               {/* Uncomment when ready: */}
-              <Image src="/images/wa-chatbot-services.png" alt="AI Chatbot Services" fill style={{ objectFit: 'cover' }} />
+              <Image src="/images/wa-chatbot-services.png" alt="AI Chatbot Services" fill style={{ objectFit: 'contain' }} />
               <div style={{
                 width: 56, height: 56, borderRadius: 14,
                 background: 'rgba(37,211,102,0.2)', border: '1px solid rgba(37,211,102,0.3)',
@@ -527,7 +527,7 @@ export default function WhatsAppChatbotPage() {
               flexDirection: 'column' as const, gap: '0.75rem',
             }}>
               {/* Uncomment when ready: */}
-              <Image src="/images/wa-chatbot-cta.svg" alt="Create WhatsApp Chatbot" fill style={{ objectFit: 'contain', padding: '2rem' }} />
+              <Image src="/images/wa-chatbot-cta.png" alt="Create WhatsApp Chatbot" fill style={{ objectFit: 'contain', padding: '2rem' }} />
               <div style={{
                 width: 64, height: 64, borderRadius: 16,
                 background: 'rgba(37,211,102,0.15)', border: '1px solid rgba(37,211,102,0.2)',
