@@ -2,6 +2,7 @@
 
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import PartnerMarquee from '@/components/PartnerMarquee'
 import Image from 'next/image'
 import { useState } from 'react'
 import { Clock, UserCheck, Route, Hash, BarChart2, Timer, TrendingUp, Users, Activity } from 'lucide-react'
@@ -103,14 +104,6 @@ const faqs = [
   },
 ]
 
-const partners = [
-  { name: 'Hindware',         file: 'hindware.png', color: '#3b82f6' },
-  { name: 'Dream11',          file: 'dream11.png',  color: '#10b981' },
-  { name: 'Mahindra',         file: 'mahindra.png', color: '#6366f1' },
-  { name: 'Junglee Pictures', file: 'junglee.png',  color: '#f59e0b' },
-  { name: 'Droom',            file: 'droom.png',    color: '#22d3ee' },
-  { name: 'Godrej',           file: 'godrej.png',   color: '#a78bfa' },
-]
 
 const inputStyle = {
   width: '100%',
@@ -189,26 +182,7 @@ export default function OtpAuthenticatorPage() {
         </section>
 
         {/* ── TRUSTED BY — MARQUEE ── */}
-        <section style={{ padding: '3rem 0', borderBottom: '1px solid var(--border)', overflow: 'hidden' }}>
-          <p style={{ textAlign: 'center', fontSize: '0.75rem', textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: 'var(--text3)', marginBottom: '2rem', fontWeight: 600 }}>
-            Trusted by many of your companies
-          </p>
-          <div style={{ position: 'relative', overflow: 'hidden' }}>
-            <div style={{ position: 'absolute', top: 0, left: 0, bottom: 0, width: 120, background: 'linear-gradient(to right, var(--bg), transparent)', zIndex: 2, pointerEvents: 'none' }} />
-            <div style={{ position: 'absolute', top: 0, right: 0, bottom: 0, width: 120, background: 'linear-gradient(to left, var(--bg), transparent)', zIndex: 2, pointerEvents: 'none' }} />
-            <div style={{ display: 'flex', gap: '1.5rem', animation: 'ticker 30s linear infinite', width: 'max-content' }}>
-              {[...Array(2)].map((_, repeat) => (
-                <div key={repeat} style={{ display: 'flex', gap: '1.5rem' }}>
-                  {partners.map((partner) => (
-                    <div key={`${repeat}-${partner.name}`} style={{ flexShrink: 0, width: 160, height: 70, borderRadius: 12, overflow: 'hidden' }}>
-                      <img src={`/images/${partner.file}`} alt={partner.name} style={{ width: '100%', height: '100%', objectFit: 'fill', borderRadius: 12 }} />
-                    </div>
-                  ))}
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <PartnerMarquee title="Trusted by many of your companies" subtitle="" />
 
         {/* ── KEY FEATURES (bullets left, image right) ── */}
         <section style={{ padding: '5rem 2rem', borderBottom: '1px solid var(--border)', position: 'relative', overflow: 'hidden' }}>

@@ -2,6 +2,7 @@
 
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import PartnerMarquee from '@/components/PartnerMarquee'
 import { useState } from 'react'
 import {
   Clock, Users, Calendar,
@@ -13,14 +14,6 @@ import Image from 'next/image'
 const accent    = '#8b5cf6'
 const accentRgb = '139,92,246'
 
-const partners = [
-  { name: 'Hindware',         file: 'hindware.png' },
-  { name: 'Dream11',          file: 'dream11.png'  },
-  { name: 'Mahindra',         file: 'mahindra.png' },
-  { name: 'Junglee Pictures', file: 'junglee.png'  },
-  { name: 'Droom',            file: 'droom.png'    },
-  { name: 'Godrej',           file: 'godrej.png'   },
-]
 
 const tabs = [
   {
@@ -225,25 +218,7 @@ export default function EdtechPage() {
         </section>
 
         {/* ── MARQUEE ── */}
-        <section style={{ padding: '3rem 0', borderBottom: '1px solid var(--border)', overflow: 'hidden' }}>
-          <p style={{ textAlign: 'center', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text2)', marginBottom: '0.25rem' }}>Elevate your company with us</p>
-          <p style={{ textAlign: 'center', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--text3)', marginBottom: '2rem', fontWeight: 600 }}>just like 100+ others</p>
-          <div style={{ position: 'relative', overflow: 'hidden' }}>
-            <div style={{ position: 'absolute', top: 0, left: 0, bottom: 0, width: 120, background: 'linear-gradient(to right, var(--bg), transparent)', zIndex: 2, pointerEvents: 'none' }} />
-            <div style={{ position: 'absolute', top: 0, right: 0, bottom: 0, width: 120, background: 'linear-gradient(to left, var(--bg), transparent)', zIndex: 2, pointerEvents: 'none' }} />
-            <div style={{ display: 'flex', gap: '1.5rem', animation: 'ticker 30s linear infinite', width: 'max-content' }}>
-              {[...Array(2)].map((_, repeat) => (
-                <div key={repeat} style={{ display: 'flex', gap: '1.5rem' }}>
-                  {partners.map((p) => (
-                    <div key={`${repeat}-${p.name}`} style={{ flexShrink: 0, width: 160, height: 70, borderRadius: 12, overflow: 'hidden' }}>
-                      <img src={`/images/${p.file}`} alt={p.name} style={{ width: '100%', height: '100%', objectFit: 'fill', borderRadius: 12 }} />
-                    </div>
-                  ))}
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <PartnerMarquee />
 
         {/* ── TABS ── */}
         <section style={{ padding: '5rem 2rem', borderBottom: '1px solid var(--border)', position: 'relative', overflow: 'hidden' }}>

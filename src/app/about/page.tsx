@@ -2,6 +2,7 @@
 
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import PartnerMarquee from '@/components/PartnerMarquee'
 
 const stats = [
   { val: '70M+', label: 'Client Revenue' },
@@ -362,127 +363,7 @@ export default function AboutPage() {
         </section>
 
         {/* Trusting Partners */}
-        <section style={{
-        padding: '5rem 2rem',
-        borderBottom: '1px solid var(--border)',
-        position: 'relative',
-        overflow: 'hidden',
-        }}>
-        <div style={{
-            position: 'absolute',
-            width: 500, height: 300,
-            background: 'radial-gradient(ellipse, rgba(59,130,246,0.06) 0%, transparent 70%)',
-            top: '50%', left: '50%',
-            transform: 'translate(-50%, -50%)',
-            pointerEvents: 'none',
-        }} />
-
-        <div style={{ maxWidth: 1100, margin: '0 auto', position: 'relative', zIndex: 1 }}>
-
-            <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <div style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.4rem',
-                fontSize: '0.75rem',
-                textTransform: 'uppercase' as const,
-                letterSpacing: '0.12em',
-                color: 'var(--accent)',
-                marginBottom: '1rem',
-            }}>
-                <span style={{ width: 18, height: 1, background: 'var(--accent)', display: 'inline-block' }} />
-                Our Trusting Partners
-            </div>
-            <h2 style={{
-                fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
-                fontWeight: 800,
-                letterSpacing: '-0.03em',
-                color: 'var(--text)',
-                marginBottom: '0.75rem',
-            }}>
-                Brands that trust Baynix
-            </h2>
-            <p style={{
-                fontSize: '0.9rem',
-                color: 'var(--text2)',
-                fontWeight: 300,
-                maxWidth: 480,
-                margin: '0 auto',
-                lineHeight: 1.7,
-            }}>
-                We're proud to work with some of India's most recognised companies across industries.
-            </p>
-            </div>
-
-            {/* Marquee */}
-        <div style={{
-        position: 'relative',
-        overflow: 'hidden',
-        }}>
-        {/* Left fade */}
-        <div style={{
-            position: 'absolute',
-            top: 0, left: 0, bottom: 0,
-            width: 120,
-            background: 'linear-gradient(to right, var(--bg), transparent)',
-            zIndex: 2,
-            pointerEvents: 'none',
-        }} />
-        {/* Right fade */}
-        <div style={{
-            position: 'absolute',
-            top: 0, right: 0, bottom: 0,
-            width: 120,
-            background: 'linear-gradient(to left, var(--bg), transparent)',
-            zIndex: 2,
-            pointerEvents: 'none',
-        }} />
-
-        {/* Track */}
-        <div style={{
-            display: 'flex',
-            gap: '1.5rem',
-            animation: 'ticker 30s linear infinite',
-            width: 'max-content',
-        }}>
-            {[...Array(2)].map((_, repeat) => (
-            <div key={repeat} style={{ display: 'flex', gap: '1.5rem' }}>
-                {[
-                { name: 'Hindware', file: 'hindware.png', color: '#3b82f6' },
-                { name: 'Dream11', file: 'dream11.png', color: '#10b981' },
-                { name: 'Mahindra', file: 'mahindra.png', color: '#6366f1' },
-                { name: 'Junglee Pictures', file: 'junglee.png', color: '#f59e0b' },
-                { name: 'Droom', file: 'droom.png', color: '#22d3ee' },
-                { name: 'Godrej', file: 'godrej.png', color: '#a78bfa' },
-                ].map((partner) => (
-                <div
-                    key={`${repeat}-${partner.name}`}
-                    style={{
-                        flexShrink: 0,
-                        width: 160,
-                        height: 70,
-                        borderRadius: 12,
-                        overflow: 'hidden',
-                    }}
-                    >
-                    <img
-                        src={`/images/${partner.file}`}
-                        alt={partner.name}
-                        style={{
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'fill',
-                        borderRadius: 12,
-                        }}
-                    />
-                </div>
-                ))}
-            </div>
-            ))}
-        </div>
-        </div>
-        </div>
-        </section>
+        <PartnerMarquee variant="full" />
 
         {/* CTA */}
         <section style={{

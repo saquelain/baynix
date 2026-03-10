@@ -121,14 +121,6 @@ const faqs = [
   },
 ]
 
-const partners = [
-  { name: 'Hindware',         file: 'hindware.png', color: '#3b82f6' },
-  { name: 'Dream11',          file: 'dream11.png',  color: '#10b981' },
-  { name: 'Mahindra',         file: 'mahindra.png', color: '#6366f1' },
-  { name: 'Junglee Pictures', file: 'junglee.png',  color: '#f59e0b' },
-  { name: 'Droom',            file: 'droom.png',    color: '#22d3ee' },
-  { name: 'Godrej',           file: 'godrej.png',   color: '#a78bfa' },
-]
 
 const inputStyle = {
   width: '100%',
