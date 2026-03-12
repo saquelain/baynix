@@ -206,7 +206,7 @@ export default function BsfiFintechPage() {
 
             {/* Hero image right */}
             <div style={{ height: 440, borderRadius: 24, background: `linear-gradient(135deg, rgba(${accentRgb},0.12), rgba(16,185,129,0.08), rgba(99,102,241,0.06))`, border: '1px solid rgba(255,255,255,0.08)', position: 'relative', overflow: 'hidden', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08), 0 32px 80px rgba(0,0,0,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '0.75rem' }}>
-              <Image src="/images/fintech-hero.png" alt="BFSI Fintech" fill style={{ objectFit: 'contain', borderRadius: 24 }} />
+              <Image src="/images/fintech-hero.png" alt="BFSI Fintech" fill style={{ objectFit: 'cover', borderRadius: 24 }} />
               {/* <div style={{ width: 72, height: 72, borderRadius: 20, background: `rgba(${accentRgb},0.15)`, border: `1px solid rgba(${accentRgb},0.25)`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '2rem' }}>🏦</div> */}
               {/* <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.15)', fontWeight: 500 }}>fintech-hero.png</div> */}
               <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(circle at 70% 30%, rgba(${accentRgb},0.1), transparent 60%)`, pointerEvents: 'none' }} />
@@ -263,7 +263,7 @@ export default function BsfiFintechPage() {
             {/* Tab content — image left, text right */}
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
               <div style={{ height: 420, borderRadius: 20, background: `linear-gradient(135deg, ${currentTab.color}18, rgba(255,255,255,0.03))`, border: '1px solid rgba(255,255,255,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '0.75rem', position: 'relative', overflow: 'hidden', boxShadow: `0 24px 60px rgba(0,0,0,0.3), 0 0 60px ${currentTab.color}10`, transition: 'all 0.4s ease' }}>
-                <Image src={`/images/${currentTab.image}`} alt={currentTab.title} fill style={{ objectFit: 'contain' }} />
+                <Image src={`/images/${currentTab.image}`} alt={currentTab.title} fill style={{ objectFit: 'cover' }} />
                 <div style={{ width: 80, height: 80, borderRadius: 20, background: `${currentTab.color}20`, border: `1px solid ${currentTab.color}35`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '2.2rem', transition: 'all 0.4s ease' }}>
                   {currentTab.emoji}
                 </div>

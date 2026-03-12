@@ -211,7 +211,7 @@ export default function StartupsPage() {
               onMouseEnter={e => { e.currentTarget.style.transform = 'scale(0.97)' }}
               onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)' }}
             >
-              <Image src="/images/startups-simplified.png" alt="Simplified SMS Marketing" fill style={{ objectFit: 'contain' }} />
+              <Image src="/images/startups-simplified.png" alt="Simplified SMS Marketing" fill style={{ objectFit: 'cover' }} />
               <div style={{ width: 72, height: 72, borderRadius: 20, background: `rgba(${accentRgb},0.15)`, border: `1px solid rgba(${accentRgb},0.25)`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '2rem' }}>📲</div>
               <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.15)', fontWeight: 500 }}>startups-simplified.png</div>
               <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(circle at 70% 30%, rgba(${accentRgb},0.1), transparent 60%)`, pointerEvents: 'none' }} />
@@ -230,7 +230,7 @@ export default function StartupsPage() {
               onMouseEnter={e => { e.currentTarget.style.transform = 'scale(0.97)' }}
               onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)' }}
             >
-              <Image src="/images/startups-usecases.png" alt="Use Cases" fill style={{ objectFit: 'contain' }} />
+              <Image src="/images/startups-usecases.png" alt="Use Cases" fill style={{ objectFit: 'cover' }} />
               <div style={{ width: 64, height: 64, borderRadius: 16, background: `rgba(${accentRgb},0.2)`, border: `1px solid rgba(${accentRgb},0.3)`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.8rem' }}>🚀</div>
               <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.2)', fontWeight: 500 }}>startups-usecases.png</div>
               <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(circle at 50% 100%, rgba(${accentRgb},0.1), transparent 70%)`, pointerEvents: 'none' }} />

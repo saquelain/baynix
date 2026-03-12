@@ -243,7 +243,7 @@ export default function HealthCarePage() {
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
               <div style={{ height: 420, borderRadius: 20, background: `linear-gradient(135deg, ${currentTab.color}18, rgba(255,255,255,0.03))`, border: '1px solid rgba(255,255,255,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '0.75rem', position: 'relative', overflow: 'hidden', boxShadow: `0 24px 60px rgba(0,0,0,0.3), 0 0 60px ${currentTab.color}10`, transition: 'all 0.4s ease' }}>
-                {/* <Image src={`/images/${currentTab.image}`} alt={currentTab.title} fill style={{ objectFit: 'contain' }} /> */}
+                <Image src={`/images/${currentTab.image}`} alt={currentTab.title} fill style={{ objectFit: 'cover' }} />
                 <div style={{ width: 80, height: 80, borderRadius: 20, background: `${currentTab.color}20`, border: `1px solid ${currentTab.color}35`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '2.2rem', transition: 'all 0.4s ease' }}>{currentTab.emoji}</div>
                 <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.15)', fontWeight: 500 }}>{currentTab.image}</div>
                 <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(circle at 50% 40%, ${currentTab.color}18, transparent 65%)`, pointerEvents: 'none', transition: 'all 0.4s ease' }} />
