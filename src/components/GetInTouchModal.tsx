@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
+import Image from 'next/image'
 
 // Map URL paths to product names (hidden from user, sent with form)
 function detectProduct(pathname: string): string {
@@ -116,16 +117,69 @@ export default function GetInTouchModal({ isOpen, onClose }: Props) {
         pointerEvents: 'none',
       }}>
         <div style={{
-          width: '100%', maxWidth: 480,
+          width: '100%', maxWidth: 820,
           background: 'var(--surface)',
           border: '1px solid var(--border2)',
           borderRadius: 18,
-          padding: '2rem',
+          overflow: 'hidden',
           pointerEvents: 'auto',
           boxShadow: '0 24px 64px rgba(0,0,0,0.5)',
           animation: 'slideUp 0.25s ease',
           position: 'relative',
+          display: 'flex',
         }}>
+          {/* Left illustration panel */}
+          <div style={{
+            width: 300, flexShrink: 0,
+            background: 'linear-gradient(160deg, rgba(99,102,241,0.18) 0%, rgba(59,130,246,0.1) 50%, rgba(16,185,129,0.08) 100%)',
+            borderRight: '1px solid var(--border2)',
+            display: 'flex', flexDirection: 'column',
+            alignItems: 'center', justifyContent: 'center',
+            padding: '2rem 1.5rem', gap: '1.25rem',
+            position: 'relative', overflow: 'hidden',
+          }} className="modal-illustration">
+            {/* Decorative blobs */}
+            <div style={{
+              position: 'absolute', top: '-40px', left: '-40px',
+              width: 160, height: 160, borderRadius: '50%',
+              background: 'radial-gradient(circle, rgba(99,102,241,0.25) 0%, transparent 70%)',
+              pointerEvents: 'none',
+            }} />
+            <div style={{
+              position: 'absolute', bottom: '-30px', right: '-30px',
+              width: 140, height: 140, borderRadius: '50%',
+              background: 'radial-gradient(circle, rgba(59,130,246,0.2) 0%, transparent 70%)',
+              pointerEvents: 'none',
+            }} />
+
+            {/* Placeholder image — replace /images/contact-illustration.png later */}
+            <Image src="/images/contact-illustration.svg" alt="Contact illustration" width={180} height={180} />
+
+            {/* Copy */}
+            <div style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
+              <p style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--text)', marginBottom: '0.4rem' }}>
+                Let&apos;s talk business
+              </p>
+              <p style={{ fontSize: '0.78rem', color: 'var(--text3)', lineHeight: 1.7 }}>
+                We typically respond within 24 hours. No spam, ever.
+              </p>
+            </div>
+
+            {/* Trust badges */}
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', justifyContent: 'center', position: 'relative', zIndex: 1 }}>
+              {['ISO 27001', 'SOC 2', 'VAPT'].map(b => (
+                <span key={b} style={{
+                  fontSize: '0.65rem', padding: '0.2rem 0.55rem',
+                  border: '1px solid rgba(255,255,255,0.12)',
+                  borderRadius: 5, color: 'var(--text3)',
+                  letterSpacing: '0.04em',
+                }}>{b}</span>
+              ))}
+            </div>
+          </div>
+
+          {/* Right form panel */}
+          <div style={{ flex: 1, padding: '2rem', position: 'relative' }}>
           {/* Close button */}
           <button
             onClick={onClose}
@@ -275,12 +329,14 @@ export default function GetInTouchModal({ isOpen, onClose }: Props) {
               </form>
             </>
           )}
+          </div>{/* end right form panel */}
         </div>
       </div>
 
       <style>{`
         @keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
         @keyframes slideUp { from { opacity: 0; transform: translateY(20px) } to { opacity: 1; transform: translateY(0) } }
+        @media (max-width: 600px) { .modal-illustration { display: none !important; } }
       `}</style>
     </>
   )
