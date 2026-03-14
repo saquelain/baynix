@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find C:/Users/saque/Downloads/baynix/src -type f -name \"*.tsx\" -o -name \"*.ts\" -o -name \"*.jsx\" -o -name \"*.js\" | xargs grep -l \"developer\" 2>/dev/null | head -20)",
+      "Bash(grep -n '\\\\${{' \"C:/Users/saque/Downloads/baynix/src/app/api-docs/page.tsx\")",
+      "Bash(grep -n 'Total: \\\\${{' \"/c/Users/saque/Downloads/baynix/src/app/api-docs/page.tsx\")"
+    ]
+  }
+}

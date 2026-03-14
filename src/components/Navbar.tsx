@@ -97,6 +97,7 @@ export default function Navbar() {
     { label: 'OTP API', href: '/otp-api', emoji: '🔐' },
     { label: 'Email API', href: '/email-api', emoji: '✉️' },
     { label: 'SMS Gateway', href: '/sms-gateway', emoji: '📡' },
+    { label: 'API Docs', href: '/api-docs/sms', emoji: '📖' },
   ]
 
   const dropdownBase = {
