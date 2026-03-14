@@ -121,9 +121,62 @@ export default function Footer() {
           <p style={{ fontSize: '0.8rem', color: 'var(--text3)' }}>
             © 2025–2026 Baynix. All Rights Reserved.
           </p>
-          <div style={{ display: 'flex', gap: '0.75rem' }}>
-            {['ISO 27001', 'GDPR', 'Meta Partner'].map((badge) => (
-              <span key={badge} style={{
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
+            {[
+              {
+                label: 'ISO 27001',
+                icon: (
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.25C17.25 22.15 21 17.25 21 12V7L12 2z"/>
+                    <path d="M9 12l2 2 4-4"/>
+                  </svg>
+                ),
+              },
+              {
+                label: 'VAPT',
+                icon: (
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="M21 21l-4.35-4.35"/>
+                    <path d="M11 8v6M8 11h6"/>
+                  </svg>
+                ),
+              },
+              {
+                label: 'SOC 2 Type II',
+                icon: (
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <path d="M9 12l2 2 4-4"/>
+                    <path d="M3 9h18"/>
+                  </svg>
+                ),
+              },
+              {
+                label: 'Code Review',
+                icon: (
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="16 18 22 12 16 6"/>
+                    <polyline points="8 6 2 12 8 18"/>
+                    <path d="M12 2v20"/>
+                  </svg>
+                ),
+              },
+              {
+                label: 'SAR',
+                icon: (
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                    <path d="M9 13h6M9 17h4"/>
+                  </svg>
+                ),
+              },
+            ].map(({ label, icon }) => (
+              <span key={label} style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.4rem',
                 padding: '0.25rem 0.75rem',
                 border: '1px solid var(--border2)',
                 borderRadius: 6,
@@ -131,7 +184,8 @@ export default function Footer() {
                 color: 'var(--text3)',
                 letterSpacing: '0.05em',
               }}>
-                {badge}
+                {icon}
+                {label}
               </span>
             ))}
           </div>
