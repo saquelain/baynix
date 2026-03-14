@@ -1,6 +1,8 @@
 'use client'
 
+import { useState } from 'react'
 import Image from 'next/image'
+import GetInTouchModal from '@/components/GetInTouchModal'
 
 const links = {
   Products: [
@@ -30,7 +32,10 @@ const links = {
 }
 
 export default function Footer() {
+  const [modalOpen, setModalOpen] = useState(false)
+
   return (
+    <>
     <footer style={{
       padding: '4rem 2rem 2rem',
       borderTop: '1px solid var(--border)',
@@ -108,6 +113,17 @@ export default function Footer() {
           ))}
         </div>
 
+        {/* Get in Touch — above the divider */}
+        <div style={{ display: 'flex', justifyContent: 'flex-start', paddingLeft: '2rem', marginBottom: '1.5rem' }}>
+          <button
+            onClick={() => setModalOpen(true)}
+            className="glass-btn glass-btn-primary glass-btn-sm"
+            style={{ cursor: 'pointer', fontFamily: 'inherit' }}
+          >
+            Get in Touch
+          </button>
+        </div>
+
         {/* Bottom */}
         <div style={{
           paddingTop: '2rem',
@@ -118,7 +134,7 @@ export default function Footer() {
           flexWrap: 'wrap',
           gap: '1rem',
         }}>
-          <p style={{ fontSize: '0.8rem', color: 'var(--text3)' }}>
+          <p style={{ fontSize: '0.8rem', color: 'var(--text3)', margin: 0 }}>
             © 2025–2026 Baynix. All Rights Reserved.
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
@@ -192,5 +208,8 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+
+    <GetInTouchModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
+    </>
   )
 }
