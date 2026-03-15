@@ -2,7 +2,7 @@
 
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import Image from 'next/image'
+import ImageBox from '@/components/ImageBox'
 import { useState } from 'react'
 import { TrendingUp, Globe, Plug, MessageCircle, BarChart2, ShieldCheck, UserCheck, Filter, Users, FileText, PieChart } from 'lucide-react'
 
@@ -188,13 +188,17 @@ export default function BulkSmsPage() {
             </div>
 
             {/* Hero image */}
-            <div style={{ height: 420, borderRadius: 24, background: 'linear-gradient(135deg, rgba(16,185,129,0.1), rgba(59,130,246,0.08), rgba(99,102,241,0.06))', border: '1px solid rgba(255,255,255,0.08)', position: 'relative', overflow: 'hidden', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08), 0 32px 80px rgba(0,0,0,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' as const, gap: '0.75rem' }}>
-              {/* Uncomment when ready: */}
-              <Image src="/images/bulk-sms-hero.png" alt="Bulk SMS Solutions" fill style={{ objectFit: 'contain', borderRadius: 24 }} />
-              <div style={{ width: 64, height: 64, borderRadius: 16, background: 'rgba(16,185,129,0.15)', border: '1px solid rgba(16,185,129,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.8rem' }}>💬</div>
-              <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.15)', fontWeight: 500 }}>bulk-sms-hero.png</div>
+            <ImageBox
+              src="/images/bulk-sms-hero.png"
+              alt="Bulk SMS Solutions"
+              background="linear-gradient(135deg, rgba(16,185,129,0.1), rgba(59,130,246,0.08), rgba(99,102,241,0.06))"
+              border="1px solid rgba(255,255,255,0.08)"
+              borderRadius={24}
+              boxShadow="inset 0 1px 0 rgba(255,255,255,0.08), 0 32px 80px rgba(0,0,0,0.4)"
+              imageStyle={{ objectFit: 'contain', borderRadius: 24 }}
+            >
               <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 70% 30%, rgba(16,185,129,0.08), transparent 60%)', pointerEvents: 'none' }} />
-            </div>
+            </ImageBox>
           </div>
         </section>
 

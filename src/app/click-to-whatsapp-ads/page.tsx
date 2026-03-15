@@ -2,7 +2,7 @@
 
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import Image from 'next/image'
+import ImageBox from '@/components/ImageBox'
 import { useState } from 'react'
 import { Headphones, Bell, RefreshCw, BookOpen, Zap } from 'lucide-react'
 
@@ -166,20 +166,21 @@ export default function ClickToWhatsAppAdsPage() {
             </div>
 
             {/* Hero image */}
-            <div style={{
-              height: 420, borderRadius: 24,
-              background: 'linear-gradient(135deg, rgba(37,211,102,0.1), rgba(18,140,126,0.08), rgba(99,102,241,0.06))',
-              border: '1px solid rgba(255,255,255,0.08)',
-              position: 'relative', overflow: 'hidden',
-              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08), 0 32px 80px rgba(0,0,0,0.4)',
-            }}>
-              <Image src="/images/ctwa-hero.png" alt="Click to WhatsApp Ads" fill style={{ objectFit: 'cover', borderRadius: 24 }} />
+            <ImageBox
+              src="/images/ctwa-hero.png"
+              alt="Click to WhatsApp Ads"
+              background="linear-gradient(135deg, rgba(37,211,102,0.1), rgba(18,140,126,0.08), rgba(99,102,241,0.06))"
+              border="1px solid rgba(255,255,255,0.08)"
+              borderRadius={24}
+              boxShadow="inset 0 1px 0 rgba(255,255,255,0.08), 0 32px 80px rgba(0,0,0,0.4)"
+              imageStyle={{ objectFit: 'cover', borderRadius: 24 }}
+            >
               <div style={{
                 position: 'absolute', inset: 0,
                 background: 'radial-gradient(circle at 70% 30%, rgba(37,211,102,0.08), transparent 60%)',
                 pointerEvents: 'none',
               }} />
-            </div>
+            </ImageBox>
           </div>
         </section>
 
@@ -280,26 +281,27 @@ export default function ClickToWhatsAppAdsPage() {
               position: 'relative', zIndex: 1,
             }}>
               {/* Image */}
-              <div
+              <ImageBox
+                src={split.image}
+                alt={split.badge}
+                border="1px solid rgba(255,255,255,0.08)"
+                borderRadius={20}
+                boxShadow={`0 24px 60px rgba(0,0,0,0.4), 0 0 0 1px ${split.color}15`}
+                imageStyle={{ objectFit: 'cover' }}
                 style={{
-                  height: 380, borderRadius: 20,
-                  position: 'relative', overflow: 'hidden',
                   direction: 'ltr',
-                  border: '1px solid rgba(255,255,255,0.08)',
-                  boxShadow: `0 24px 60px rgba(0,0,0,0.4), 0 0 0 1px ${split.color}15`,
                   transition: 'transform 0.4s ease',
                   cursor: 'default',
                 }}
-                onMouseEnter={e => { e.currentTarget.style.transform = 'scale(0.97)' }}
-                onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)' }}
+                onMouseEnter={(e: React.MouseEvent<HTMLDivElement>) => { e.currentTarget.style.transform = 'scale(0.97)' }}
+                onMouseLeave={(e: React.MouseEvent<HTMLDivElement>) => { e.currentTarget.style.transform = 'scale(1)' }}
               >
-                <Image src={split.image} alt={split.badge} fill style={{ objectFit: 'cover' }} />
                 <div style={{
                   position: 'absolute', inset: 0,
                   background: `radial-gradient(circle at 50% 100%, ${split.color}12, transparent 70%)`,
                   pointerEvents: 'none',
                 }} />
-              </div>
+              </ImageBox>
 
               {/* Text */}
               <div style={{ direction: 'ltr' }}>
@@ -383,19 +385,20 @@ export default function ClickToWhatsAppAdsPage() {
             </div>
 
             {/* Image */}
-            <div style={{
-              height: 480, borderRadius: 20,
-              position: 'relative', overflow: 'hidden',
-              border: '1px solid rgba(255,255,255,0.08)',
-              boxShadow: '0 24px 60px rgba(0,0,0,0.4)',
-            }}>
-              <Image src="/images/ctwa-solution.png" alt="One solution for all businesses" fill style={{ objectFit: 'cover' }} />
+            <ImageBox
+              src="/images/ctwa-solution.png"
+              alt="One solution for all businesses"
+              border="1px solid rgba(255,255,255,0.08)"
+              borderRadius={20}
+              boxShadow="0 24px 60px rgba(0,0,0,0.4)"
+              imageStyle={{ objectFit: 'cover' }}
+            >
               <div style={{
                 position: 'absolute', inset: 0,
                 background: 'radial-gradient(circle at 30% 70%, rgba(37,211,102,0.1), transparent 60%)',
                 pointerEvents: 'none',
               }} />
-            </div>
+            </ImageBox>
           </div>
         </section>
 

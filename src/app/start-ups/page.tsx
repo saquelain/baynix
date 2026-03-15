@@ -11,7 +11,7 @@ import {
   Rocket, BarChart3,
   ArrowRight,
 } from 'lucide-react'
-import Image from 'next/image'
+import ImageBox from '@/components/ImageBox'
 
 const accent    = '#6366f1'
 const accentRgb = '99,102,241'
@@ -207,14 +207,22 @@ export default function StartupsPage() {
             </div>
 
             <div
-              style={{ height: 440, borderRadius: 24, background: `linear-gradient(135deg, rgba(${accentRgb},0.12), rgba(236,72,153,0.08), rgba(16,185,129,0.05))`, border: '1px solid rgba(255,255,255,0.08)', position: 'relative', overflow: 'hidden', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08), 0 32px 80px rgba(0,0,0,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '0.75rem', transition: 'transform 0.4s ease' }}
+              style={{ transition: 'transform 0.4s ease' }}
               onMouseEnter={e => { e.currentTarget.style.transform = 'scale(0.97)' }}
               onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)' }}
             >
-              <Image src="/images/startups-simplified.png" alt="Simplified SMS Marketing" fill style={{ objectFit: 'cover' }} />
-              <div style={{ width: 72, height: 72, borderRadius: 20, background: `rgba(${accentRgb},0.15)`, border: `1px solid rgba(${accentRgb},0.25)`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '2rem' }}>📲</div>
-              <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.15)', fontWeight: 500 }}>startups-simplified.png</div>
-              <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(circle at 70% 30%, rgba(${accentRgb},0.1), transparent 60%)`, pointerEvents: 'none' }} />
+              <ImageBox
+                src="/images/startups-simplified.png"
+                alt="Simplified SMS Marketing"
+                width={800} height={440}
+                background={`linear-gradient(135deg, rgba(${accentRgb},0.12), rgba(236,72,153,0.08), rgba(16,185,129,0.05))`}
+                border="1px solid rgba(255,255,255,0.08)"
+                borderRadius={24}
+                boxShadow="inset 0 1px 0 rgba(255,255,255,0.08), 0 32px 80px rgba(0,0,0,0.4)"
+                imageStyle={{ objectFit: 'cover' }}
+              >
+                <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(circle at 70% 30%, rgba(${accentRgb},0.1), transparent 60%)`, pointerEvents: 'none' }} />
+              </ImageBox>
             </div>
           </div>
         </section>
@@ -226,14 +234,22 @@ export default function StartupsPage() {
           <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center', direction: 'rtl', position: 'relative', zIndex: 1 }}>
             {/* Image left via rtl */}
             <div
-              style={{ height: 460, borderRadius: 20, direction: 'ltr', position: 'relative', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.08)', boxShadow: '0 24px 60px rgba(0,0,0,0.4)', background: `linear-gradient(135deg, rgba(${accentRgb},0.1), rgba(236,72,153,0.07))`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '0.75rem', transition: 'transform 0.4s ease' }}
+              style={{ direction: 'ltr', transition: 'transform 0.4s ease' }}
               onMouseEnter={e => { e.currentTarget.style.transform = 'scale(0.97)' }}
               onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)' }}
             >
-              <Image src="/images/startups-usecases.png" alt="Use Cases" fill style={{ objectFit: 'cover' }} />
-              <div style={{ width: 64, height: 64, borderRadius: 16, background: `rgba(${accentRgb},0.2)`, border: `1px solid rgba(${accentRgb},0.3)`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.8rem' }}>🚀</div>
-              <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.2)', fontWeight: 500 }}>startups-usecases.png</div>
-              <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(circle at 50% 100%, rgba(${accentRgb},0.1), transparent 70%)`, pointerEvents: 'none' }} />
+              <ImageBox
+                src="/images/startups-usecases.png"
+                alt="Use Cases"
+                width={800} height={460}
+                background={`linear-gradient(135deg, rgba(${accentRgb},0.1), rgba(236,72,153,0.07))`}
+                border="1px solid rgba(255,255,255,0.08)"
+                borderRadius={20}
+                boxShadow="0 24px 60px rgba(0,0,0,0.4)"
+                imageStyle={{ objectFit: 'cover' }}
+              >
+                <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(circle at 50% 100%, rgba(${accentRgb},0.1), transparent 70%)`, pointerEvents: 'none' }} />
+              </ImageBox>
             </div>
 
             {/* Text right */}

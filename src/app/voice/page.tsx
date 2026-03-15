@@ -2,7 +2,7 @@
 
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import Image from 'next/image'
+import ImageBox from '@/components/ImageBox'
 import { useState } from 'react'
 import {
   Globe, Workflow, ShieldCheck, Radio, PhoneCall, Star,
@@ -189,12 +189,19 @@ export default function VoicePage() {
             </div>
 
             {/* Hero image */}
-            <div style={{ height: 440, borderRadius: 24, background: 'linear-gradient(135deg, rgba(245,158,11,0.1), rgba(99,102,241,0.08), rgba(34,211,238,0.06))', border: '1px solid rgba(255,255,255,0.08)', position: 'relative', overflow: 'hidden', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08), 0 32px 80px rgba(0,0,0,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' as const, gap: '0.75rem' }}>
-              <Image src="/images/voice-hero.png" alt="Voice Call Provider" fill style={{ objectFit: 'contain', borderRadius: 24 }} />
-              <div style={{ width: 64, height: 64, borderRadius: 16, background: 'rgba(245,158,11,0.15)', border: '1px solid rgba(245,158,11,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.8rem' }}>🎙️</div>
-              <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.15)', fontWeight: 500 }}>voice-hero.png</div>
+            <ImageBox
+              src="/images/voice-hero.png"
+              alt="Voice Call Provider"
+              background="linear-gradient(135deg, rgba(245,158,11,0.1), rgba(99,102,241,0.08), rgba(34,211,238,0.06))"
+              border="1px solid rgba(255,255,255,0.08)"
+              borderRadius={24}
+              boxShadow="inset 0 1px 0 rgba(255,255,255,0.08), 0 32px 80px rgba(0,0,0,0.4)"
+              imageStyle={{ objectFit: 'contain', borderRadius: 24 }}
+            >
+              {/* <div style={{ width: 64, height: 64, borderRadius: 16, background: 'rgba(245,158,11,0.15)', border: '1px solid rgba(245,158,11,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.8rem' }}>🎙️</div> */}
+              {/* <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.15)', fontWeight: 500 }}>voice-hero.png</div> */}
               <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 70% 30%, rgba(245,158,11,0.08), transparent 60%)', pointerEvents: 'none' }} />
-            </div>
+            </ImageBox>
           </div>
         </section>
 
@@ -231,7 +238,7 @@ export default function VoicePage() {
                     <div style={{ height: 140, background: `linear-gradient(135deg, ${item.color}15, ${item.color}08)`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' as const, gap: '0.5rem', borderBottom: '1px solid rgba(255,255,255,0.06)', position: 'relative', overflow: 'hidden' }}>
                       {/* <Image src={`/images/${item.img}`} alt={item.title} fill style={{ objectFit: 'contain', padding: '1rem' }} /> */}
                       <div style={{ fontSize: '2.5rem' }}>{item.emoji}</div>
-                      <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.15)', fontWeight: 500 }}>{item.img}</div>
+                      {/* <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.15)', fontWeight: 500 }}>{item.img}</div> */}
                       <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(circle at 50% 100%, ${item.color}18, transparent 70%)`, pointerEvents: 'none' }} />
                     </div>
 
@@ -347,14 +354,24 @@ export default function VoicePage() {
 
             {/* Illustration right */}
             <div
-              style={{ height: 400, borderRadius: 24, background: 'linear-gradient(135deg, rgba(245,158,11,0.1), rgba(99,102,241,0.08))', border: '1px solid rgba(255,255,255,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)', flexDirection: 'column' as const, gap: '0.75rem', transition: 'transform 0.4s ease' }}
+              style={{ transition: 'transform 0.4s ease', borderRadius: 24 }}
               onMouseEnter={e => { e.currentTarget.style.transform = 'scale(0.97)' }}
               onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)' }}
             >
-              <Image src="/images/voice-support.svg" alt="Voice Campaigns" fill style={{ objectFit: 'contain', padding: '2rem' }} />
-              <div style={{ width: 64, height: 64, borderRadius: 16, background: 'rgba(245,158,11,0.15)', border: '1px solid rgba(245,158,11,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.8rem' }}>📈</div>
-              <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.15)', fontWeight: 500 }}>voice-campaigns.png</div>
-              <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 60% 40%, rgba(245,158,11,0.1), transparent 60%)', pointerEvents: 'none' }} />
+              <ImageBox
+                src="/images/voice-support.svg"
+                alt="Voice Campaigns"
+                background="linear-gradient(135deg, rgba(245,158,11,0.1), rgba(99,102,241,0.08))"
+                border="1px solid rgba(255,255,255,0.08)"
+                borderRadius={24}
+                boxShadow="inset 0 1px 0 rgba(255,255,255,0.08)"
+                padding="2rem"
+                imageStyle={{ objectFit: 'contain' }}
+              >
+                {/* <div style={{ width: 64, height: 64, borderRadius: 16, background: 'rgba(245,158,11,0.15)', border: '1px solid rgba(245,158,11,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.8rem' }}>📈</div> */}
+                {/* <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.15)', fontWeight: 500 }}>voice-campaigns.png</div> */}
+                <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 60% 40%, rgba(245,158,11,0.1), transparent 60%)', pointerEvents: 'none' }} />
+              </ImageBox>
             </div>
           </div>
         </section>

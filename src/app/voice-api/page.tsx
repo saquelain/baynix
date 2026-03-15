@@ -2,7 +2,7 @@
 
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import Image from 'next/image'
+import ImageBox from '@/components/ImageBox'
 import { useState } from 'react'
 
 const features = [
@@ -250,21 +250,23 @@ export default function VoiceApiPage() {
             </div>
 
             {/* Hero illustration */}
-            <div style={{
-              height: 380, borderRadius: 24,
-              background: 'linear-gradient(135deg, rgba(59,130,246,0.12), rgba(99,102,241,0.08), rgba(34,211,238,0.06))',
-              border: '1px solid rgba(255,255,255,0.08)',
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              position: 'relative', overflow: 'hidden',
-              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)',
-            }}>
-              <Image src="/images/voice-hero.svg" alt="Voice API" fill style={{ objectFit: 'contain', padding: '2rem' }} />
+            <ImageBox
+              src="/images/voice-hero.svg"
+              alt="Voice API"
+              width={760}
+              height={380}
+              background="linear-gradient(135deg, rgba(59,130,246,0.12), rgba(99,102,241,0.08), rgba(34,211,238,0.06))"
+              border="1px solid rgba(255,255,255,0.08)"
+              borderRadius={24}
+              boxShadow="inset 0 1px 0 rgba(255,255,255,0.08)"
+              padding="2rem"
+            >
               <div style={{
                 position: 'absolute', top: 0, left: 0, right: 0, bottom: 0,
                 background: 'radial-gradient(circle at 70% 30%, rgba(59,130,246,0.1), transparent 60%)',
                 pointerEvents: 'none',
               }} />
-            </div>
+            </ImageBox>
           </div>
         </section>
 
@@ -356,20 +358,23 @@ export default function VoiceApiPage() {
                     background: `linear-gradient(90deg, transparent, ${f.color}66, transparent)`,
                   }} />
 
-                  <div style={{
-                    width: '100%', height: 140, borderRadius: 12,
-                    background: `linear-gradient(135deg, ${f.color}12, ${f.color}06)`,
-                    border: `1px solid ${f.color}18`,
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    marginBottom: '1.25rem', position: 'relative', overflow: 'hidden',
-                  }}>
-                    <Image src={f.illustration} alt={f.title} fill style={{ objectFit: 'contain', padding: '1.5rem' }} />
+                  <ImageBox
+                    src={f.illustration}
+                    alt={f.title}
+                    width={400}
+                    height={140}
+                    background={`linear-gradient(135deg, ${f.color}12, ${f.color}06)`}
+                    border={`1px solid ${f.color}18`}
+                    borderRadius={12}
+                    padding="1.5rem"
+                    style={{ marginBottom: '1.25rem' }}
+                  >
                     <div style={{
                       position: 'absolute', inset: 0,
                       background: `radial-gradient(circle at 50% 100%, ${f.color}15, transparent 70%)`,
                       pointerEvents: 'none',
                     }} />
-                  </div>
+                  </ImageBox>
 
                   <h3 style={{
                     fontSize: '1rem', fontWeight: 700, color: 'var(--text)',
@@ -547,21 +552,24 @@ export default function VoiceApiPage() {
             gap: '4rem', alignItems: 'center',
             position: 'relative', zIndex: 1,
           }}>
-            <div style={{
-              height: 340, borderRadius: 24,
-              background: 'linear-gradient(135deg, rgba(59,130,246,0.12), rgba(99,102,241,0.08))',
-              border: '1px solid rgba(255,255,255,0.08)',
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              position: 'relative', overflow: 'hidden',
-              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)',
-            }}>
-              <Image src="/images/sms-engage.svg" alt="Engage" fill style={{ objectFit: 'contain', padding: '1rem', filter: "invert(0.3)" }} />
+            <ImageBox
+              src="/images/sms-engage.svg"
+              alt="Engage"
+              width={760}
+              height={340}
+              background="linear-gradient(135deg, rgba(59,130,246,0.12), rgba(99,102,241,0.08))"
+              border="1px solid rgba(255,255,255,0.08)"
+              borderRadius={24}
+              boxShadow="inset 0 1px 0 rgba(255,255,255,0.08)"
+              padding="1rem"
+              imageStyle={{ filter: 'invert(0.3)' }}
+            >
               <div style={{
                 position: 'absolute', inset: 0,
                 background: 'radial-gradient(circle at 30% 70%, rgba(59,130,246,0.15), transparent 60%)',
                 pointerEvents: 'none',
               }} />
-            </div>
+            </ImageBox>
 
             <div>
               <div style={{

@@ -3,7 +3,7 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import PartnerMarquee from '@/components/PartnerMarquee'
-import Image from 'next/image'
+import ImageBox from '@/components/ImageBox'
 import { useState } from 'react'
 import { Users, Puzzle, Palette, ShieldCheck, MessageSquare, ImagePlay, CheckCircle, XCircle } from 'lucide-react'
 
@@ -172,13 +172,19 @@ export default function RcsMessagingPage() {
             </div>
 
             {/* Hero image */}
-            <div style={{ height: 420, borderRadius: 24, background: 'linear-gradient(135deg, rgba(59,130,246,0.1), rgba(99,102,241,0.08), rgba(34,211,238,0.06))', border: '1px solid rgba(255,255,255,0.08)', position: 'relative', overflow: 'hidden', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08), 0 32px 80px rgba(0,0,0,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' as const, gap: '0.75rem' }}>
-              {/* Uncomment when ready: */}
-              <Image src="/images/rcs-hero.png" alt="RCS Business Messaging" fill style={{ objectFit: 'contain', borderRadius: 24 }} />
-              <div style={{ width: 64, height: 64, borderRadius: 16, background: 'rgba(59,130,246,0.15)', border: '1px solid rgba(59,130,246,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.8rem' }}>📱</div>
-              <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.15)', fontWeight: 500 }}>rcs-hero.png</div>
+            <ImageBox
+              src="/images/rcs-hero.png"
+              alt="RCS Business Messaging"
+              background='linear-gradient(135deg, rgba(59,130,246,0.1), rgba(99,102,241,0.08), rgba(34,211,238,0.06))'
+              border='1px solid rgba(255,255,255,0.08)'
+              borderRadius={24}
+              boxShadow='inset 0 1px 0 rgba(255,255,255,0.08), 0 32px 80px rgba(0,0,0,0.4)'
+              imageStyle={{ objectFit: 'contain', borderRadius: 24 }}
+            >
+              <div style={{ width: 64, height: 64, borderRadius: 16, background: 'rgba(59,130,246,0.15)', border: '1px solid rgba(59,130,246,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.8rem', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>📱</div>
+              {/* <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.15)', fontWeight: 500, position: 'absolute', bottom: '1rem', left: 0, right: 0, textAlign: 'center' }}>rcs-hero.png</div> */}
               <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 70% 30%, rgba(59,130,246,0.08), transparent 60%)', pointerEvents: 'none' }} />
-            </div>
+            </ImageBox>
           </div>
         </section>
 
@@ -221,15 +227,23 @@ export default function RcsMessagingPage() {
 
             {/* Image right */}
             <div
-              style={{ height: 420, borderRadius: 20, position: 'relative', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.08)', boxShadow: '0 24px 60px rgba(0,0,0,0.4)', transition: 'transform 0.4s ease', background: 'linear-gradient(135deg, rgba(59,130,246,0.1), rgba(99,102,241,0.07))', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' as const, gap: '0.75rem' }}
+              style={{ transition: 'transform 0.4s ease' }}
               onMouseEnter={e => { e.currentTarget.style.transform = 'scale(0.97)' }}
               onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)' }}
             >
-              {/* Uncomment when ready: */}
-              <Image src="/images/rcs-why.png" alt="Why Choose RCS" fill style={{ objectFit: 'cover' }} />
-              <div style={{ width: 56, height: 56, borderRadius: 14, background: 'rgba(59,130,246,0.2)', border: '1px solid rgba(59,130,246,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem' }}>📊</div>
-              <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.2)', fontWeight: 500 }}>rcs-why.png</div>
-              <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 50% 100%, rgba(59,130,246,0.1), transparent 70%)', pointerEvents: 'none' }} />
+              <ImageBox
+                src="/images/rcs-why.png"
+                alt="Why Choose RCS"
+                background='linear-gradient(135deg, rgba(59,130,246,0.1), rgba(99,102,241,0.07))'
+                border='1px solid rgba(255,255,255,0.08)'
+                borderRadius={20}
+                boxShadow='0 24px 60px rgba(0,0,0,0.4)'
+                imageStyle={{ objectFit: 'cover' }}
+              >
+                <div style={{ width: 56, height: 56, borderRadius: 14, background: 'rgba(59,130,246,0.2)', border: '1px solid rgba(59,130,246,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>📊</div>
+                {/* <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.2)', fontWeight: 500, position: 'absolute', bottom: '1rem', left: 0, right: 0, textAlign: 'center' }}>rcs-why.png</div> */}
+                <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 50% 100%, rgba(59,130,246,0.1), transparent 70%)', pointerEvents: 'none' }} />
+              </ImageBox>
             </div>
           </div>
         </section>
@@ -370,15 +384,23 @@ export default function RcsMessagingPage() {
 
             {/* Image right */}
             <div
-              style={{ height: 380, borderRadius: 20, position: 'relative', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.08)', boxShadow: '0 24px 60px rgba(0,0,0,0.4)', transition: 'transform 0.4s ease', background: 'linear-gradient(135deg, rgba(59,130,246,0.1), rgba(34,211,238,0.07))', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' as const, gap: '0.75rem' }}
+              style={{ transition: 'transform 0.4s ease' }}
               onMouseEnter={e => { e.currentTarget.style.transform = 'scale(0.97)' }}
               onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)' }}
             >
-              {/* Uncomment when ready: */}
-              <Image src="/images/rcs-fallback.png" alt="RCS Fallback" fill style={{ objectFit: 'cover' }} />
-              <div style={{ width: 56, height: 56, borderRadius: 14, background: 'rgba(59,130,246,0.2)', border: '1px solid rgba(59,130,246,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem' }}>🔄</div>
-              <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.2)', fontWeight: 500 }}>rcs-fallback.png</div>
-              <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 50% 100%, rgba(59,130,246,0.1), transparent 70%)', pointerEvents: 'none' }} />
+              <ImageBox
+                src="/images/rcs-fallback.png"
+                alt="RCS Fallback"
+                background='linear-gradient(135deg, rgba(59,130,246,0.1), rgba(34,211,238,0.07))'
+                border='1px solid rgba(255,255,255,0.08)'
+                borderRadius={20}
+                boxShadow='0 24px 60px rgba(0,0,0,0.4)'
+                imageStyle={{ objectFit: 'cover' }}
+              >
+                <div style={{ width: 56, height: 56, borderRadius: 14, background: 'rgba(59,130,246,0.2)', border: '1px solid rgba(59,130,246,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>🔄</div>
+                {/* <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.2)', fontWeight: 500, position: 'absolute', bottom: '1rem', left: 0, right: 0, textAlign: 'center' }}>rcs-fallback.png</div> */}
+                <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 50% 100%, rgba(59,130,246,0.1), transparent 70%)', pointerEvents: 'none' }} />
+              </ImageBox>
             </div>
           </div>
         </section>
@@ -390,15 +412,23 @@ export default function RcsMessagingPage() {
           <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center', direction: 'rtl' as any, position: 'relative', zIndex: 1 }}>
             {/* Image left via rtl */}
             <div
-              style={{ height: 380, borderRadius: 20, position: 'relative', overflow: 'hidden', direction: 'ltr', border: '1px solid rgba(255,255,255,0.08)', boxShadow: '0 24px 60px rgba(0,0,0,0.4)', transition: 'transform 0.4s ease', background: 'linear-gradient(135deg, rgba(99,102,241,0.1), rgba(59,130,246,0.07))', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' as const, gap: '0.75rem' }}
+              style={{ direction: 'ltr', transition: 'transform 0.4s ease' }}
               onMouseEnter={e => { e.currentTarget.style.transform = 'scale(0.97)' }}
               onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)' }}
             >
-              {/* Uncomment when ready: */}
-              <Image src="/images/rcs-transform.png" alt="Transform customer interaction" fill style={{ objectFit: 'cover' }} />
-              <div style={{ width: 56, height: 56, borderRadius: 14, background: 'rgba(99,102,241,0.2)', border: '1px solid rgba(99,102,241,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem' }}>✨</div>
-              <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.2)', fontWeight: 500 }}>rcs-transform.png</div>
-              <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 50% 100%, rgba(99,102,241,0.1), transparent 70%)', pointerEvents: 'none' }} />
+              <ImageBox
+                src="/images/rcs-transform.png"
+                alt="Transform customer interaction"
+                background='linear-gradient(135deg, rgba(99,102,241,0.1), rgba(59,130,246,0.07))'
+                border='1px solid rgba(255,255,255,0.08)'
+                borderRadius={20}
+                boxShadow='0 24px 60px rgba(0,0,0,0.4)'
+                imageStyle={{ objectFit: 'cover' }}
+              >
+                <div style={{ width: 56, height: 56, borderRadius: 14, background: 'rgba(99,102,241,0.2)', border: '1px solid rgba(99,102,241,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>✨</div>
+                {/* <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.2)', fontWeight: 500, position: 'absolute', bottom: '1rem', left: 0, right: 0, textAlign: 'center' }}>rcs-transform.png</div> */}
+                <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 50% 100%, rgba(99,102,241,0.1), transparent 70%)', pointerEvents: 'none' }} />
+              </ImageBox>
             </div>
 
             {/* Text right */}

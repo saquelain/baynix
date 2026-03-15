@@ -2,7 +2,7 @@
 
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import Image from 'next/image'
+import ImageBox from '@/components/ImageBox'
 import { useState } from 'react'
 import { BarChart3, MessageSquareReply, Download, Settings2, CheckCircle2 } from 'lucide-react'
 
@@ -162,12 +162,19 @@ export default function MissedCallPage() {
             </div>
 
             {/* Hero image right */}
-            <div style={{ height: 440, borderRadius: 24, background: `linear-gradient(135deg, rgba(${accentRgb},0.12), rgba(245,158,11,0.08), rgba(16,185,129,0.05))`, border: '1px solid rgba(255,255,255,0.08)', position: 'relative', overflow: 'hidden', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08), 0 32px 80px rgba(0,0,0,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' as const, gap: '0.75rem' }}>
-              <Image src="/images/missed-call-hero.png" alt="Missed Call Service" fill style={{ objectFit: 'contain', borderRadius: 24 }} />
-              <div style={{ width: 64, height: 64, borderRadius: 16, background: `rgba(${accentRgb},0.15)`, border: `1px solid rgba(${accentRgb},0.2)`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.8rem' }}>📵</div>
-              <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.15)', fontWeight: 500 }}>missed-call-hero.png</div>
+            <ImageBox
+              src="/images/missed-call-hero.png"
+              alt="Missed Call Service"
+              width={800}
+              height={440}
+              background={`linear-gradient(135deg, rgba(${accentRgb},0.12), rgba(245,158,11,0.08), rgba(16,185,129,0.05))`}
+              border="1px solid rgba(255,255,255,0.08)"
+              borderRadius={24}
+              boxShadow="inset 0 1px 0 rgba(255,255,255,0.08), 0 32px 80px rgba(0,0,0,0.4)"
+              imageStyle={{ objectFit: 'contain', borderRadius: 24 }}
+            >
               <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(circle at 70% 30%, rgba(${accentRgb},0.1), transparent 60%)`, pointerEvents: 'none' }} />
-            </div>
+            </ImageBox>
           </div>
         </section>
 
@@ -178,14 +185,23 @@ export default function MissedCallPage() {
           <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center', direction: 'rtl' as any, position: 'relative', zIndex: 1 }}>
             {/* Image left via rtl */}
             <div
-              style={{ height: 420, borderRadius: 20, direction: 'ltr', position: 'relative', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.08)', boxShadow: '0 24px 60px rgba(0,0,0,0.4)', background: `linear-gradient(135deg, rgba(${accentRgb},0.1), rgba(245,158,11,0.07))`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' as const, gap: '0.75rem', transition: 'transform 0.4s ease' }}
+              style={{ direction: 'ltr', borderRadius: 20, transition: 'transform 0.4s ease' }}
               onMouseEnter={e => { e.currentTarget.style.transform = 'scale(0.97)' }}
               onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)' }}
             >
-              <Image src="/images/missed-call-services.png" alt="Best Missed Call Services" fill style={{ objectFit: 'contain' }} />
-              <div style={{ width: 56, height: 56, borderRadius: 14, background: `rgba(${accentRgb},0.2)`, border: `1px solid rgba(${accentRgb},0.3)`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem' }}>📞</div>
-              <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.2)', fontWeight: 500 }}>missed-call-services.png</div>
-              <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(circle at 50% 100%, rgba(${accentRgb},0.1), transparent 70%)`, pointerEvents: 'none' }} />
+              <ImageBox
+                src="/images/missed-call-services.png"
+                alt="Best Missed Call Services"
+                width={800}
+                height={420}
+                background={`linear-gradient(135deg, rgba(${accentRgb},0.1), rgba(245,158,11,0.07))`}
+                border="1px solid rgba(255,255,255,0.08)"
+                borderRadius={20}
+                boxShadow="0 24px 60px rgba(0,0,0,0.4)"
+                imageStyle={{ objectFit: 'contain' }}
+              >
+                <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(circle at 50% 100%, rgba(${accentRgb},0.1), transparent 70%)`, pointerEvents: 'none' }} />
+              </ImageBox>
             </div>
 
             {/* Text right */}
@@ -262,14 +278,24 @@ export default function MissedCallPage() {
             </div>
 
             <div
-              style={{ height: 400, borderRadius: 24, background: `linear-gradient(135deg, rgba(${accentRgb},0.12), rgba(245,158,11,0.08))`, border: '1px solid rgba(255,255,255,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)', flexDirection: 'column' as const, gap: '0.75rem', transition: 'transform 0.4s ease' }}
+              style={{ borderRadius: 24, transition: 'transform 0.4s ease' }}
               onMouseEnter={e => { e.currentTarget.style.transform = 'scale(0.97)' }}
               onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)' }}
             >
-              <Image src="/images/missed-call-smart.png" alt="Smart Voice Solutions" fill style={{ objectFit: 'contain', padding: '2rem' }} />
-              <div style={{ width: 64, height: 64, borderRadius: 16, background: `rgba(${accentRgb},0.15)`, border: `1px solid rgba(${accentRgb},0.2)`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.8rem' }}>💡</div>
-              <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.15)', fontWeight: 500 }}>missed-call-smart.png</div>
-              <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(circle at 60% 40%, rgba(${accentRgb},0.12), transparent 60%)`, pointerEvents: 'none' }} />
+              <ImageBox
+                src="/images/missed-call-smart.png"
+                alt="Smart Voice Solutions"
+                width={800}
+                height={400}
+                background={`linear-gradient(135deg, rgba(${accentRgb},0.12), rgba(245,158,11,0.08))`}
+                border="1px solid rgba(255,255,255,0.08)"
+                borderRadius={24}
+                boxShadow="inset 0 1px 0 rgba(255,255,255,0.08)"
+                padding="2rem"
+                imageStyle={{ objectFit: 'contain' }}
+              >
+                <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(circle at 60% 40%, rgba(${accentRgb},0.12), transparent 60%)`, pointerEvents: 'none' }} />
+              </ImageBox>
             </div>
           </div>
         </section>
@@ -281,14 +307,23 @@ export default function MissedCallPage() {
           <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center', direction: 'rtl' as any, position: 'relative', zIndex: 1 }}>
             {/* Image left via rtl */}
             <div
-              style={{ height: 460, borderRadius: 20, direction: 'ltr', position: 'relative', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.08)', boxShadow: '0 24px 60px rgba(0,0,0,0.4)', background: `linear-gradient(135deg, rgba(${accentRgb},0.1), rgba(16,185,129,0.08))`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' as const, gap: '0.75rem', transition: 'transform 0.4s ease' }}
+              style={{ direction: 'ltr', borderRadius: 20, transition: 'transform 0.4s ease' }}
               onMouseEnter={e => { e.currentTarget.style.transform = 'scale(0.97)' }}
               onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)' }}
             >
-              <Image src="/images/missed-call-benefits.png" alt="Key Benefits" fill style={{ objectFit: 'contain' }} />
-              <div style={{ width: 56, height: 56, borderRadius: 14, background: `rgba(${accentRgb},0.2)`, border: `1px solid rgba(${accentRgb},0.3)`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem' }}>🎯</div>
-              <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.2)', fontWeight: 500 }}>missed-call-benefits.png</div>
-              <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(circle at 50% 100%, rgba(${accentRgb},0.1), transparent 70%)`, pointerEvents: 'none' }} />
+              <ImageBox
+                src="/images/missed-call-benefits.png"
+                alt="Key Benefits"
+                width={800}
+                height={460}
+                background={`linear-gradient(135deg, rgba(${accentRgb},0.1), rgba(16,185,129,0.08))`}
+                border="1px solid rgba(255,255,255,0.08)"
+                borderRadius={20}
+                boxShadow="0 24px 60px rgba(0,0,0,0.4)"
+                imageStyle={{ objectFit: 'contain' }}
+              >
+                <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(circle at 50% 100%, rgba(${accentRgb},0.1), transparent 70%)`, pointerEvents: 'none' }} />
+              </ImageBox>
             </div>
 
             {/* Text right with tick marks */}

@@ -2,7 +2,7 @@
 
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import Image from 'next/image'
+import ImageBox from '@/components/ImageBox'
 import { useState } from 'react'
 import { Headphones, Bell, RefreshCw, BookOpen, Zap } from 'lucide-react'
 
@@ -236,33 +236,21 @@ export default function WhatsAppApiPage() {
             </div>
 
             {/* Hero image */}
-            <div style={{
-              height: 420, borderRadius: 24,
-              background: 'linear-gradient(135deg, rgba(37,211,102,0.1), rgba(18,140,126,0.08), rgba(99,102,241,0.06))',
-              border: '1px solid rgba(255,255,255,0.08)',
-              position: 'relative', overflow: 'hidden',
-              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08), 0 32px 80px rgba(0,0,0,0.4)',
-            }}>
-              {/* Uncomment and add your image file when ready */}
-              <Image src="/images/wa-hero.png" alt="WhatsApp Business API" fill style={{ objectFit: 'cover', borderRadius: 24 }} />
-              {/* <div style={{
-                position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column' as const,
-                alignItems: 'center', justifyContent: 'center', gap: '0.75rem',
-                color: 'rgba(255,255,255,0.15)', fontSize: '0.8rem', fontWeight: 500,
-              }}>
-                <div style={{
-                  width: 64, height: 64, borderRadius: 16,
-                  background: 'rgba(37,211,102,0.15)', border: '1px solid rgba(37,211,102,0.2)',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.8rem',
-                }}>💚</div>
-                wa-hero.png
-              </div> */}
+            <ImageBox
+              src="/images/wa-hero.png"
+              alt="WhatsApp Business API"
+              background='linear-gradient(135deg, rgba(37,211,102,0.1), rgba(18,140,126,0.08), rgba(99,102,241,0.06))'
+              border='1px solid rgba(255,255,255,0.08)'
+              borderRadius={24}
+              boxShadow='inset 0 1px 0 rgba(255,255,255,0.08), 0 32px 80px rgba(0,0,0,0.4)'
+              imageStyle={{ objectFit: 'cover', borderRadius: 24 }}
+            >
               <div style={{
                 position: 'absolute', inset: 0,
                 background: 'radial-gradient(circle at 70% 30%, rgba(37,211,102,0.08), transparent 60%)',
                 pointerEvents: 'none',
               }} />
-            </div>
+            </ImageBox>
           </div>
         </section>
 
@@ -363,34 +351,28 @@ export default function WhatsAppApiPage() {
             }}>
               {/* Image */}
               <div
-                style={{
-                  height: 380, borderRadius: 20,
-                  position: 'relative', overflow: 'hidden', direction: 'ltr',
-                  border: '1px solid rgba(255,255,255,0.08)',
-                  boxShadow: `0 24px 60px rgba(0,0,0,0.4), 0 0 0 1px ${split.color}15`,
-                  transition: 'transform 0.4s ease',
-                  background: `linear-gradient(135deg, ${split.color}10, ${split.color}06)`,
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  flexDirection: 'column' as const, gap: '0.75rem',
-                }}
+                style={{ direction: 'ltr', transition: 'transform 0.4s ease' }}
                 onMouseEnter={e => { e.currentTarget.style.transform = 'scale(0.97)' }}
                 onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)' }}
               >
-                {/* Uncomment and add your image file when ready */}
-                <Image src={split.image} alt={split.badge} fill style={{ objectFit: 'contain' }} />
-                {/* <div style={{
-                  width: 56, height: 56, borderRadius: 14,
-                  background: `${split.color}20`, border: `1px solid ${split.color}30`,
-                  display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem',
-                }}>📱</div> */}
-                <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.2)', fontWeight: 500 }}>
-                  {split.image.split('/').pop()}
-                </div>
-                <div style={{
-                  position: 'absolute', inset: 0,
-                  background: `radial-gradient(circle at 50% 100%, ${split.color}12, transparent 70%)`,
-                  pointerEvents: 'none',
-                }} />
+                <ImageBox
+                  src={split.image}
+                  alt={split.badge}
+                  background={`linear-gradient(135deg, ${split.color}10, ${split.color}06)`}
+                  border='1px solid rgba(255,255,255,0.08)'
+                  borderRadius={20}
+                  boxShadow={`0 24px 60px rgba(0,0,0,0.4), 0 0 0 1px ${split.color}15`}
+                  imageStyle={{ objectFit: 'contain' }}
+                >
+                  {/* <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.2)', fontWeight: 500, position: 'absolute', bottom: '1rem', left: 0, right: 0, textAlign: 'center' }}>
+                    {split.image.split('/').pop()}
+                  </div> */}
+                  <div style={{
+                    position: 'absolute', inset: 0,
+                    background: `radial-gradient(circle at 50% 100%, ${split.color}12, transparent 70%)`,
+                    pointerEvents: 'none',
+                  }} />
+                </ImageBox>
               </div>
 
               {/* Text */}
@@ -551,31 +533,30 @@ export default function WhatsAppApiPage() {
             </div>
 
             {/* Illustration */}
-            <div style={{
-              height: 380, borderRadius: 24,
-              background: 'linear-gradient(135deg, rgba(99,102,241,0.12), rgba(59,130,246,0.08))',
-              border: '1px solid rgba(255,255,255,0.08)',
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              position: 'relative', overflow: 'hidden',
-              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)',
-              flexDirection: 'column' as const, gap: '0.75rem',
-            }}>
-              {/* Uncomment and add your illustration file when ready */}
-              <Image src="/images/wa-onboarding.svg" alt="Zero Touch Onboarding" fill style={{ objectFit: 'contain', padding: '2rem' }} />
+            <ImageBox
+              src="/images/wa-onboarding.svg"
+              alt="Zero Touch Onboarding"
+              background='linear-gradient(135deg, rgba(99,102,241,0.12), rgba(59,130,246,0.08))'
+              border='1px solid rgba(255,255,255,0.08)'
+              borderRadius={24}
+              boxShadow='inset 0 1px 0 rgba(255,255,255,0.08)'
+              padding='2rem'
+            >
               <div style={{
                 width: 64, height: 64, borderRadius: 16,
                 background: 'rgba(99,102,241,0.15)', border: '1px solid rgba(99,102,241,0.2)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.8rem',
+                position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
               }}>🚀</div>
-              <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.15)', fontWeight: 500 }}>
+              {/* <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.15)', fontWeight: 500, position: 'absolute', bottom: '1rem', left: 0, right: 0, textAlign: 'center' }}>
                 wa-onboarding.png
-              </div>
+              </div> */}
               <div style={{
                 position: 'absolute', inset: 0,
                 background: 'radial-gradient(circle at 60% 40%, rgba(99,102,241,0.12), transparent 60%)',
                 pointerEvents: 'none',
               }} />
-            </div>
+            </ImageBox>
           </div>
         </section>
 

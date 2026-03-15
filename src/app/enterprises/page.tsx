@@ -10,7 +10,7 @@ import {
   MessageCircle, LineChart, Lightbulb, Plug, Zap, Users,
   ArrowRight, Building,
 } from 'lucide-react'
-import Image from 'next/image'
+import ImageBox from '@/components/ImageBox'
 
 const accent    = '#22d3ee'
 const accentRgb = '34,211,238'
@@ -251,14 +251,22 @@ export default function EnterprisesPage() {
           <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center', direction: 'rtl', position: 'relative', zIndex: 1 }}>
             {/* Image left via rtl */}
             <div
-              style={{ height: 480, borderRadius: 20, direction: 'ltr', position: 'relative', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.08)', boxShadow: '0 24px 60px rgba(0,0,0,0.4)', background: `linear-gradient(135deg, rgba(${accentRgb},0.1), rgba(99,102,241,0.07))`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '0.75rem', transition: 'transform 0.4s ease' }}
+              style={{ direction: 'ltr', transition: 'transform 0.4s ease' }}
               onMouseEnter={e => { e.currentTarget.style.transform = 'scale(0.97)' }}
               onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)' }}
             >
-              <Image src="/images/enterprises-whatyouget.png" alt="What You Get" fill style={{ objectFit: 'cover' }} />
-              <div style={{ width: 72, height: 72, borderRadius: 20, background: `rgba(${accentRgb},0.2)`, border: `1px solid rgba(${accentRgb},0.3)`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '2rem' }}>🏢</div>
-              <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.2)', fontWeight: 500 }}>enterprises-whatyouget.png</div>
-              <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(circle at 50% 100%, rgba(${accentRgb},0.1), transparent 70%)`, pointerEvents: 'none' }} />
+              <ImageBox
+                src="/images/enterprises-whatyouget.png"
+                alt="What You Get"
+                width={800} height={480}
+                background={`linear-gradient(135deg, rgba(${accentRgb},0.1), rgba(99,102,241,0.07))`}
+                border="1px solid rgba(255,255,255,0.08)"
+                borderRadius={20}
+                boxShadow="0 24px 60px rgba(0,0,0,0.4)"
+                imageStyle={{ objectFit: 'cover' }}
+              >
+                <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(circle at 50% 100%, rgba(${accentRgb},0.1), transparent 70%)`, pointerEvents: 'none' }} />
+              </ImageBox>
             </div>
 
             {/* Text right */}

@@ -2,7 +2,7 @@
 
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import Image from 'next/image'
+import ImageBox from '@/components/ImageBox'
 import { useState } from 'react'
 import { UserCheck, KeyRound, CreditCard, RefreshCcw } from 'lucide-react'
 
@@ -173,12 +173,19 @@ export default function VoiceOtpPage() {
             </div>
 
             {/* Hero image */}
-            <div style={{ height: 420, borderRadius: 24, background: 'linear-gradient(135deg, rgba(245,158,11,0.1), rgba(99,102,241,0.08), rgba(34,211,238,0.06))', border: '1px solid rgba(255,255,255,0.08)', position: 'relative', overflow: 'hidden', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08), 0 32px 80px rgba(0,0,0,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' as const, gap: '0.75rem' }}>
-              <Image src="/images/voice-otp-hero.png" alt="Voice OTP" fill style={{ objectFit: 'contain', borderRadius: 24 }} />
-              <div style={{ width: 64, height: 64, borderRadius: 16, background: 'rgba(245,158,11,0.15)', border: '1px solid rgba(245,158,11,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.8rem' }}>🔐</div>
-              <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.15)', fontWeight: 500 }}>voice-otp-hero.png</div>
+            <ImageBox
+              src="/images/voice-otp-hero.png"
+              alt="Voice OTP"
+              background="linear-gradient(135deg, rgba(245,158,11,0.1), rgba(99,102,241,0.08), rgba(34,211,238,0.06))"
+              border="1px solid rgba(255,255,255,0.08)"
+              borderRadius={24}
+              boxShadow="inset 0 1px 0 rgba(255,255,255,0.08), 0 32px 80px rgba(0,0,0,0.4)"
+              imageStyle={{ objectFit: 'contain', borderRadius: 24 }}
+            >
+              {/* <div style={{ width: 64, height: 64, borderRadius: 16, background: 'rgba(245,158,11,0.15)', border: '1px solid rgba(245,158,11,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.8rem' }}>🔐</div> */}
+              {/* <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.15)', fontWeight: 500 }}>voice-otp-hero.png</div> */}
               <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 70% 30%, rgba(245,158,11,0.08), transparent 60%)', pointerEvents: 'none' }} />
-            </div>
+            </ImageBox>
           </div>
         </section>
 
@@ -189,14 +196,23 @@ export default function VoiceOtpPage() {
           <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center', direction: 'rtl' as any, position: 'relative', zIndex: 1 }}>
             {/* Image left via rtl */}
             <div
-              style={{ height: 400, borderRadius: 20, direction: 'ltr', position: 'relative', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.08)', boxShadow: '0 24px 60px rgba(0,0,0,0.4)', transition: 'transform 0.4s ease', background: 'linear-gradient(135deg, rgba(245,158,11,0.1), rgba(99,102,241,0.07))', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' as const, gap: '0.75rem' }}
+              style={{ direction: 'ltr', transition: 'transform 0.4s ease', borderRadius: 20 }}
               onMouseEnter={e => { e.currentTarget.style.transform = 'scale(0.97)' }}
               onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)' }}
             >
-              <Image src="/images/voice-otp-services.png" alt="Voice OTP Services" fill style={{ objectFit: 'contain' }} />
-              <div style={{ width: 56, height: 56, borderRadius: 14, background: 'rgba(245,158,11,0.2)', border: '1px solid rgba(245,158,11,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem' }}>🛡️</div>
-              <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.2)', fontWeight: 500 }}>voice-otp-services.png</div>
-              <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 50% 100%, rgba(245,158,11,0.1), transparent 70%)', pointerEvents: 'none' }} />
+              <ImageBox
+                src="/images/voice-otp-services.png"
+                alt="Voice OTP Services"
+                background="linear-gradient(135deg, rgba(245,158,11,0.1), rgba(99,102,241,0.07))"
+                border="1px solid rgba(255,255,255,0.08)"
+                borderRadius={20}
+                boxShadow="0 24px 60px rgba(0,0,0,0.4)"
+                imageStyle={{ objectFit: 'contain' }}
+              >
+                {/* <div style={{ width: 56, height: 56, borderRadius: 14, background: 'rgba(245,158,11,0.2)', border: '1px solid rgba(245,158,11,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem' }}>🛡️</div> */}
+                {/* <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.2)', fontWeight: 500 }}>voice-otp-services.png</div> */}
+                <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 50% 100%, rgba(245,158,11,0.1), transparent 70%)', pointerEvents: 'none' }} />
+              </ImageBox>
             </div>
 
             {/* Text right */}
@@ -249,11 +265,17 @@ export default function VoiceOtpPage() {
                       <div style={{ paddingRight: '2.5rem', textAlign: 'right' as const }}>
                         <div style={{ display: 'inline-block', padding: '1.75rem 2rem', background: 'rgba(255,255,255,0.03)', backdropFilter: 'blur(24px)', WebkitBackdropFilter: 'blur(24px)', border: `1px solid ${step.color}22`, borderRadius: 20, boxShadow: `inset 0 1px 0 rgba(255,255,255,0.06), 0 0 30px ${step.color}08`, textAlign: 'left' as const, maxWidth: 360, width: '100%' }}>
                           {/* Illustration — no border, full bleed, bigger */}
-                          <div style={{ height: 150, borderRadius: 10, overflow: 'hidden', marginBottom: '1.25rem', position: 'relative', background: `linear-gradient(135deg, ${step.color}15, ${step.color}06)`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                            <Image src={`/images/${step.img}`} alt={step.title} fill style={{ objectFit: 'contain', borderRadius: 10 }} />
-                            <div style={{ fontSize: '4rem' }}>{step.emoji}</div>
-                            <div style={{ position: 'absolute', bottom: 5, right: 8, fontSize: '0.58rem', color: 'rgba(255,255,255,0.1)' }}>{step.img}</div>
-                          </div>
+                          <ImageBox
+                            src={`/images/${step.img}`}
+                            alt={step.title}
+                            background={`linear-gradient(135deg, ${step.color}15, ${step.color}06)`}
+                            borderRadius={10}
+                            style={{ marginBottom: '1.25rem' }}
+                            imageStyle={{ objectFit: 'contain', borderRadius: 10 }}
+                          >
+                            {/* <div style={{ fontSize: '4rem' }}>{step.emoji}</div> */}
+                            {/* <div style={{ position: 'absolute', bottom: 5, right: 8, fontSize: '0.58rem', color: 'rgba(255,255,255,0.1)' }}>{step.img}</div> */}
+                          </ImageBox>
                           <div style={{ fontSize: '0.72rem', fontWeight: 700, color: step.color, textTransform: 'uppercase' as const, letterSpacing: '0.1em', marginBottom: '0.35rem' }}>{step.step}</div>
                           <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--text)', marginBottom: '0.5rem' }}>{step.title}</h3>
                           <p style={{ fontSize: '0.83rem', color: 'var(--text2)', lineHeight: 1.7, fontWeight: 300 }}>{step.desc}</p>
@@ -275,11 +297,17 @@ export default function VoiceOtpPage() {
                       <div style={{ paddingLeft: '2.5rem' }}>
                         <div style={{ display: 'inline-block', padding: '1.75rem 2rem', background: 'rgba(255,255,255,0.03)', backdropFilter: 'blur(24px)', WebkitBackdropFilter: 'blur(24px)', border: `1px solid ${step.color}22`, borderRadius: 20, boxShadow: `inset 0 1px 0 rgba(255,255,255,0.06), 0 0 30px ${step.color}08`, maxWidth: 360, width: '100%' }}>
                           {/* Illustration — no border, full bleed, bigger */}
-                          <div style={{ height: 150, borderRadius: 10, overflow: 'hidden', marginBottom: '1.25rem', position: 'relative', background: `linear-gradient(135deg, ${step.color}15, ${step.color}06)`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                            <Image src={`/images/${step.img}`} alt={step.title} fill style={{ objectFit: 'contain', borderRadius: 10 }} />
-                            <div style={{ fontSize: '4rem' }}>{step.emoji}</div>
-                            <div style={{ position: 'absolute', bottom: 5, right: 8, fontSize: '0.58rem', color: 'rgba(255,255,255,0.1)' }}>{step.img}</div>
-                          </div>
+                          <ImageBox
+                            src={`/images/${step.img}`}
+                            alt={step.title}
+                            background={`linear-gradient(135deg, ${step.color}15, ${step.color}06)`}
+                            borderRadius={10}
+                            style={{ marginBottom: '1.25rem' }}
+                            imageStyle={{ objectFit: 'contain', borderRadius: 10 }}
+                          >
+                            {/* <div style={{ fontSize: '4rem' }}>{step.emoji}</div> */}
+                            {/* <div style={{ position: 'absolute', bottom: 5, right: 8, fontSize: '0.58rem', color: 'rgba(255,255,255,0.1)' }}>{step.img}</div> */}
+                          </ImageBox>
                           <div style={{ fontSize: '0.72rem', fontWeight: 700, color: step.color, textTransform: 'uppercase' as const, letterSpacing: '0.1em', marginBottom: '0.35rem' }}>{step.step}</div>
                           <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--text)', marginBottom: '0.5rem' }}>{step.title}</h3>
                           <p style={{ fontSize: '0.83rem', color: 'var(--text2)', lineHeight: 1.7, fontWeight: 300 }}>{step.desc}</p>
@@ -316,14 +344,24 @@ export default function VoiceOtpPage() {
 
             {/* Illustration right */}
             <div
-              style={{ height: 380, borderRadius: 24, background: 'linear-gradient(135deg, rgba(245,158,11,0.1), rgba(99,102,241,0.08))', border: '1px solid rgba(255,255,255,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)', flexDirection: 'column' as const, gap: '0.75rem', transition: 'transform 0.4s ease' }}
+              style={{ transition: 'transform 0.4s ease', borderRadius: 24 }}
               onMouseEnter={e => { e.currentTarget.style.transform = 'scale(0.97)' }}
               onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)' }}
             >
-              <Image src="/images/voice-otp-cta.svg" alt="Voice OTP CTA" fill style={{ objectFit: 'contain', padding: '2rem' }} />
-              <div style={{ width: 64, height: 64, borderRadius: 16, background: 'rgba(245,158,11,0.15)', border: '1px solid rgba(245,158,11,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.8rem' }}>🚀</div>
-              <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.15)', fontWeight: 500 }}>voice-otp-cta.png</div>
-              <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 60% 40%, rgba(245,158,11,0.1), transparent 60%)', pointerEvents: 'none' }} />
+              <ImageBox
+                src="/images/voice-otp-cta.svg"
+                alt="Voice OTP CTA"
+                background="linear-gradient(135deg, rgba(245,158,11,0.1), rgba(99,102,241,0.08))"
+                border="1px solid rgba(255,255,255,0.08)"
+                borderRadius={24}
+                boxShadow="inset 0 1px 0 rgba(255,255,255,0.08)"
+                padding="2rem"
+                imageStyle={{ objectFit: 'contain' }}
+              >
+                {/* <div style={{ width: 64, height: 64, borderRadius: 16, background: 'rgba(245,158,11,0.15)', border: '1px solid rgba(245,158,11,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.8rem' }}>🚀</div> */}
+                {/* <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.15)', fontWeight: 500 }}>voice-otp-cta.png</div> */}
+                <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 60% 40%, rgba(245,158,11,0.1), transparent 60%)', pointerEvents: 'none' }} />
+              </ImageBox>
             </div>
           </div>
         </section>
@@ -367,14 +405,23 @@ export default function VoiceOtpPage() {
 
             {/* Image right */}
             <div
-              style={{ height: 500, borderRadius: 20, position: 'relative', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.08)', boxShadow: '0 24px 60px rgba(0,0,0,0.4)', transition: 'transform 0.4s ease', background: 'linear-gradient(135deg, rgba(245,158,11,0.1), rgba(99,102,241,0.07))', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' as const, gap: '0.75rem' }}
+              style={{ transition: 'transform 0.4s ease', borderRadius: 20 }}
               onMouseEnter={e => { e.currentTarget.style.transform = 'scale(0.97)' }}
               onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)' }}
             >
-              <Image src="/images/voice-otp-why.png" alt="Why Voice OTP" fill style={{ objectFit: 'cover' }} />
-              <div style={{ width: 56, height: 56, borderRadius: 14, background: 'rgba(245,158,11,0.2)', border: '1px solid rgba(245,158,11,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem' }}>🔒</div>
-              <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.2)', fontWeight: 500 }}>voice-otp-why.png</div>
-              <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 50% 100%, rgba(245,158,11,0.1), transparent 70%)', pointerEvents: 'none' }} />
+              <ImageBox
+                src="/images/voice-otp-why.png"
+                alt="Why Voice OTP"
+                background="linear-gradient(135deg, rgba(245,158,11,0.1), rgba(99,102,241,0.07))"
+                border="1px solid rgba(255,255,255,0.08)"
+                borderRadius={20}
+                boxShadow="0 24px 60px rgba(0,0,0,0.4)"
+                imageStyle={{ objectFit: 'cover' }}
+              >
+                {/* <div style={{ width: 56, height: 56, borderRadius: 14, background: 'rgba(245,158,11,0.2)', border: '1px solid rgba(245,158,11,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem' }}>🔒</div> */}
+                {/* <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.2)', fontWeight: 500 }}>voice-otp-why.png</div> */}
+                <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 50% 100%, rgba(245,158,11,0.1), transparent 70%)', pointerEvents: 'none' }} />
+              </ImageBox>
             </div>
           </div>
         </section>

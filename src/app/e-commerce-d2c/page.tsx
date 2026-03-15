@@ -3,7 +3,7 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import PartnerMarquee from '@/components/PartnerMarquee'
-import Image from 'next/image'
+import ImageBox from '@/components/ImageBox'
 import { useState } from 'react'
 import {
   Bell, Megaphone, ShoppingCart, MapPin, Zap,
@@ -183,7 +183,7 @@ export default function EcommerceD2CPage() {
           <div style={{ position: 'absolute', width: 700, height: 500, background: `radial-gradient(ellipse, rgba(${accentRgb},0.09) 0%, transparent 70%)`, top: '50%', left: '30%', transform: 'translate(-50%,-50%)', pointerEvents: 'none' }} />
           <div style={{ position: 'absolute', width: 400, height: 400, background: 'radial-gradient(ellipse, rgba(236,72,153,0.07) 0%, transparent 70%)', top: '20%', right: '5%', pointerEvents: 'none' }} />
 
-          <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center', position: 'relative', zIndex: 1 }}>
+          <div style={{ maxWidth: 1300, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center', position: 'relative', zIndex: 1 }}>
             <div>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', padding: '0.3rem 0.9rem', background: `rgba(${accentRgb},0.12)`, border: `1px solid rgba(${accentRgb},0.3)`, borderRadius: 100, fontSize: '0.72rem', fontWeight: 700, color: accent, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
                 E-Commerce & D2C
@@ -202,12 +202,19 @@ export default function EcommerceD2CPage() {
               </div>
             </div>
 
-            <div style={{ height: 440, borderRadius: 24, background: `linear-gradient(135deg, rgba(${accentRgb},0.12), rgba(236,72,153,0.08), rgba(16,185,129,0.05))`, border: '1px solid rgba(255,255,255,0.08)', position: 'relative', overflow: 'hidden', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08), 0 32px 80px rgba(0,0,0,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '0.75rem' }}>
-              <Image src="/images/ecom-hero.png" alt="E-Commerce" fill style={{ objectFit: 'cover', borderRadius: 24 }} />
-              {/* <div style={{ width: 72, height: 72, borderRadius: 20, background: `rgba(${accentRgb},0.15)`, border: `1px solid rgba(${accentRgb},0.25)`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '2rem' }}>🛍️</div> */}
-              <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.15)', fontWeight: 500 }}>ecom-hero.png</div>
+            <ImageBox
+              src="/images/ecom-hero.png"
+              alt="E-Commerce"
+              width={1200}
+              height={900}
+              background={`linear-gradient(135deg, rgba(${accentRgb},0.12), rgba(236,72,153,0.08), rgba(16,185,129,0.05))`}
+              border='1px solid rgba(255,255,255,0.08)'
+              borderRadius={24}
+              boxShadow='inset 0 1px 0 rgba(255,255,255,0.08), 0 32px 80px rgba(0,0,0,0.4)'
+              imageStyle={{ borderRadius: 24 }}
+            >
               <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(circle at 70% 30%, rgba(${accentRgb},0.1), transparent 60%)`, pointerEvents: 'none' }} />
-            </div>
+            </ImageBox>
           </div>
         </section>
 
@@ -218,7 +225,7 @@ export default function EcommerceD2CPage() {
         <section style={{ padding: '5rem 2rem', borderBottom: '1px solid var(--border)', position: 'relative', overflow: 'hidden' }}>
           <div style={{ position: 'absolute', width: 700, height: 500, background: `radial-gradient(ellipse, rgba(${accentRgb},0.06) 0%, transparent 70%)`, top: '50%', left: '50%', transform: 'translate(-50%,-50%)', pointerEvents: 'none' }} />
 
-          <div style={{ maxWidth: 1100, margin: '0 auto', position: 'relative', zIndex: 1 }}>
+          <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative', zIndex: 1 }}>
             <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.12em', color: accent, marginBottom: '1rem' }}>
                 <span style={{ width: 18, height: 1, background: accent, display: 'inline-block' }} />
@@ -258,15 +265,20 @@ export default function EcommerceD2CPage() {
             </div>
 
             {/* Tab content — image left, text right */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
-              <div style={{ height: 420, borderRadius: 20, background: `linear-gradient(135deg, ${currentTab.color}18, rgba(255,255,255,0.03))`, border: '1px solid rgba(255,255,255,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '0.75rem', position: 'relative', overflow: 'hidden', boxShadow: `0 24px 60px rgba(0,0,0,0.3), 0 0 60px ${currentTab.color}10`, transition: 'all 0.4s ease' }}>
-                <Image src={`/images/${currentTab.image}`} alt={currentTab.title} fill style={{ objectFit: 'cover' }} />
-                <div style={{ width: 80, height: 80, borderRadius: 20, background: `${currentTab.color}20`, border: `1px solid ${currentTab.color}35`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '2.2rem', transition: 'all 0.4s ease' }}>
-                  {currentTab.emoji}
-                </div>
-                <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.15)', fontWeight: 500 }}>{currentTab.image}</div>
+            <div style={{ display: 'grid', gridTemplateColumns: '55fr 45fr', gap: '4rem', alignItems: 'center' }}>
+              <ImageBox
+                src={`/images/${currentTab.image}`}
+                alt={currentTab.title}
+                width={1200}
+                height={900}
+                background={`linear-gradient(135deg, ${currentTab.color}18, rgba(255,255,255,0.03))`}
+                border='1px solid rgba(255,255,255,0.08)'
+                borderRadius={20}
+                boxShadow={`0 24px 60px rgba(0,0,0,0.3), 0 0 60px ${currentTab.color}10`}
+                style={{ transition: 'all 0.4s ease' }}
+              >
                 <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(circle at 50% 40%, ${currentTab.color}18, transparent 65%)`, pointerEvents: 'none', transition: 'all 0.4s ease' }} />
-              </div>
+              </ImageBox>
 
               <div>
                 <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.12em', color: currentTab.color, marginBottom: '1rem', transition: 'color 0.3s' }}>

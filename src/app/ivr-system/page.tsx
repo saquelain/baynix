@@ -2,7 +2,7 @@
 
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import Image from 'next/image'
+import ImageBox from '@/components/ImageBox'
 import { useState } from 'react'
 import {
   Bot, Server, Headphones,
@@ -184,12 +184,19 @@ export default function IvrSystemPage() {
             </div>
 
             {/* Hero image */}
-            <div style={{ height: 440, borderRadius: 24, background: 'linear-gradient(135deg, rgba(99,102,241,0.12), rgba(16,185,129,0.08), rgba(245,158,11,0.06))', border: '1px solid rgba(255,255,255,0.08)', position: 'relative', overflow: 'hidden', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08), 0 32px 80px rgba(0,0,0,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' as const, gap: '0.75rem' }}>
-              <Image src="/images/ivr-hero.png" alt="IVR System" fill style={{ objectFit: 'contain', borderRadius: 24 }} />
-              <div style={{ width: 64, height: 64, borderRadius: 16, background: 'rgba(99,102,241,0.15)', border: '1px solid rgba(99,102,241,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.8rem' }}>📞</div>
-              <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.15)', fontWeight: 500 }}>ivr-hero.png</div>
+            <ImageBox
+              src="/images/ivr-hero.png"
+              alt="IVR System"
+              background="linear-gradient(135deg, rgba(99,102,241,0.12), rgba(16,185,129,0.08), rgba(245,158,11,0.06))"
+              border="1px solid rgba(255,255,255,0.08)"
+              borderRadius={24}
+              boxShadow="inset 0 1px 0 rgba(255,255,255,0.08), 0 32px 80px rgba(0,0,0,0.4)"
+              imageStyle={{ objectFit: 'contain', borderRadius: 24 }}
+            >
+              {/* <div style={{ width: 64, height: 64, borderRadius: 16, background: 'rgba(99,102,241,0.15)', border: '1px solid rgba(99,102,241,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.8rem' }}>📞</div> */}
+              {/* <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.15)', fontWeight: 500 }}>ivr-hero.png</div> */}
               <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 70% 30%, rgba(99,102,241,0.1), transparent 60%)', pointerEvents: 'none' }} />
-            </div>
+            </ImageBox>
           </div>
         </section>
 
@@ -252,14 +259,24 @@ export default function IvrSystemPage() {
 
             {/* Illustration right */}
             <div
-              style={{ height: 400, borderRadius: 24, background: 'linear-gradient(135deg, rgba(99,102,241,0.12), rgba(16,185,129,0.08))', border: '1px solid rgba(255,255,255,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)', flexDirection: 'column' as const, gap: '0.75rem', transition: 'transform 0.4s ease' }}
+              style={{ transition: 'transform 0.4s ease', borderRadius: 24 }}
               onMouseEnter={e => { e.currentTarget.style.transform = 'scale(0.97)' }}
               onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)' }}
             >
-              <Image src="/images/ivr-smart.svg" alt="Smart IVR Solutions" fill style={{ objectFit: 'contain', padding: '2rem' }} />
-              <div style={{ width: 64, height: 64, borderRadius: 16, background: 'rgba(99,102,241,0.15)', border: '1px solid rgba(99,102,241,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.8rem' }}>🧠</div>
-              <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.15)', fontWeight: 500 }}>ivr-smart.png</div>
-              <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 60% 40%, rgba(99,102,241,0.12), transparent 60%)', pointerEvents: 'none' }} />
+              <ImageBox
+                src="/images/ivr-smart.svg"
+                alt="Smart IVR Solutions"
+                background="linear-gradient(135deg, rgba(99,102,241,0.12), rgba(16,185,129,0.08))"
+                border="1px solid rgba(255,255,255,0.08)"
+                borderRadius={24}
+                boxShadow="inset 0 1px 0 rgba(255,255,255,0.08)"
+                padding="2rem"
+                imageStyle={{ objectFit: 'contain' }}
+              >
+                {/* <div style={{ width: 64, height: 64, borderRadius: 16, background: 'rgba(99,102,241,0.15)', border: '1px solid rgba(99,102,241,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.8rem' }}>🧠</div> */}
+                {/* <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.15)', fontWeight: 500 }}>ivr-smart.png</div> */}
+                <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 60% 40%, rgba(99,102,241,0.12), transparent 60%)', pointerEvents: 'none' }} />
+              </ImageBox>
             </div>
           </div>
         </section>

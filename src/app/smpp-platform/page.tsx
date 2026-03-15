@@ -2,7 +2,7 @@
 
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import Image from 'next/image'
+import ImageBox from '@/components/ImageBox'
 import { useState } from 'react'
 import { Zap, DollarSign, Layers, BarChart2, Receipt, LifeBuoy } from 'lucide-react'
 
@@ -190,22 +190,21 @@ export default function SmppPlatformPage() {
             </div>
 
             {/* Hero illustration placeholder */}
-            <div style={{
-              height: 400, borderRadius: 24,
-              background: 'linear-gradient(135deg, rgba(99,102,241,0.12), rgba(59,130,246,0.08), rgba(34,211,238,0.06))',
-              border: '1px solid rgba(255,255,255,0.08)',
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              position: 'relative', overflow: 'hidden',
-              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08), 0 32px 80px rgba(0,0,0,0.3)',
-            }}>
-              {/* Replace src with your actual image later */}
-              <Image src="/images/smpp-hero.png" alt="Click to WhatsApp Ads" fill style={{ objectFit: 'contain', borderRadius: 24 }} />
+            <ImageBox
+              src="/images/smpp-hero.png"
+              alt="Click to WhatsApp Ads"
+              background="linear-gradient(135deg, rgba(99,102,241,0.12), rgba(59,130,246,0.08), rgba(34,211,238,0.06))"
+              border="1px solid rgba(255,255,255,0.08)"
+              borderRadius={24}
+              boxShadow="inset 0 1px 0 rgba(255,255,255,0.08), 0 32px 80px rgba(0,0,0,0.3)"
+              imageStyle={{ objectFit: 'contain', borderRadius: 24 }}
+            >
               <div style={{
                 position: 'absolute', inset: 0,
                 background: 'radial-gradient(circle at 70% 30%, rgba(99,102,241,0.1), transparent 60%)',
                 pointerEvents: 'none',
               }} />
-            </div>
+            </ImageBox>
           </div>
         </section>
 
@@ -267,21 +266,22 @@ export default function SmppPlatformPage() {
                   }} />
 
                   {/* Illustration placeholder */}
-                  <div style={{
-                    width: '100%', height: 130, borderRadius: 12,
-                    background: `linear-gradient(135deg, ${f.color}12, ${f.color}06)`,
-                    border: `1px solid ${f.color}18`,
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    marginBottom: '1.25rem', position: 'relative', overflow: 'hidden',
-                    flexDirection: 'column' as const, gap: '0.4rem',
-                  }}>
-                    <Image src={f.illustration} alt={f.title} fill style={{ objectFit: 'contain', padding: '1rem' }} />
+                  <ImageBox
+                    src={f.illustration}
+                    alt={f.title}
+                    background={`linear-gradient(135deg, ${f.color}12, ${f.color}06)`}
+                    border={`1px solid ${f.color}18`}
+                    borderRadius={12}
+                    padding="1rem"
+                    imageStyle={{ objectFit: 'contain' }}
+                    style={{ marginBottom: '1.25rem' }}
+                  >
                     <div style={{
                       position: 'absolute', inset: 0,
                       background: `radial-gradient(circle at 50% 100%, ${f.color}15, transparent 70%)`,
                       pointerEvents: 'none',
                     }} />
-                  </div>
+                  </ImageBox>
 
                   <h3 style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--text)', marginBottom: '0.6rem', letterSpacing: '-0.01em' }}>
                     {f.title}
@@ -338,29 +338,22 @@ export default function SmppPlatformPage() {
             </div>
 
             {/* Illustration placeholder */}
-            <div style={{
-              height: 360, borderRadius: 24,
-              background: 'linear-gradient(135deg, rgba(59,130,246,0.1), rgba(99,102,241,0.08))',
-              border: '1px solid rgba(255,255,255,0.08)',
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              position: 'relative', overflow: 'hidden',
-              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)',
-              flexDirection: 'column' as const, gap: '0.75rem',
-            }}>
-              <div style={{
-                width: 64, height: 64, borderRadius: 16,
-                background: 'rgba(59,130,246,0.15)',
-                border: '1px solid rgba(59,130,246,0.2)',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontSize: '1.8rem',
-              }}>🌍</div>
-              <Image src="/images/smpp-getstarted.svg" alt="Engage" fill style={{ objectFit: 'contain', padding: '1rem', filter: "invert(0.3)" }} />
+            <ImageBox
+              src="/images/smpp-getstarted.svg"
+              alt="Engage"
+              background="linear-gradient(135deg, rgba(59,130,246,0.1), rgba(99,102,241,0.08))"
+              border="1px solid rgba(255,255,255,0.08)"
+              borderRadius={24}
+              boxShadow="inset 0 1px 0 rgba(255,255,255,0.08)"
+              padding="1rem"
+              imageStyle={{ objectFit: 'contain', filter: 'invert(0.3)' }}
+            >
               <div style={{
                 position: 'absolute', inset: 0,
                 background: 'radial-gradient(circle at 60% 40%, rgba(59,130,246,0.1), transparent 60%)',
                 pointerEvents: 'none',
               }} />
-            </div>
+            </ImageBox>
           </div>
         </section>
 
