@@ -281,27 +281,26 @@ export default function ClickToWhatsAppAdsPage() {
               position: 'relative', zIndex: 1,
             }}>
               {/* Image */}
-              <ImageBox
-                src={split.image}
-                alt={split.badge}
-                border="1px solid rgba(255,255,255,0.08)"
-                borderRadius={20}
-                boxShadow={`0 24px 60px rgba(0,0,0,0.4), 0 0 0 1px ${split.color}15`}
-                imageStyle={{ objectFit: 'cover' }}
-                style={{
-                  direction: 'ltr',
-                  transition: 'transform 0.4s ease',
-                  cursor: 'default',
-                }}
+              <div
+                style={{ direction: 'ltr', transition: 'transform 0.4s ease', cursor: 'default', borderRadius: 20 }}
                 onMouseEnter={(e: React.MouseEvent<HTMLDivElement>) => { e.currentTarget.style.transform = 'scale(0.97)' }}
                 onMouseLeave={(e: React.MouseEvent<HTMLDivElement>) => { e.currentTarget.style.transform = 'scale(1)' }}
               >
-                <div style={{
-                  position: 'absolute', inset: 0,
-                  background: `radial-gradient(circle at 50% 100%, ${split.color}12, transparent 70%)`,
-                  pointerEvents: 'none',
-                }} />
-              </ImageBox>
+                <ImageBox
+                  src={split.image}
+                  alt={split.badge}
+                  border="1px solid rgba(255,255,255,0.08)"
+                  borderRadius={20}
+                  boxShadow={`0 24px 60px rgba(0,0,0,0.4), 0 0 0 1px ${split.color}15`}
+                  imageStyle={{ objectFit: 'cover' }}
+                >
+                  <div style={{
+                    position: 'absolute', inset: 0,
+                    background: `radial-gradient(circle at 50% 100%, ${split.color}12, transparent 70%)`,
+                    pointerEvents: 'none',
+                  }} />
+                </ImageBox>
+              </div>
 
               {/* Text */}
               <div style={{ direction: 'ltr' }}>
