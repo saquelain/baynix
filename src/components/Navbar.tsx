@@ -88,6 +88,7 @@ export default function Navbar() {
     { label: 'About Us', href: '/about', emoji: '🏢' },
     { label: 'Life at ATPL', href: '/life', emoji: '✨' },
     { label: 'Career', href: '/career', emoji: '🚀' },
+    { label: 'Media Coverage', href: '/media-coverage', emoji: '📰' },
     { label: 'Contact Us', href: '/contact', emoji: '💬' },
   ]
 

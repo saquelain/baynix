@@ -24,6 +24,7 @@ const links = {
   Company: [
     { label: 'About Us', href: '/about' },
     { label: 'Careers', href: '/career' },
+    { label: 'Media Coverage', href: '/media-coverage' },
     { label: 'Blog', href: '/blog' },
     { label: 'Developer Docs', href: 'https://developers.baynix.ai' },
     { label: 'Contact Us', href: '/contact' },
