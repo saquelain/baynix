@@ -211,12 +211,12 @@ export default function ConversationalAiChatbotPage() {
               boxShadow='inset 0 1px 0 rgba(255,255,255,0.08), 0 32px 80px rgba(0,0,0,0.4)'
               imageStyle={{ objectFit: 'cover', borderRadius: 24 }}
             >
-              <div style={{
+              {/* <div style={{
                 width: 64, height: 64, borderRadius: 16,
                 background: 'rgba(99,102,241,0.15)', border: '1px solid rgba(99,102,241,0.2)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.8rem',
                 position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
-              }}>✨</div>
+              }}>✨</div> */}
               {/* <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.15)', fontWeight: 500, position: 'absolute', bottom: '1rem', left: 0, right: 0, textAlign: 'center' }}>ai-chatbot-hero.png</div> */}
               <div style={{
                 position: 'absolute', inset: 0,
@@ -258,12 +258,12 @@ export default function ConversationalAiChatbotPage() {
                 boxShadow='0 24px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(99,102,241,0.1)'
                 imageStyle={{ objectFit: 'cover' }}
               >
-                <div style={{
+                {/* <div style={{
                   width: 56, height: 56, borderRadius: 14,
                   background: 'rgba(99,102,241,0.2)', border: '1px solid rgba(99,102,241,0.3)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem',
                   position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
-                }}>🧠</div>
+                }}>🧠</div> */}
                 {/* <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.2)', fontWeight: 500, position: 'absolute', bottom: '1rem', left: 0, right: 0, textAlign: 'center' }}>ai-chatbot-services.png</div> */}
                 <div style={{
                   position: 'absolute', inset: 0,

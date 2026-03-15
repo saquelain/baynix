@@ -348,7 +348,6 @@ export default function NumberMaskingPage() {
                 border="1px solid rgba(255,255,255,0.08)"
                 borderRadius={24}
                 boxShadow="inset 0 1px 0 rgba(255,255,255,0.08)"
-                padding="2rem"
                 imageStyle={{ objectFit: 'cover' }}
               >
                 <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(circle at 60% 40%, rgba(${accentRgb},0.12), transparent 60%)`, pointerEvents: 'none' }} />
