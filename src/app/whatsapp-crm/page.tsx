@@ -217,13 +217,13 @@ export default function WhatsAppCrmPage() {
               boxShadow='inset 0 1px 0 rgba(255,255,255,0.08), 0 32px 80px rgba(0,0,0,0.4)'
               imageStyle={{ objectFit: 'contain', borderRadius: 24 }}
             >
-              <div style={{
+              {/* <div style={{
                 width: 64, height: 64, borderRadius: 16,
                 background: 'rgba(37,211,102,0.15)', border: '1px solid rgba(37,211,102,0.2)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.8rem',
                 position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
-              }}>🗂️</div>
-              <div style={{ position: 'absolute', bottom: '40%', left: 0, right: 0, textAlign: 'center', fontSize: '0.8rem', color: 'rgba(255,255,255,0.15)', fontWeight: 500 }}>wa-crm-hero.png</div>
+              }}>🗂️</div> */}
+              {/* <div way to share catalogue, prices, v style={{ position: 'absolute', bottom: '40%', left: 0, right: 0, textAlign: 'center', fontSize: '0.8rem', color: 'rgba(255,255,255,0.15)', fontWeight: 500 }}>wa-crm-hero.png</div> */}
               <div style={{
                 position: 'absolute', inset: 0,
                 background: 'radial-gradient(circle at 70% 30%, rgba(37,211,102,0.08), transparent 60%)',
@@ -342,13 +342,13 @@ export default function WhatsAppCrmPage() {
                 boxShadow='0 24px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(37,211,102,0.1)'
                 imageStyle={{ objectFit: 'contain' }}
               >
-                <div style={{
+                {/* <div style={{
                   width: 56, height: 56, borderRadius: 14,
                   background: 'rgba(37,211,102,0.2)', border: '1px solid rgba(37,211,102,0.3)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem',
                   position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
-                }}>🛒</div>
-                <div style={{ position: 'absolute', bottom: '40%', left: 0, right: 0, textAlign: 'center', fontSize: '0.75rem', color: 'rgba(255,255,255,0.2)', fontWeight: 500 }}>wa-crm-commerce.png</div>
+                }}>🛒</div> */}
+                {/* <div style={{ position: 'absolute', bottom: '40%', left: 0, right: 0, textAlign: 'center', fontSize: '0.75rem', color: 'rgba(255,255,255,0.2)', fontWeight: 500 }}>wa-crm-commerce.png</div> */}
                 <div style={{
                   position: 'absolute', inset: 0,
                   background: 'radial-gradient(circle at 50% 100%, rgba(37,211,102,0.1), transparent 70%)',

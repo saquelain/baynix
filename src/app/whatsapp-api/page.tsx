@@ -542,12 +542,12 @@ export default function WhatsAppApiPage() {
               boxShadow='inset 0 1px 0 rgba(255,255,255,0.08)'
               padding='2rem'
             >
-              <div style={{
+              {/* <div style={{
                 width: 64, height: 64, borderRadius: 16,
                 background: 'rgba(99,102,241,0.15)', border: '1px solid rgba(99,102,241,0.2)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.8rem',
                 position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
-              }}>🚀</div>
+              }}>🚀</div> */}
               {/* <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.15)', fontWeight: 500, position: 'absolute', bottom: '1rem', left: 0, right: 0, textAlign: 'center' }}>
                 wa-onboarding.png
               </div> */}
