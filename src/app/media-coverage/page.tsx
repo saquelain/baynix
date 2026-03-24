@@ -10,6 +10,9 @@ const articles = [
   {
     publication: 'IT Brief India',
     emoji: '🚀',
+    logo: '/images/media/logos/it-brief-india.png',
+    image: '/images/media/it-brief-india.png',
+    invert: false,
     title: 'Azmarq Technovation Launches Baynix AI in Dubai to Boost AI Messaging',
     excerpt: 'Azmarq Technovation officially launches Baynix AI in Dubai, positioning the platform as a next-generation AI-powered messaging solution for businesses across the Middle East.',
     category: 'Product Launch' as Category,
@@ -18,6 +21,9 @@ const articles = [
   {
     publication: 'Campaign Middle East',
     emoji: '🌍',
+    logo: '/images/media/logos/campaign-middle-east.png',
+    image: '/images/media/campaign-middle-east.png',
+    invert: true,
     title: 'Azmarq Launches Baynix AI in Dubai to Help Clients Improve Customer Engagement',
     excerpt: 'Campaign Middle East covers Baynix AI\'s entry into the Dubai market, highlighting how the platform empowers brands with smarter, AI-driven customer communication tools.',
     category: 'Product Launch' as Category,
@@ -26,6 +32,9 @@ const articles = [
   {
     publication: 'Express Computer',
     emoji: '💻',
+    logo: '/images/media/logos/express-computer.png',
+    image: '/images/media/express-computer.png',
+    invert: false,
     title: 'How End-to-End Encryption, OTP Verification and AI-Driven Spam Detection Prevent Fraud',
     excerpt: 'A deep dive into how modern security layers — including E2E encryption, OTP verification, and AI-powered spam filters — are redefining fraud prevention in digital messaging.',
     category: 'Technology' as Category,
@@ -34,6 +43,9 @@ const articles = [
   {
     publication: 'MediaNews4U',
     emoji: '📡',
+    logo: '/images/media/logos/medianews4u.png',
+    image: '/images/media/medianews4u.png',
+    invert: false,
     title: 'Businesses Increasingly Adopt RCS for Rich Media Messaging with Interactive Features',
     excerpt: 'Imteyaz Ansari of Azmarq Technovation discusses the rapid rise of RCS messaging adoption among enterprises, enabling richer customer interactions with buttons, photos, and payments.',
     category: 'Technology' as Category,
@@ -42,6 +54,9 @@ const articles = [
   {
     publication: 'Indian Express',
     emoji: '🗞️',
+    logo: '/images/media/logos/indian-express.png',
+    image: '/images/media/indian-express.png',
+    invert: true,
     title: 'The Unsubscribe Button Trap: Why Your Inbox Declutter Could Be a Cyberattack',
     excerpt: 'Indian Express explores the growing cybersecurity risk lurking inside email unsubscribe links — and what businesses and users should know to stay protected.',
     category: 'Technology' as Category,
@@ -50,6 +65,9 @@ const articles = [
   {
     publication: 'YourStory',
     emoji: '📰',
+    logo: '/images/media/logos/yourstory.png',
+    image: '/images/media/yourstory.png',
+    invert: true,
     title: 'Azmarq Helps Businesses with Omnichannel Communication',
     excerpt: 'YourStory features how Azmarq is enabling businesses of all sizes to unify their customer communication across SMS, WhatsApp, RCS, Voice, and Email from a single platform.',
     category: 'Business' as Category,
@@ -58,6 +76,9 @@ const articles = [
   {
     publication: 'Times Now News',
     emoji: '📊',
+    logo: '/images/media/logos/times-now-news.svg',
+    image: '/images/media/times-now-news.png',
+    invert: false,
     title: 'How AI Chatbots Are Ushering a New Era of Financial Inclusion & Literacy Through Messaging',
     excerpt: 'Times Now explores how conversational AI chatbots are breaking barriers in financial access — helping millions understand banking, credit, and investment through simple messaging.',
     category: 'Business' as Category,
@@ -66,6 +87,9 @@ const articles = [
   {
     publication: 'TechGraph',
     emoji: '⚡',
+    logo: '/images/media/logos/techgraph.png',
+    image: '/images/media/techgraph.png',
+    invert: true,
     title: 'Scaling Indian CPaaS: Azmarq\'s Imteyaz Ansari on Business Communication',
     excerpt: 'TechGraph sits down with Imteyaz Ansari to discuss Azmarq\'s journey in building a world-class CPaaS platform, the growth of India\'s communication tech sector, and what\'s next.',
     category: 'Business' as Category,
@@ -296,6 +320,29 @@ export default function MediaCoveragePage() {
                       background: `linear-gradient(180deg, transparent, ${accent.color}, transparent)`,
                     }} />
 
+                    {/* Article image */}
+                    <div style={{
+                      width: '100%',
+                      height: 180,
+                      borderRadius: 12,
+                      overflow: 'hidden',
+                      marginBottom: '1.25rem',
+                      background: 'rgba(255,255,255,0.04)',
+                      border: '1px solid rgba(255,255,255,0.07)',
+                      flexShrink: 0,
+                    }}>
+                      <img
+                        src={article.image}
+                        alt={article.publication}
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover',
+                          display: 'block',
+                        }}
+                      />
+                    </div>
+
                     {/* Header row: publication badge + category tag */}
                     <div style={{
                       display: 'flex',
@@ -311,25 +358,21 @@ export default function MediaCoveragePage() {
                         gap: '0.5rem',
                       }}>
                         <span style={{
-                          width: 32, height: 32,
-                          borderRadius: 9,
-                          background: accent.bg,
-                          border: `1px solid ${accent.border}`,
+                            height: 32,
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
-                          fontSize: '0.9rem',
-                          flexShrink: 0,
                         }}>
-                          {article.emoji}
-                        </span>
-                        <span style={{
-                          fontSize: '0.82rem',
-                          fontWeight: 700,
-                          color: accent.color,
-                          letterSpacing: '0.02em',
-                        }}>
-                          {article.publication}
+                          <img
+                            src={article.logo}
+                            alt={article.publication}
+                            style={{
+                              width: '100%',
+                              height: '100%',
+                              objectFit: 'contain',
+                              filter: article.invert ? 'invert(1)' : 'none',
+                            }}
+                          />
                         </span>
                       </div>
 
