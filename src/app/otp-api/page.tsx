@@ -249,7 +249,7 @@ export default function OtpApiPage() {
 
             {/* Hero illustration */}
             <ImageBox
-              src="/images/otp-hero.svg"
+              src="/images/otp-api-hero.png"
               alt="OTP API"
               width={760}
               height={380}

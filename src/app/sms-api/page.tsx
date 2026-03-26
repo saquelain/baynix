@@ -240,7 +240,7 @@ export default function SmsApiPage() {
 
             {/* Hero illustration placeholder */}
             <ImageBox
-              src="/images/sms-hero.svg"
+              src="/images/sms-api-hero.png"
               alt="SMS API"
               width={760}
               height={380}

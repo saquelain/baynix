@@ -251,7 +251,7 @@ export default function VoiceApiPage() {
 
             {/* Hero illustration */}
             <ImageBox
-              src="/images/voice-hero.svg"
+              src="/images/voice-api-hero.png"
               alt="Voice API"
               width={760}
               height={380}

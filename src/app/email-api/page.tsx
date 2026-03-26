@@ -250,7 +250,7 @@ export default function EmailApiPage() {
 
             {/* Hero illustration */}
             <ImageBox
-              src="/images/email-hero.svg"
+              src="/images/email-api-hero.png"
               alt="Email API"
               width={760}
               height={380}

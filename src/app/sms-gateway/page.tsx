@@ -238,7 +238,7 @@ export default function SmsGatewayPage() {
 
             {/* Hero illustration */}
             <ImageBox
-              src="/images/sms-hero.svg"
+              src="/images/sms-gateway-hero.png"
               alt="SMS Gateway"
               background="linear-gradient(135deg, rgba(99,102,241,0.12), rgba(59,130,246,0.08), rgba(34,211,238,0.06))"
               border="1px solid rgba(255,255,255,0.08)"

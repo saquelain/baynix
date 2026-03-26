@@ -18,8 +18,8 @@ export default function Navbar() {
   }, [])
 
   const navLinks = [
-    { label: 'Industries', href: '#industries' },
-    { label: 'Pricing', href: '#pricing' },
+    { label: 'Industries', href: '/#industries' },
+    { label: 'Pricing', href: '/#pricing' },
     ]
 
     const solutionSections = [
@@ -86,7 +86,7 @@ export default function Navbar() {
 
   const companyLinks = [
     { label: 'About Us', href: '/about', emoji: '🏢' },
-    { label: 'Life at ATPL', href: '/life', emoji: '✨' },
+    { label: 'Life at ATPL', href: '/life-at-atpl', emoji: '✨' },
     { label: 'Career', href: '/career', emoji: '🚀' },
     { label: 'Media Coverage', href: '/media-coverage', emoji: '📰' },
     { label: 'Contact Us', href: '/contact', emoji: '💬' },
