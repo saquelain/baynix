@@ -113,7 +113,7 @@ export default function CareerPage() {
             zIndex: 0,
           }}>
             {/* Uncomment when you have the image: */}
-            <Image src="/images/career-hero.jpg" alt="Career at Baynix" fill style={{ objectFit: 'cover', opacity: 2 }} />
+            <Image src="/images/career-hero.png" alt="Career at Baynix" fill style={{ objectFit: 'cover', opacity: 2 }} />
            
           </div>
 
