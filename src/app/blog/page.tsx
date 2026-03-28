@@ -218,6 +218,7 @@ export default function BlogPage() {
 
               <div
                 key={activeSlide}
+                className="blog-slide-grid"
                 style={{
                   display: 'grid',
                   gridTemplateColumns: '1fr auto',
