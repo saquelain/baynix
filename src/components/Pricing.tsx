@@ -192,7 +192,7 @@ export default function Pricing() {
         </div>
 
         {/* Cards */}
-        <div className="reveal" style={{
+        <div className="reveal pricing-grid" style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(3, 1fr)',
           gap: '1.5rem',
@@ -201,6 +201,7 @@ export default function Pricing() {
           {plans.map((plan) => (
             <div
               key={plan.name}
+              className={plan.featured ? 'pricing-card pricing-card-featured' : 'pricing-card'}
               style={{
                 position: 'relative',
                 borderRadius: 24,

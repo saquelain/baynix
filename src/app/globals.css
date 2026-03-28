@@ -584,6 +584,18 @@ html::-webkit-scrollbar {
   }
 }
 
+@media (max-width: 1023px) {
+  .pricing-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 480px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .pricing-card-featured {
+    transform: scale(1) !important;
+  }
+}
+
 @media (max-width: 768px) {
   .split-grid {
     grid-template-columns: 1fr !important;
@@ -606,17 +618,31 @@ html::-webkit-scrollbar {
   }
 }
 
-/* Footer: single col on mobile */
+/* Footer: single col on mobile, centered */
 @media (max-width: 480px) {
   .footer-grid {
     grid-template-columns: 1fr !important;
     gap: 1.75rem !important;
+    text-align: center;
+  }
+  .footer-grid img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .footer-grid p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .footer-grid ul {
+    align-items: center;
   }
   .footer-bottom {
     flex-direction: column !important;
-    align-items: flex-start !important;
+    align-items: center !important;
+    text-align: center;
   }
   .footer-get-in-touch {
     padding-left: 0 !important;
+    justify-content: center !important;
   }
 }
