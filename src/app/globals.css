@@ -1373,3 +1373,45 @@ html::-webkit-scrollbar {
     grid-template-columns: 1fr !important;
   }
 }
+
+@media (max-width: 768px) {
+  .ivr-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .ivr-types-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .ivr-cta-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .ivr-benefits-top-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .ivr-benefits-bottom-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .ivr-testimonials-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .ivr-types-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .ivr-benefits-top-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .ivr-benefits-bottom-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
