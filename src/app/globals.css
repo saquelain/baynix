@@ -806,3 +806,29 @@ html::-webkit-scrollbar {
     grid-template-columns: 1fr !important;
   }
 }
+
+@media (max-width: 768px) {
+  .logistics-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .logistics-tabs-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .logistics-why-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .logistics-testimonials-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .logistics-why-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
