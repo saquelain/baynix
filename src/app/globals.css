@@ -1247,3 +1247,34 @@ html::-webkit-scrollbar {
     grid-template-columns: repeat(3, 1fr) !important;
   }
 }
+@media (max-width: 768px) {
+  .emailsms-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .emailsms-features-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .emailsms-why-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .emailsms-integrate-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+    direction: ltr !important;
+  }
+
+  .emailsms-testimonials-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .emailsms-features-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
