@@ -832,3 +832,29 @@ html::-webkit-scrollbar {
     grid-template-columns: 1fr !important;
   }
 }
+
+@media (max-width: 768px) {
+  .health-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .health-tabs-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .health-why-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .health-testimonials-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .health-why-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
