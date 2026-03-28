@@ -201,7 +201,7 @@ export default function EmailApiPage() {
             top: '20%', right: '10%', pointerEvents: 'none',
           }} />
 
-          <div style={{
+          <div className="emailapi-hero-grid" style={{
             maxWidth: 1100, margin: '0 auto',
             display: 'grid', gridTemplateColumns: '1fr 1fr',
             gap: '4rem', alignItems: 'center',
@@ -325,7 +325,7 @@ export default function EmailApiPage() {
               </h2>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.25rem' }}>
+            <div className="emailapi-features-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.25rem' }}>
               {features.map((f) => (
                 <div
                   key={f.title}
@@ -407,7 +407,7 @@ export default function EmailApiPage() {
               </div>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
+            <div className="emailapi-stats-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
               {stats.map((s) => (
                 <div key={s.label} style={{
                   padding: '2.5rem 2rem', textAlign: 'center',
@@ -529,7 +529,7 @@ export default function EmailApiPage() {
             top: '50%', right: '10%', pointerEvents: 'none',
           }} />
 
-          <div style={{
+          <div className="emailapi-cta-grid" style={{
             maxWidth: 1100, margin: '0 auto',
             display: 'grid', gridTemplateColumns: '1fr 1fr',
             gap: '4rem', alignItems: 'center',
