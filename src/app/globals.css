@@ -923,3 +923,21 @@ html::-webkit-scrollbar {
     grid-template-columns: 1fr !important;
   }
 }
+
+@media (max-width: 768px) {
+  .ctwa-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .ctwa-split-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+    direction: ltr !important;
+  }
+
+  .ctwa-solution-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+}

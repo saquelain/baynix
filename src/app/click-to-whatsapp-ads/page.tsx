@@ -124,7 +124,7 @@ export default function ClickToWhatsAppAdsPage() {
             top: '20%', right: '5%', pointerEvents: 'none',
           }} />
 
-          <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center', position: 'relative', zIndex: 1 }}>
+          <div className="ctwa-hero-grid" style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center', position: 'relative', zIndex: 1 }}>
             <div>
               <div style={{
                 display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
@@ -273,7 +273,7 @@ export default function ClickToWhatsAppAdsPage() {
               transform: 'translateY(-50%)', pointerEvents: 'none',
             }} />
 
-            <div style={{
+            <div className="ctwa-split-grid" style={{
               maxWidth: 1100, margin: '0 auto',
               display: 'grid', gridTemplateColumns: '1fr 1fr',
               gap: '4rem', alignItems: 'center',
@@ -346,7 +346,7 @@ export default function ClickToWhatsAppAdsPage() {
             pointerEvents: 'none',
           }} />
 
-          <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center', position: 'relative', zIndex: 1 }}>
+          <div className="ctwa-solution-grid" style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center', position: 'relative', zIndex: 1 }}>
             <div>
               <div style={{
                 display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
