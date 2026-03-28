@@ -1278,3 +1278,29 @@ html::-webkit-scrollbar {
     grid-template-columns: repeat(2, 1fr) !important;
   }
 }
+
+@media (max-width: 768px) {
+  .longcode-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .longcode-features-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .longcode-why-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .longcode-testimonials-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .longcode-features-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
