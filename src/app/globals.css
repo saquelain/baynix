@@ -1179,3 +1179,37 @@ html::-webkit-scrollbar {
     grid-template-columns: repeat(2, 1fr) !important;
   }
 }
+
+@media (max-width: 768px) {
+  .otp-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .otp-keyfeatures-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .otp-stats-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .otp-features-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .otp-testimonials-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .otp-stats-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  .otp-features-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
