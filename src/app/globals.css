@@ -728,3 +728,29 @@ html::-webkit-scrollbar {
     grid-template-columns: 1fr !important;
   }
 }
+
+@media (max-width: 768px) {
+  .ecom-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .ecom-benefits-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .ecom-tabs-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .ecom-testimonials-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .ecom-benefits-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
