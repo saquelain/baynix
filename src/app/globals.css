@@ -1415,3 +1415,45 @@ html::-webkit-scrollbar {
     grid-template-columns: repeat(3, 1fr) !important;
   }
 }
+
+@media (max-width: 768px) {
+  .obd-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .obd-features-top-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .obd-features-bottom-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .obd-cta-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .obd-why-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .obd-testimonials-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .obd-features-top-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .obd-features-bottom-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .obd-why-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
