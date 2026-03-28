@@ -1701,3 +1701,38 @@ html::-webkit-scrollbar {
     grid-template-columns: repeat(3, 1fr) !important;
   }
 }
+
+@media (max-width: 768px) {
+  .smsgw-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .smsgw-features-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .smsgw-why-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .smsgw-bullets-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .smsgw-cta-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .smsgw-features-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .smsgw-bullets-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
