@@ -1535,3 +1535,49 @@ html::-webkit-scrollbar {
     grid-template-columns: repeat(2, 1fr) !important;
   }
 }
+
+@media (max-width: 768px) {
+  .nm-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .nm-services-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+    direction: ltr !important;
+  }
+
+  .nm-why-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .nm-cta-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .nm-benefits-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .nm-features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+    direction: ltr !important;
+  }
+
+  .nm-testimonials-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .nm-why-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .nm-benefits-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
