@@ -254,7 +254,7 @@ export default function CareerPage() {
             </div>
 
             {/* Stats — 3 large cards */}
-            <div style={{
+            <div className="career-stats-grid" style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(3, 1fr)',
             gap: '1.5rem',

@@ -707,3 +707,12 @@ html::-webkit-scrollbar {
     grid-template-columns: 1fr !important;
   }
 }
+
+@media (max-width: 768px) {
+  .career-stats-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 480px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
