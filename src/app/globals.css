@@ -1497,3 +1497,41 @@ html::-webkit-scrollbar {
     grid-template-columns: repeat(3, 1fr) !important;
   }
 }
+
+@media (max-width: 768px) {
+  .mc-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .mc-services-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+    direction: ltr !important;
+  }
+
+  .mc-features-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .mc-cta-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .mc-why-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+    direction: ltr !important;
+  }
+
+  .mc-testimonials-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .mc-features-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
