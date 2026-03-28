@@ -780,3 +780,29 @@ html::-webkit-scrollbar {
     grid-template-columns: 1fr !important;
   }
 }
+
+@media (max-width: 768px) {
+  .edtech-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .edtech-tabs-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .edtech-offerings-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .edtech-testimonials-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .edtech-offerings-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
