@@ -115,7 +115,7 @@ export default function Footer() {
         </div>
 
         {/* Get in Touch — above the divider */}
-        <div style={{ display: 'flex', justifyContent: 'flex-start', paddingLeft: '2rem', marginBottom: '1.5rem' }}>
+        <div className="footer-get-in-touch" style={{ display: 'flex', justifyContent: 'flex-start', paddingLeft: '2rem', marginBottom: '1.5rem' }}>
           <button
             onClick={() => setModalOpen(true)}
             className="glass-btn glass-btn-primary glass-btn-sm"
@@ -126,7 +126,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div style={{
+        <div className="footer-bottom" style={{
           paddingTop: '2rem',
           borderTop: '1px solid var(--border)',
           display: 'flex',

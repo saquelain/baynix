@@ -534,11 +534,43 @@ html::-webkit-scrollbar {
   );
 }
 
-@media (min-width: 768px) {
-  .nav-link-item {
-    display: block !important;
-  }
+/* ── Navbar responsive ── */
+
+/* Desktop nav links: hidden by default (inline style on element), shown on desktop */
+.nav-link-item { display: none; }
+@media (min-width: 1024px) {
+  .nav-link-item { display: block !important; }
 }
+
+/* Desktop auth: shown by default (desktop), hidden below 1024px */
+.desktop-auth { display: flex; }
+@media (max-width: 1023px) {
+  .desktop-auth { display: none; }
+}
+
+/* Hamburger: hidden by default (desktop), shown below 1024px */
+.hamburger-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem;
+  color: var(--text);
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+@media (max-width: 1023px) {
+  .hamburger-btn { display: flex; }
+}
+
+/* Mobile overlay: hidden by default (desktop), visible below 1024px */
+.mobile-menu-overlay { display: none; }
+@media (max-width: 1023px) {
+  .mobile-menu-overlay { display: block; }
+}
+
 
 @media (max-width: 768px) {
   .split-grid {
@@ -554,9 +586,25 @@ html::-webkit-scrollbar {
   }
 }
 
+/* Footer: 2-col on tablet */
 @media (max-width: 768px) {
   .footer-grid {
     grid-template-columns: 1fr 1fr !important;
     gap: 2rem !important;
+  }
+}
+
+/* Footer: single col on mobile */
+@media (max-width: 480px) {
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.75rem !important;
+  }
+  .footer-bottom {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  .footer-get-in-touch {
+    padding-left: 0 !important;
   }
 }
