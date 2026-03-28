@@ -203,7 +203,7 @@ export default function VoiceApiPage() {
             pointerEvents: 'none',
           }} />
 
-          <div style={{
+          <div className="voiceapi-hero-grid" style={{
             maxWidth: 1100, margin: '0 auto',
             display: 'grid', gridTemplateColumns: '1fr 1fr',
             gap: '4rem', alignItems: 'center',
@@ -326,7 +326,7 @@ export default function VoiceApiPage() {
               </h2>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.25rem' }}>
+            <div className="voiceapi-features-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.25rem' }}>
               {features.map((f) => (
                 <div
                   key={f.title}
@@ -506,7 +506,7 @@ export default function VoiceApiPage() {
               </div>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
+            <div className="voiceapi-stats-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
               {stats.map((s) => (
                 <div key={s.label} style={{
                   padding: '2.5rem 2rem', textAlign: 'center',
@@ -546,7 +546,7 @@ export default function VoiceApiPage() {
             top: '50%', right: '10%', pointerEvents: 'none',
           }} />
 
-          <div style={{
+          <div className="voiceapi-cta-grid" style={{
             maxWidth: 1100, margin: '0 auto',
             display: 'grid', gridTemplateColumns: '1fr 1fr',
             gap: '4rem', alignItems: 'center',
