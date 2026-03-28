@@ -1641,3 +1641,33 @@ html::-webkit-scrollbar {
     grid-template-columns: repeat(3, 1fr) !important;
   }
 }
+
+@media (max-width: 768px) {
+  .otpapi-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .otpapi-features-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .otpapi-stats-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .otpapi-cta-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .otpapi-features-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .otpapi-stats-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
