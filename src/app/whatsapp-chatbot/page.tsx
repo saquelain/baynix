@@ -160,7 +160,7 @@ export default function WhatsAppChatbotPage() {
             top: '20%', right: '5%', pointerEvents: 'none',
           }} />
 
-          <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center', position: 'relative', zIndex: 1 }}>
+          <div className="wachatbot-hero-grid" style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center', position: 'relative', zIndex: 1 }}>
             <div>
               <div style={{
                 display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
@@ -236,7 +236,7 @@ export default function WhatsAppChatbotPage() {
             pointerEvents: 'none',
           }} />
 
-          <div style={{
+          <div className="wachatbot-services-grid" style={{
             maxWidth: 1100, margin: '0 auto',
             display: 'grid', gridTemplateColumns: '1fr 1fr',
             gap: '4rem', alignItems: 'center',
@@ -316,7 +316,7 @@ export default function WhatsAppChatbotPage() {
             pointerEvents: 'none',
           }} />
 
-          <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'start', position: 'relative', zIndex: 1 }}>
+          <div className="wachatbot-features-grid" style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'start', position: 'relative', zIndex: 1 }}>
             {/* Left heading */}
             <div style={{ position: 'sticky', top: '6rem' }}>
               <div style={{
@@ -426,7 +426,7 @@ export default function WhatsAppChatbotPage() {
               </h2>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.25rem' }}>
+            <div className="wachatbot-why-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.25rem' }}>
               {whyChatbot.map((item) => {
                 const Icon = item.icon
                 return (
@@ -489,7 +489,7 @@ export default function WhatsAppChatbotPage() {
             pointerEvents: 'none',
           }} />
 
-          <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center', position: 'relative', zIndex: 1 }}>
+          <div className="wachatbot-cta-grid" style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center', position: 'relative', zIndex: 1 }}>
             <div>
               <div style={{
                 display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
@@ -568,7 +568,7 @@ export default function WhatsAppChatbotPage() {
               </h2>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.25rem' }}>
+            <div className="wachatbot-testimonials-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.25rem' }}>
               {testimonials.map((t) => (
                 <div
                   key={t.name}
