@@ -147,7 +147,7 @@ export default function ContactPage() {
             pointerEvents: 'none',
           }} />
 
-          <div style={{
+          <div className="contact-grid" style={{
             maxWidth: 1100,
             margin: '0 auto',
             display: 'grid',
