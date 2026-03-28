@@ -147,7 +147,7 @@ export default function FeaturesGrid() {
         </div>
 
         {/* Grid */}
-        <div className="reveal" style={{
+        <div className="reveal features-grid" style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(3, 1fr)',
           gap: '1rem',
