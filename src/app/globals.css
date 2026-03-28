@@ -1346,3 +1346,30 @@ html::-webkit-scrollbar {
     grid-template-columns: repeat(3, 1fr) !important;
   }
 }
+
+@media (max-width: 768px) {
+  .voiceotp-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .voiceotp-services-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+    direction: ltr !important;
+  }
+
+  .voiceotp-cta-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .voiceotp-why-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .voiceotp-testimonials-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
