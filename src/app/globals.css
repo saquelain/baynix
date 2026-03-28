@@ -858,3 +858,33 @@ html::-webkit-scrollbar {
     grid-template-columns: 1fr !important;
   }
 }
+
+@media (max-width: 768px) {
+  .startups-simplified-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .startups-usecases-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+    direction: ltr !important;
+  }
+
+  .startups-features-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .startups-testimonials-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .startups-steps {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .startups-step-arrow {
+    display: none !important;
+  }
+}

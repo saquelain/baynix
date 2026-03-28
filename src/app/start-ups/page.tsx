@@ -191,7 +191,7 @@ export default function StartupsPage() {
         <section style={{ padding: '5rem 2rem', borderBottom: '1px solid var(--border)', position: 'relative', overflow: 'hidden' }}>
           <div style={{ position: 'absolute', width: 500, height: 400, background: `radial-gradient(ellipse, rgba(${accentRgb},0.07) 0%, transparent 70%)`, top: '50%', left: '10%', transform: 'translateY(-50%)', pointerEvents: 'none' }} />
 
-          <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center', position: 'relative', zIndex: 1 }}>
+          <div className="startups-simplified-grid" style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center', position: 'relative', zIndex: 1 }}>
             <div>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.12em', color: accent, marginBottom: '1rem' }}>
                 <span style={{ width: 18, height: 1, background: accent, display: 'inline-block' }} />
@@ -231,7 +231,7 @@ export default function StartupsPage() {
         <section style={{ padding: '5rem 2rem', borderBottom: '1px solid var(--border)', position: 'relative', overflow: 'hidden' }}>
           <div style={{ position: 'absolute', width: 500, height: 400, background: `radial-gradient(ellipse, rgba(${accentRgb},0.07) 0%, transparent 70%)`, top: '50%', right: '5%', transform: 'translateY(-50%)', pointerEvents: 'none' }} />
 
-          <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center', direction: 'rtl', position: 'relative', zIndex: 1 }}>
+          <div className="startups-usecases-grid" style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center', direction: 'rtl', position: 'relative', zIndex: 1 }}>
             {/* Image left via rtl */}
             <div
               style={{ direction: 'ltr', transition: 'transform 0.4s ease' }}
@@ -300,7 +300,7 @@ export default function StartupsPage() {
               </h2>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+            <div className="startups-features-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
               {/* Features card */}
               <div style={{ ...glassCard, padding: '2.5rem' }}>
                 <div style={{ position: 'absolute', top: 0, left: '15%', right: '15%', height: 1, background: `linear-gradient(90deg, transparent, rgba(${accentRgb},0.5), transparent)` }} />
@@ -373,7 +373,7 @@ export default function StartupsPage() {
             </div>
 
             {/* Steps row */}
-            <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <div className="startups-steps" style={{ display: 'flex', alignItems: 'flex-start', gap: '0', justifyContent: 'center', flexWrap: 'wrap' }}>
               {steps.map((step, i) => {
                 const Icon = step.icon
                 return (
@@ -395,7 +395,7 @@ export default function StartupsPage() {
 
                     {/* Arrow between steps */}
                     {i < steps.length - 1 && (
-                      <div style={{ display: 'flex', alignItems: 'center', paddingTop: '1.4rem', flexShrink: 0 }}>
+                      <div className="startups-step-arrow" style={{ display: 'flex', alignItems: 'center', paddingTop: '1.4rem', flexShrink: 0 }}>
                         <div style={{ width: 24, height: 1, background: `rgba(${accentRgb},0.3)` }} />
                         <ArrowRight size={14} color={`rgba(${accentRgb},0.5)`} strokeWidth={2} />
                       </div>
@@ -432,7 +432,7 @@ export default function StartupsPage() {
               </h2>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.25rem' }}>
+            <div className="startups-testimonials-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.25rem' }}>
               {testimonials.map((t) => (
                 <div key={t.name} style={{ ...glassCard, padding: '2rem' }}>
                   <div style={{ position: 'absolute', top: 0, left: '15%', right: '15%', height: 1, background: `linear-gradient(90deg, transparent, ${t.color}66, transparent)` }} />
