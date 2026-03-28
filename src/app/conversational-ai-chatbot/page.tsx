@@ -160,7 +160,7 @@ export default function ConversationalAiChatbotPage() {
             top: '20%', right: '5%', pointerEvents: 'none',
           }} />
 
-          <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center', position: 'relative', zIndex: 1 }}>
+          <div className="aichatbot-hero-grid" style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center', position: 'relative', zIndex: 1 }}>
             <div>
               <div style={{
                 display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
@@ -236,7 +236,7 @@ export default function ConversationalAiChatbotPage() {
             pointerEvents: 'none',
           }} />
 
-          <div style={{
+          <div className="aichatbot-services-grid" style={{
             maxWidth: 1100, margin: '0 auto',
             display: 'grid', gridTemplateColumns: '1fr 1fr',
             gap: '4rem', alignItems: 'center',
@@ -316,7 +316,7 @@ export default function ConversationalAiChatbotPage() {
             pointerEvents: 'none',
           }} />
 
-          <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'start', position: 'relative', zIndex: 1 }}>
+          <div className="aichatbot-features-grid" style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'start', position: 'relative', zIndex: 1 }}>
             {/* Left heading sticky */}
             <div style={{ position: 'sticky', top: '6rem' }}>
               <div style={{
@@ -432,7 +432,7 @@ export default function ConversationalAiChatbotPage() {
               </p>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.25rem', marginTop: '3rem' }}>
+            <div className="aichatbot-why-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.25rem', marginTop: '3rem' }}>
               {whyChatbot.map((item) => {
                 const Icon = item.icon
                 return (
@@ -494,7 +494,7 @@ export default function ConversationalAiChatbotPage() {
             pointerEvents: 'none',
           }} />
 
-          <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center', position: 'relative', zIndex: 1 }}>
+          <div className="aichatbot-cta-grid" style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center', position: 'relative', zIndex: 1 }}>
             <div>
               <div style={{
                 display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
@@ -573,7 +573,7 @@ export default function ConversationalAiChatbotPage() {
               </h2>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.25rem' }}>
+            <div className="aichatbot-testimonials-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.25rem' }}>
               {testimonials.map((t) => (
                 <div
                   key={t.name}

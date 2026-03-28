@@ -1072,3 +1072,40 @@ html::-webkit-scrollbar {
     grid-template-columns: 1fr !important;
   }
 }
+
+@media (max-width: 768px) {
+  .aichatbot-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .aichatbot-services-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+    direction: ltr !important;
+  }
+
+  .aichatbot-features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .aichatbot-why-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .aichatbot-cta-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .aichatbot-testimonials-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .aichatbot-why-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
