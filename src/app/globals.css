@@ -888,3 +888,38 @@ html::-webkit-scrollbar {
     display: none !important;
   }
 }
+
+@media (max-width: 768px) {
+  .enterprise-advantages-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .enterprise-whatyouget-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+    direction: ltr !important;
+  }
+
+  .enterprise-howwehelp-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .enterprise-testimonials-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .enterprise-steps {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .enterprise-step-arrow {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .enterprise-advantages-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
