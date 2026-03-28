@@ -975,3 +975,36 @@ html::-webkit-scrollbar {
     grid-template-columns: repeat(2, 1fr) !important;
   }
 }
+
+
+@media (max-width: 768px) {
+  .wa-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .wa-split-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+    direction: ltr !important;
+  }
+
+  .wa-addons-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .wa-onboarding-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .wa-testimonials-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .wa-addons-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
