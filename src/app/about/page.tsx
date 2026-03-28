@@ -120,7 +120,7 @@ export default function AboutPage() {
           </p>
 
           {/* Stats */}
-          <div style={{
+          <div className="stats-grid" style={{
             display: 'inline-grid',
             gridTemplateColumns: 'repeat(4, 1fr)',
             gap: '0',
@@ -181,7 +181,7 @@ export default function AboutPage() {
           }} />
 
           <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-            <div style={{
+            <div className="values-grid" style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(3, 1fr)',
               gap: '1.5rem',
@@ -249,7 +249,7 @@ export default function AboutPage() {
             pointerEvents: 'none',
           }} />
 
-          <div style={{
+          <div className="careers-grid" style={{
             maxWidth: 900,
             margin: '0 auto',
             display: 'grid',

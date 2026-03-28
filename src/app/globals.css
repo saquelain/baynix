@@ -646,3 +646,28 @@ html::-webkit-scrollbar {
     justify-content: center !important;
   }
 }
+
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .values-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .careers-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+}
