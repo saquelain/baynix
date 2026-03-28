@@ -941,3 +941,37 @@ html::-webkit-scrollbar {
     gap: 2.5rem !important;
   }
 }
+
+@media (max-width: 768px) {
+  .smpp-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .smpp-features-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .smpp-global-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .smpp-why-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .smpp-testimonials-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .smpp-features-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .smpp-why-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
