@@ -754,3 +754,29 @@ html::-webkit-scrollbar {
     grid-template-columns: 1fr !important;
   }
 }
+
+@media (max-width: 768px) {
+  .fintech-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .fintech-tabs-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .fintech-conversions-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+    direction: ltr !important;
+  }
+
+  .fintech-benefits-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .fintech-testimonials-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
