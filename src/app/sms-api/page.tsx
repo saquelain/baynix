@@ -197,7 +197,7 @@ export default function SmsApiPage() {
             pointerEvents: 'none',
           }} />
 
-          <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center', position: 'relative', zIndex: 1 }}>
+          <div className="smsapi-hero-grid" style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center', position: 'relative', zIndex: 1 }}>
             <div>
               <div style={{
                 display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
@@ -291,7 +291,7 @@ export default function SmsApiPage() {
               </p>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.25rem' }}>
+            <div className="smsapi-features-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.25rem' }}>
               {features.map((f) => (
                 <div
                   key={f.title}
@@ -380,7 +380,7 @@ export default function SmsApiPage() {
               </div>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
+            <div className="smsapi-stats-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
               {stats.map((s) => (
                 <div key={s.label} style={{
                   padding: '2.5rem 2rem', textAlign: 'center',
@@ -523,7 +523,7 @@ export default function SmsApiPage() {
             top: '50%', right: '10%', pointerEvents: 'none',
           }} />
 
-          <div style={{
+          <div className="smsapi-cta-grid" style={{
             maxWidth: 1100, margin: '0 auto',
             display: 'grid', gridTemplateColumns: '1fr 1fr',
             gap: '4rem', alignItems: 'center',
