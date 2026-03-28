@@ -226,7 +226,7 @@ export default function LifePage() {
               </h2>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.25rem' }}>
+            <div className="perks-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.25rem' }}>
               {perks.map((perk) => (
                 <div
                   key={perk.title}
@@ -310,7 +310,7 @@ export default function LifePage() {
               </p>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.25rem' }}>
+            <div className="testimonials-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.25rem' }}>
               {testimonials.map((t) => (
                 <div
                   key={t.name}
@@ -418,7 +418,7 @@ export default function LifePage() {
             </div>
 
             {/* Image grid */}
-            <div style={{
+            <div className="events-grid" style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(4, 1fr)',
               gap: '1rem',
