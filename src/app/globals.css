@@ -1213,3 +1213,37 @@ html::-webkit-scrollbar {
     grid-template-columns: repeat(2, 1fr) !important;
   }
 }
+
+@media (max-width: 768px) {
+  .shortcode-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .shortcode-features-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .shortcode-why-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .shortcode-stats-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .shortcode-testimonials-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .shortcode-features-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .shortcode-stats-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
