@@ -1008,3 +1008,30 @@ html::-webkit-scrollbar {
     grid-template-columns: repeat(2, 1fr) !important;
   }
 }
+
+@media (max-width: 768px) {
+  .wacrm-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .wacrm-commerce-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+    direction: ltr !important;
+  }
+
+  .wacrm-features-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .wacrm-testimonials-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .wacrm-features-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}

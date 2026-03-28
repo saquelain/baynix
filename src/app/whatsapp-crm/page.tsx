@@ -158,7 +158,7 @@ export default function WhatsAppCrmPage() {
             top: '20%', right: '5%', pointerEvents: 'none',
           }} />
 
-          <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center', position: 'relative', zIndex: 1 }}>
+          <div className="wacrm-hero-grid" style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center', position: 'relative', zIndex: 1 }}>
             <div>
               <div style={{
                 display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
@@ -320,7 +320,7 @@ export default function WhatsAppCrmPage() {
             pointerEvents: 'none',
           }} />
 
-          <div style={{
+          <div className="wacrm-commerce-grid" style={{
             maxWidth: 1100, margin: '0 auto',
             display: 'grid', gridTemplateColumns: '1fr 1fr',
             gap: '4rem', alignItems: 'center',
@@ -423,7 +423,7 @@ export default function WhatsAppCrmPage() {
               </h2>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.25rem' }}>
+            <div className="wacrm-features-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.25rem' }}>
               {crmFeatures.map((f) => {
                 const Icon = f.icon
                 return (
@@ -536,7 +536,7 @@ export default function WhatsAppCrmPage() {
               </h2>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.25rem' }}>
+            <div className="wacrm-testimonials-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.25rem' }}>
               {testimonials.map((t) => (
                 <div
                   key={t.name}
