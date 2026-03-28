@@ -1457,3 +1457,43 @@ html::-webkit-scrollbar {
     grid-template-columns: repeat(2, 1fr) !important;
   }
 }
+
+@media (max-width: 768px) {
+  .ibd-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .ibd-services-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+    direction: ltr !important;
+  }
+
+  .ibd-cta-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .ibd-features-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .ibd-stats-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .ibd-testimonials-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .ibd-features-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .ibd-stats-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
