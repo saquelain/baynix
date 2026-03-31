@@ -78,6 +78,31 @@ export default function Footer() {
             }}>
               📧 hello@baynix.ai &nbsp;|&nbsp; 🌐 baynix.ai
             </p>
+            {/* Meta Business Partner — prestigious placement */}
+<div style={{
+  marginTop: '1.25rem',
+  display: 'inline-flex',
+  alignItems: 'center',
+  padding: '0.4rem 0.9rem',
+  borderRadius: 10,
+  background: 'rgba(255,255,255,0.04)',
+  border: '1px solid rgba(255,255,255,0.1)',
+  boxShadow: '0 0 20px rgba(24,119,242,0.2)',
+  transition: 'box-shadow 0.2s',
+}}
+onMouseEnter={e => (e.currentTarget.style.boxShadow = '0 0 32px rgba(24,119,242,0.4)')}
+onMouseLeave={e => (e.currentTarget.style.boxShadow = '0 0 20px rgba(24,119,242,0.2)')}
+>
+<a href="https://www.facebook.com/business/" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center' }}>
+  <Image
+    src="/images/certs/meta.png"
+    alt="Meta Business Partner"
+    width={180}
+    height={60}
+    style={{ objectFit: 'contain' }}
+  />
+</a>
+</div>
           </div>
 
           {/* Link columns */}
@@ -126,87 +151,83 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="footer-bottom" style={{
-          paddingTop: '2rem',
-          borderTop: '1px solid var(--border)',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: '1rem',
-        }}>
-          <p style={{ fontSize: '0.8rem', color: 'var(--text3)', margin: 0 }}>
-            © 2025–2026 Baynix. All Rights Reserved.
-          </p>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
-            {[
-              {
-                label: 'ISO 27001',
-                icon: (
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.25C17.25 22.15 21 17.25 21 12V7L12 2z"/>
-                    <path d="M9 12l2 2 4-4"/>
-                  </svg>
-                ),
-              },
-              {
-                label: 'VAPT',
-                icon: (
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="11" cy="11" r="8"/>
-                    <path d="M21 21l-4.35-4.35"/>
-                    <path d="M11 8v6M8 11h6"/>
-                  </svg>
-                ),
-              },
-              {
-                label: 'SOC 2 Type II',
-                icon: (
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="3" y="3" width="18" height="18" rx="2"/>
-                    <path d="M9 12l2 2 4-4"/>
-                    <path d="M3 9h18"/>
-                  </svg>
-                ),
-              },
-              {
-                label: 'Code Review',
-                icon: (
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="16 18 22 12 16 6"/>
-                    <polyline points="8 6 2 12 8 18"/>
-                    <path d="M12 2v20"/>
-                  </svg>
-                ),
-              },
-              {
-                label: 'SAR',
-                icon: (
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
-                    <polyline points="14 2 14 8 20 8"/>
-                    <path d="M9 13h6M9 17h4"/>
-                  </svg>
-                ),
-              },
-            ].map(({ label, icon }) => (
-              <span key={label} style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.4rem',
-                padding: '0.25rem 0.75rem',
-                border: '1px solid var(--border2)',
-                borderRadius: 6,
-                fontSize: '0.7rem',
-                color: 'var(--text3)',
-                letterSpacing: '0.05em',
-              }}>
-                {icon}
-                {label}
-              </span>
-            ))}
-          </div>
-        </div>
+        {/* Bottom */}
+<div className="footer-bottom" style={{
+  paddingTop: '2rem',
+  borderTop: '1px solid var(--border)',
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  flexWrap: 'wrap',
+  gap: '1rem',
+}}>
+  <p style={{ fontSize: '0.8rem', color: 'var(--text3)', margin: 0 }}>
+    © 2025–2026 Baynix. All Rights Reserved.
+  </p>
+
+{/* Trust Bar */}
+<div style={{
+  display: 'flex',
+  alignItems: 'center',
+  gap: '0.5rem',
+  flexWrap: 'wrap',
+  rowGap: '1rem',
+}}>
+  <span style={{
+    fontSize: '0.6rem',
+    color: 'var(--text3)',
+    textTransform: 'uppercase',
+    letterSpacing: '0.12em',
+    whiteSpace: 'nowrap',
+    marginRight: '0.25rem',
+  }}>
+    Certified &amp; Audited
+  </span>
+
+  <div style={{ width: 1, height: 36, background: 'var(--border2)' }} />
+
+  {[
+    { src: '/images/certs/iso27001.png',   alt: 'ISO 27001 Certified', width: 68, height: 68, circle: false, glow: 'rgba(59,130,246,0.3)'  },
+    { src: '/images/certs/vapt.png',       alt: 'VAPT Certified',      width: 68, height: 68, circle: true,  glow: 'rgba(59,130,246,0.3)'  },
+    { src: '/images/certs/soc2.png',       alt: 'SOC 2 Type II',       width: 76, height: 76, circle: true,  glow: 'rgba(56,189,248,0.3)'  },
+    { src: '/images/certs/code-review.png',alt: 'Code Review',         width: 68, height: 68, circle: true,  glow: 'rgba(99,102,241,0.35)', filter: 'invert(1) hue-rotate(200deg) saturate(3) brightness(1.2)' },
+    { src: '/images/certs/sar.png',        alt: 'SAR Audited',         width: 68, height: 68, circle: true,  glow: 'rgba(16,185,129,0.35)', filter: 'invert(1) hue-rotate(100deg) saturate(3) brightness(1.2)' },
+  ].map(({ src, alt, width, height, circle, glow, filter }) => (
+    <div
+      key={alt}
+      title={alt}
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: '50%',
+        boxShadow: `0 0 14px ${glow}`,
+        transition: 'transform 0.2s, box-shadow 0.2s',
+      }}
+      onMouseEnter={e => {
+        e.currentTarget.style.transform = 'translateY(-3px) scale(1.08)'
+        e.currentTarget.style.boxShadow = `0 0 26px ${glow}`
+      }}
+      onMouseLeave={e => {
+        e.currentTarget.style.transform = 'translateY(0) scale(1)'
+        e.currentTarget.style.boxShadow = `0 0 14px ${glow}`
+      }}
+    >
+      <Image
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        style={{
+          objectFit: 'contain',
+          borderRadius: circle ? '50%' : 4,
+          filter: filter ?? undefined,
+        }}
+      />
+    </div>
+  ))}
+</div>
+</div>
       </div>
     </footer>
 
