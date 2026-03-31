@@ -3,6 +3,7 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { useState } from 'react'
+import { QRCodeSVG } from 'qrcode.react'
 
 const industries = [
   'Healthcare', 'Education', 'Financial Services', 'eCommerce',
@@ -410,38 +411,22 @@ export default function ContactPage() {
                   Scan the Code and let's get the conversation going!
                 </p>
 
-                {/* QR Code placeholder */}
+                {/* Real WhatsApp QR Code */}
                 <div style={{
-                  width: 160, height: 160,
-                  margin: '0 auto 1.5rem',
-                  borderRadius: 16,
-                  background: '#fff',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  position: 'relative',
-                  overflow: 'hidden',
-                  boxShadow: '0 8px 32px rgba(0,0,0,0.3)',
+                margin: '0 auto 1.5rem',
+                padding: 14,
+                background: '#fff',
+                borderRadius: 16,
+                display: 'inline-block',
+                boxShadow: '0 8px 32px rgba(0,0,0,0.3)',
                 }}>
-                  {/* QR Code placeholder */}
-                <div style={{
-                    width: 160, height: 160,
-                    margin: '0 auto 1.5rem',
-                    borderRadius: 16,
-                    overflow: 'hidden',
-                    boxShadow: '0 8px 32px rgba(0,0,0,0.3)',
-                    }}>
-                    <img
-                        src="/images/whatsapp-qr.png"
-                        alt="WhatsApp QR Code"
-                        style={{
-                        width: '100%',
-                        height: '100%',
-                        paddingTop: 15,
-                        objectFit: 'contain',
-                        }}
-                    />
-                    </div>
+                <QRCodeSVG
+                    value="https://api.whatsapp.com/send/?phone=919773981832&text&type=phone_number&app_absent=0"
+                    size={148}
+                    fgColor="#128C7E"
+                    bgColor="#ffffff"
+                    level="H"
+                />
                 </div>
 
                 {/* Steps */}
@@ -502,7 +487,7 @@ export default function ContactPage() {
                 </p>
 
                 <a
-                  href="https://wa.me/919999999999"
+                  href="https://wa.me/919773981832"
                   className="glass-btn glass-btn-secondary"
                   style={{ width: '100%', justifyContent: 'center', fontSize: '0.82rem' }}
                 >
@@ -540,7 +525,7 @@ export default function ContactPage() {
 
                 {[
                   { icon: '✉️', label: 'Email', value: 'hello@baynix.ai', href: 'mailto:hello@baynix.ai' },
-                  { icon: '📞', label: 'Phone', value: '+91 99999 99999', href: 'tel:+919999999999' },
+                  { icon: '📞', label: 'Phone', value: '+91 97739 81832', href: 'tel:+919773981832' },
                   { icon: '📍', label: 'Office', value: 'Noida, Uttar Pradesh, India', href: '#' },
                 ].map((item) => (
                   <a
