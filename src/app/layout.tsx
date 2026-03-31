@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter, Geist, Manrope } from 'next/font/google'
 import './globals.css'
 import ScrollReveal from '@/components/ScrollReveal'
+import WhatsAppWidget from '@/components/WhatsAppWidget'
 
 const inter = Manrope({
   subsets: ['latin'],
@@ -36,6 +37,7 @@ export default function RootLayout({
         <div className="aurora-3" />
         <ScrollReveal />
         {children}
+        <WhatsAppWidget />
       </body>
     </html>
   )
