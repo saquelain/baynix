@@ -26,6 +26,13 @@ export type BattleCard = {
     iconColor: string
   }[]
   features: Feature[]
+  limitationsIntro: string   // 2-line what the competitor is
+  limitations: {
+    title: string
+    body: string
+    icon: string
+    iconColor: string
+  }[]
 }
 
 export const battlecards: BattleCard[] = [
@@ -76,6 +83,33 @@ export const battlecards: BattleCard[] = [
       { name: 'TRAI Compliant (India)',baynix: true,  competitor: false },
       { name: 'Dedicated Support',     baynix: true,  competitor: '⚠️ Chatbot only' },
     ],
+    limitationsIntro: 'WATI is a customer engagement tool built on WhatsApp\'s Business API. It features a shared team inbox, broadcast management, a chatbot builder, and other WhatsApp engagement tools. However, when you\'re scaling up, the limitations of a basic and WhatsApp-centric tool become glaringly obvious.',
+    limitations: [
+    {
+        icon: 'Receipt',
+        iconColor: '#f59e0b',
+        title: 'Hidden costs & sneaky pricing',
+        body: 'That "simple" plan? Not so simple. Restrictive user limits, confusing credits, and surprise add-ons mean the real cost is often much higher than advertised.',
+    },
+    {
+        icon: 'MousePointerClick',
+        iconColor: '#f87171',
+        title: 'Clunky UI/UX with limited automation',
+        body: 'The interface lags, you can\'t send voice messages from the web app, and critical features like chat search and filters barely work. Instead of saving time, your team ends up doing manual work.',
+    },
+    {
+        icon: 'PhoneOff',
+        iconColor: '#fb923c',
+        title: 'Poor customer support',
+        body: 'When issues hit, reliable help is hard to get, leaving you vulnerable during critical outages or technical glitches.',
+    },
+    {
+        icon: 'GitBranchPlus',
+        iconColor: '#c084fc',
+        title: 'Simple but inflexible automation builder',
+        body: 'The rigid, horizontal chatbot builder makes it difficult to create complex automation. As your needs grow, you\'ll find the tool lacks the flexibility to build complex customer journeys.',
+    },
+    ],
   },
   {
     slug: 'respond-io',
@@ -123,6 +157,33 @@ export const battlecards: BattleCard[] = [
       { name: 'Email API',             baynix: true,  competitor: false },
       { name: 'Go-live in 24 hrs',     baynix: true,  competitor: false },
     ],
+    limitationsIntro: 'Respond.io is a powerful omnichannel messaging CRM used by enterprises globally. It supports multiple channels and has a solid automation engine. But for Indian SMBs and growing startups, the cracks start showing quickly.',
+    limitations: [
+    {
+        icon: 'Receipt',
+        iconColor: '#f59e0b',
+        title: 'Enterprise pricing for SMB problems',
+        body: 'Respond.io charges per contact, and costs escalate fast as your list grows. What starts as $79/month quickly balloons with add-ons and seat limits.',
+    },
+    {
+        icon: 'Globe',
+        iconColor: '#f87171',
+        title: 'No India-specific compliance',
+        body: 'No DLT registration support, no TRAI compliance layer. For any business running SMS campaigns in India, this is a non-starter.',
+    },
+    {
+        icon: 'Zap',
+        iconColor: '#fb923c',
+        title: 'RCS is completely absent',
+        body: 'Respond.io has no RCS roadmap. As Indian carriers roll out RCS, businesses on Respond.io will be left behind.',
+    },
+    {
+        icon: 'Clock',
+        iconColor: '#c084fc',
+        title: 'Long and painful onboarding',
+        body: 'Getting live on Respond.io takes days of setup, training, and configuration. Baynix gets you sending in under 24 hours.',
+    },
+    ],
   },
   {
     slug: 'sleekflow',
@@ -169,6 +230,33 @@ export const battlecards: BattleCard[] = [
       { name: 'API-First SDK',         baynix: true,  competitor: '⚠️ Limited' },
       { name: 'Developer Docs',        baynix: true,  competitor: true  },
       { name: 'Transparent Pricing',   baynix: true,  competitor: '⚠️ Complex tiers' },
+    ],
+    limitationsIntro: 'SleekFlow is a feature-rich omnichannel suite popular in Southeast Asia. It covers WhatsApp, Instagram, Facebook, and more under one roof. But feature abundance comes with a cost — in price, complexity, and relevance for Indian businesses.',
+    limitations: [
+    {
+        icon: 'Layers',
+        iconColor: '#f59e0b',
+        title: 'Overwhelming complexity',
+        body: 'SleekFlow packs in CRM, AI agents, social commerce, and more. For most Indian businesses, 60% of these features go unused — but you\'re still paying for them.',
+    },
+    {
+        icon: 'Receipt',
+        iconColor: '#f87171',
+        title: 'Premium pricing without Indian context',
+        body: 'SleekFlow\'s plans are priced for SEA enterprise budgets. Indian SMBs end up overpaying for a platform that wasn\'t designed with their market in mind.',
+    },
+    {
+        icon: 'MapPin',
+        iconColor: '#fb923c',
+        title: 'No TRAI or DLT compliance',
+        body: 'SleekFlow has no built-in DLT registration or TRAI-compliant SMS routing. Running bulk SMS in India without this means your messages won\'t deliver.',
+    },
+    {
+        icon: 'Zap',
+        iconColor: '#c084fc',
+        title: 'No RCS support',
+        body: 'SleekFlow has no RCS offering. Baynix is RCS-ready today, giving your business a head start on India\'s next messaging channel.',
+    },
     ],
   },
 ]

@@ -6,13 +6,16 @@ import {
   DollarSign, Smartphone, Bot, BarChart3,
   Globe, ShieldCheck, Zap, Headphones,
   Lock, Clock, TrendingUp, Wrench,
-  type LucideIcon
+  type LucideIcon, Receipt, MousePointerClick, PhoneOff,
+  GitBranchPlus, MapPin, Layers,
 } from 'lucide-react'
 
 const iconMap: Record<string, LucideIcon> = {
   DollarSign, Smartphone, Bot, BarChart3,
   Globe, ShieldCheck, Zap, Headphones,
   Lock, Clock, TrendingUp, Wrench,
+  Receipt, MousePointerClick, PhoneOff,
+  GitBranchPlus, MapPin, Layers,
 }
 
 const CheckIcon = () => (
@@ -154,6 +157,7 @@ export default function BattlecardPage({ card }: { card: BattleCard }) {
               On this page
             </p>
             {[
+                { href: '#limitations', label: `${card.competitor}'s Limitations` },
               { href: '#comparison', label: 'Feature Comparison' },
               { href: '#pain-points', label: 'Key Differences' },
               { href: '#verdict', label: 'Final Verdict' },
@@ -225,6 +229,105 @@ export default function BattlecardPage({ card }: { card: BattleCard }) {
 
         {/* Main column */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
+
+            {/* Limitations Section */}
+<section id="limitations">
+  <div style={{
+    display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
+    fontSize: '0.72rem', textTransform: 'uppercase' as const,
+    letterSpacing: '0.12em', color: '#f87171',
+    padding: '0.3rem 0.8rem',
+    border: '1px solid rgba(248,113,113,0.3)',
+    borderRadius: 20,
+    background: 'rgba(248,113,113,0.08)',
+    marginBottom: '1.25rem',
+  }}>
+    Why switch?
+  </div>
+
+  <h2 style={{
+    fontSize: '1.4rem', fontWeight: 700,
+    marginBottom: '0.75rem', letterSpacing: '-0.02em',
+  }}>
+    Why you should consider a {card.competitor} alternative
+  </h2>
+
+  <p style={{
+    fontSize: '0.9rem', color: 'var(--text3)',
+    lineHeight: 1.8, fontWeight: 300,
+    marginBottom: '2rem',
+    padding: '1.25rem 1.5rem',
+    background: 'rgba(255,255,255,0.02)',
+    border: '1px solid var(--border)',
+    borderRadius: 12,
+    borderLeft: `3px solid ${card.accentColor}`,
+  }}>
+    {card.limitationsIntro}
+  </p>
+
+  <div style={{ display: 'flex', flexDirection: 'column' as const, gap: '1rem' }}>
+    {card.limitations.map((l, i) => {
+      const Icon = iconMap[l.icon] ?? Bot
+      return (
+        <div key={l.title} style={{
+          display: 'flex',
+          gap: '1.25rem',
+          padding: '1.25rem 1.5rem',
+          background: 'rgba(255,255,255,0.02)',
+          border: '1px solid var(--border)',
+          borderRadius: 14,
+          alignItems: 'flex-start',
+          transition: 'border-color 0.2s, background 0.2s',
+        }}
+        onMouseEnter={e => {
+          e.currentTarget.style.borderColor = `${l.iconColor}40`
+          e.currentTarget.style.background = 'rgba(255,255,255,0.04)'
+        }}
+        onMouseLeave={e => {
+          e.currentTarget.style.borderColor = 'var(--border)'
+          e.currentTarget.style.background = 'rgba(255,255,255,0.02)'
+        }}
+        >
+          {/* Number + Icon */}
+          <div style={{ display: 'flex', flexDirection: 'column' as const, alignItems: 'center', gap: '0.4rem', flexShrink: 0 }}>
+            <div style={{
+              width: 40, height: 40,
+              borderRadius: 10,
+              background: `${l.iconColor}15`,
+              border: `1px solid ${l.iconColor}30`,
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              boxShadow: `0 0 12px ${l.iconColor}15`,
+            }}>
+              <Icon size={18} color={l.iconColor} strokeWidth={1.8} />
+            </div>
+            <span style={{
+              fontSize: '0.65rem', fontWeight: 700,
+              color: 'var(--text3)', letterSpacing: '0.05em',
+            }}>
+              0{i + 1}
+            </span>
+          </div>
+
+          {/* Content */}
+          <div>
+            <h3 style={{
+              fontSize: '0.95rem', fontWeight: 700,
+              color: 'var(--text)', marginBottom: '0.4rem',
+            }}>
+              {l.title}
+            </h3>
+            <p style={{
+              fontSize: '0.82rem', color: 'var(--text3)',
+              lineHeight: 1.7, fontWeight: 300, margin: 0,
+            }}>
+              {l.body}
+            </p>
+          </div>
+        </div>
+      )
+    })}
+  </div>
+</section>
 
           {/* Comparison Table */}
           <section id="comparison">
