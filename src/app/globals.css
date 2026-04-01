@@ -1743,3 +1743,15 @@ html::-webkit-scrollbar {
     gap: 1.5rem !important;
   }
 }
+
+@media (max-width: 768px) {
+  .battlecard-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .battlecard-sidebar {
+    position: static !important;
+  }
+  .pain-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
