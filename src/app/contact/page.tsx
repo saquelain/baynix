@@ -42,19 +42,40 @@ export default function ContactPage() {
     email: '', industry: '', phone: '', message: '', captcha: '',
   })
   const [focused, setFocused] = useState<string | null>(null)
-  const [submitted, setSubmitted] = useState(false)
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
 
   const handleChange = (field: string, value: string) => {
     setForm(prev => ({ ...prev, [field]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (form.captcha.trim() !== '4') {
       alert('Please solve the math problem correctly.')
       return
     }
-    setSubmitted(true)
+    setStatus('sending')
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          firstName: form.firstName,
+          lastName: form.lastName,
+          company: form.company,
+          jobTitle: form.jobTitle,
+          email: form.email,
+          phone: form.phone,
+          industry: form.industry,
+          message: form.message,
+          source: 'Contact',
+        }),
+      })
+      if (!res.ok) throw new Error()
+      setStatus('success')
+    } catch {
+      setStatus('error')
+    }
   }
 
   const getFocusStyle = (field: string) => focused === field ? {
@@ -179,7 +200,7 @@ export default function ContactPage() {
                 background: 'linear-gradient(90deg, transparent, rgba(99,102,241,0.5), transparent)',
               }} />
 
-              {submitted ? (
+              {status === 'success' ? (
                 <div style={{ textAlign: 'center', padding: '3rem 1rem' }}>
                   <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>✅</div>
                   <h3 style={{ fontSize: '1.4rem', fontWeight: 700, color: 'var(--text)', marginBottom: '0.5rem' }}>
@@ -347,8 +368,19 @@ export default function ContactPage() {
                     While submitting this form, I agree to receive communication from Baynix via SMS, Email, RCS and WhatsApp for my service, offers and updates.
                   </p>
 
-                  <button type="submit" className="glass-btn glass-btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
-                    Send Message →
+                  {status === 'error' && (
+                    <p style={{ fontSize: '0.8rem', color: '#f87171', marginBottom: '0.75rem' }}>
+                      Something went wrong. Please try again.
+                    </p>
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={status === 'sending'}
+                    className="glass-btn glass-btn-primary"
+                    style={{ width: '100%', justifyContent: 'center', opacity: status === 'sending' ? 0.7 : 1 }}
+                  >
+                    {status === 'sending' ? 'Sending…' : 'Send Message →'}
                   </button>
                 </form>
               )}

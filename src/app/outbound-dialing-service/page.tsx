@@ -8,6 +8,7 @@ import {
   ListChecks, Bell, Radio, Globe2, UserCog,
   CheckCircle, TrendingUp, DollarSign,
 } from 'lucide-react'
+import CTASectionForm from '@/components/CTASectionForm'
 
 // ── Voice Messaging Features ───────────────────────────────────────────
 const features = [
@@ -132,15 +133,8 @@ const cardLeave = (e: React.MouseEvent<HTMLDivElement>) => {
 }
 
 export default function OutboundDialingPage() {
-  const [openFaq, setOpenFaq]     = useState<number | null>(0)
-  const [focused, setFocused]     = useState<string | null>(null)
-  const [form, setForm]           = useState({ name: '', email: '', message: '' })
-  const [submitted, setSubmitted] = useState(false)
+  const [openFaq, setOpenFaq]     = useState<number | null>(0)
 
-  const getFocusStyle = (field: string) =>
-    focused === field
-      ? { ...inputStyle, border: '1px solid rgba(99,102,241,0.5)', background: 'rgba(255,255,255,0.06)', boxShadow: '0 0 0 3px rgba(99,102,241,0.1)' }
-      : inputStyle
 
   return (
     <>
@@ -373,29 +367,7 @@ export default function OutboundDialingPage() {
             <div style={{ padding: '2.5rem', background: 'rgba(255,255,255,0.03)', backdropFilter: 'blur(32px)', WebkitBackdropFilter: 'blur(32px)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 24, boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.07), 0 24px 60px rgba(0,0,0,0.3)', position: 'relative', overflow: 'hidden' }}>
               <div style={{ position: 'absolute', top: 0, left: '15%', right: '15%', height: 1, background: 'linear-gradient(90deg, transparent, rgba(99,102,241,0.5), transparent)' }} />
 
-              {submitted ? (
-                <div style={{ textAlign: 'center', padding: '2rem' }}>
-                  <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>✅</div>
-                  <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--text)', marginBottom: '0.5rem' }}>Enquiry Sent!</h3>
-                  <p style={{ color: 'var(--text2)', fontWeight: 300 }}>We'll get back to you within 24 hours.</p>
-                </div>
-              ) : (
-                <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true) }}>
-                  <div style={{ marginBottom: '1rem' }}>
-                    <label style={{ fontSize: '0.8rem', fontWeight: 500, color: 'var(--text2)', marginBottom: '0.4rem', display: 'block' }}>Name *</label>
-                    <input type="text" placeholder="Your name" required value={form.name} onChange={e => setForm(p => ({ ...p, name: e.target.value }))} onFocus={() => setFocused('name')} onBlur={() => setFocused(null)} style={getFocusStyle('name')} />
-                  </div>
-                  <div style={{ marginBottom: '1rem' }}>
-                    <label style={{ fontSize: '0.8rem', fontWeight: 500, color: 'var(--text2)', marginBottom: '0.4rem', display: 'block' }}>Email *</label>
-                    <input type="email" placeholder="your@email.com" required value={form.email} onChange={e => setForm(p => ({ ...p, email: e.target.value }))} onFocus={() => setFocused('email')} onBlur={() => setFocused(null)} style={getFocusStyle('email')} />
-                  </div>
-                  <div style={{ marginBottom: '1.5rem' }}>
-                    <label style={{ fontSize: '0.8rem', fontWeight: 500, color: 'var(--text2)', marginBottom: '0.4rem', display: 'block' }}>Message *</label>
-                    <textarea placeholder="Tell us about your requirements..." required rows={4} value={form.message} onChange={e => setForm(p => ({ ...p, message: e.target.value }))} onFocus={() => setFocused('msg')} onBlur={() => setFocused(null)} style={{ ...getFocusStyle('msg'), resize: 'vertical' as const, minHeight: 100 }} />
-                  </div>
-                  <button type="submit" className="glass-btn glass-btn-primary" style={{ width: '100%', justifyContent: 'center' }}>Enquiry Now →</button>
-                </form>
-              )}
+              <CTASectionForm />
             </div>
           </div>
         </section>

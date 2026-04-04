@@ -3,36 +3,7 @@
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
-
-// Map URL paths to product names (hidden from user, sent with form)
-function detectProduct(pathname: string): string {
-  const map: Record<string, string> = {
-    '/bulk-sms':        'Bulk SMS',
-    '/whatsapp-api':    'WhatsApp API',
-    '/rcs-messaging':   'RCS Messaging',
-    '/voice':           'Voice Solutions',
-    '/email-api':       'Email API',
-    '/otp-authenticator': 'OTP Authenticator',
-    '/e-commerce-d2c':  'E-Commerce / D2C',
-    '/bsfi-fintech':    'BFSI & Fintech',
-    '/edtech':          'EdTech',
-    '/logistics':       'Logistics',
-    '/health-care':     'Healthcare',
-    '/start-ups':       'Startups',
-    '/pricing':         'Pricing',
-    '/about':           'About',
-    '/api-docs/sms':    'SMS API Docs',
-    '/api-docs/otp':    'OTP API Docs',
-    '/api-docs/whatsapp/create-templates': 'WhatsApp API Docs',
-    '/api-docs/whatsapp/send-templates':   'WhatsApp API Docs',
-    '/api-docs/whatsapp/conversation-api': 'WhatsApp API Docs',
-    '/api-docs/rcs':    'RCS API Docs',
-  }
-  for (const [key, val] of Object.entries(map)) {
-    if (pathname.startsWith(key)) return val
-  }
-  return 'General'
-}
+import { detectPage } from '@/lib/detectPage'
 
 interface Props {
   isOpen: boolean
@@ -41,7 +12,7 @@ interface Props {
 
 export default function GetInTouchModal({ isOpen, onClose }: Props) {
   const pathname = usePathname()
-  const product = detectProduct(pathname)
+  const source = detectPage(pathname)
 
   const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' })
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
@@ -73,7 +44,7 @@ export default function GetInTouchModal({ isOpen, onClose }: Props) {
       await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, product }),
+        body: JSON.stringify({ ...form, source }),
       })
       setStatus('success')
       setForm({ name: '', email: '', phone: '', message: '' })

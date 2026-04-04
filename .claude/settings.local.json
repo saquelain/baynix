@@ -4,7 +4,13 @@
       "Bash(find C:/Users/saque/Downloads/baynix/src -type f -name \"*.tsx\" -o -name \"*.ts\" -o -name \"*.jsx\" -o -name \"*.js\" | xargs grep -l \"developer\" 2>/dev/null | head -20)",
       "Bash(grep -n '\\\\${{' \"C:/Users/saque/Downloads/baynix/src/app/api-docs/page.tsx\")",
       "Bash(grep -n 'Total: \\\\${{' \"/c/Users/saque/Downloads/baynix/src/app/api-docs/page.tsx\")",
-      "Bash(npx tsc:*)"
+      "Bash(npx tsc:*)",
+      "Bash(grep -l \"CTABanner\\\\|GetInTouchModal\\\\|Contact\\\\|glass-btn\" /d/baynix/src/app/*/page.tsx)",
+      "Bash(ls /d/baynix/src/app/*/page.tsx)",
+      "Bash(grep -l \"GetInTouchModal\\\\|setModalOpen\\\\|useState.*modal\" /d/baynix/src/app/*/page.tsx)",
+      "Bash(grep:*)",
+      "Bash(node fix-forms.mjs)",
+      "Bash(node:*)"
     ]
   }
 }
