@@ -46,17 +46,18 @@ export default function ImageBox({
         background,
         border,
         position: 'relative',
-        overflow: 'hidden',
         boxShadow,
         padding,
         ...wrapperStyle,
       }}
     >
       <Image
+        {...imageProps}
         width={width}
         height={height}
         sizes={sizes}
         priority={priority}
+        loading={priority ? 'eager' : undefined}
         style={{
           width: '100%',
           height: 'auto',
@@ -64,7 +65,6 @@ export default function ImageBox({
           ...imageStyle,
           ...style,
         }}
-        {...imageProps}
       />
       {children}
     </div>
