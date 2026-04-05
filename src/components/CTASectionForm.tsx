@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { detectPage } from '@/lib/detectPage'
+import { CheckCircle } from 'lucide-react'
 
 const inputStyle: React.CSSProperties = {
   width: '100%',
@@ -64,7 +65,7 @@ export default function CTASectionForm() {
   if (status === 'success') {
     return (
       <div style={{ textAlign: 'center', padding: '2rem' }}>
-        <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>✅</div>
+        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}><CheckCircle size={48} color="#10b981" /></div>
         <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--text)', marginBottom: '0.5rem' }}>Enquiry Sent!</h3>
         <p style={{ color: 'var(--text2)', fontWeight: 300 }}>We'll get back to you within 24 hours.</p>
       </div>

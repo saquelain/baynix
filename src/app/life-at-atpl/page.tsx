@@ -5,40 +5,41 @@ import Footer from '@/components/Footer'
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { TrendingUp, Globe, DollarSign, HeartPulse, Clock, Sparkles, type LucideIcon } from 'lucide-react'
 
-const perks = [
+const perks: { icon: LucideIcon; title: string; desc: string; color: string }[] = [
   {
-    icon: '📈',
+    icon: TrendingUp,
     title: 'Career Growth',
     desc: 'Unlock your potential with our structured career development programs, mentoring, and opportunities for advancement. We are committed to helping you reach new heights in your professional journey.',
     color: '#3b82f6',
   },
   {
-    icon: '🌍',
+    icon: Globe,
     title: 'Work From Anywhere',
     desc: "Enjoy the freedom to work from any location, whether it's your home, a cafe, or a beach. Our flexible remote work policy supports your productivity and work-life balance.",
     color: '#10b981',
   },
   {
-    icon: '💰',
+    icon: DollarSign,
     title: 'Smart Salary',
     desc: "Benefit from a competitive salary package designed to reward your skills and experience. We offer performance bonuses and regular salary reviews to ensure you're always compensated fairly.",
     color: '#f59e0b',
   },
   {
-    icon: '🏥',
+    icon: HeartPulse,
     title: 'Medical Insurance',
     desc: 'Stay healthy and secure with our comprehensive medical insurance plans. We cover a range of medical needs to ensure you and your family are protected and well taken care of.',
     color: '#ec4899',
   },
   {
-    icon: '⏰',
+    icon: Clock,
     title: 'Flexible Hours',
     desc: 'Achieve a better work-life balance with our flexible working hours. Tailor your schedule to fit your personal and professional needs, ensuring you perform at your best.',
     color: '#22d3ee',
   },
   {
-    icon: '🎉',
+    icon: Sparkles,
     title: 'Amazing Work Culture',
     desc: 'Thrive in a positive and inclusive work environment. We foster collaboration, celebrate achievements, and support your growth with team-building activities and a culture of mutual respect.',
     color: '#a78bfa',
@@ -264,9 +265,9 @@ export default function LifePage() {
                     width: 48, height: 48, borderRadius: 14,
                     background: `${perk.color}15`, border: `1px solid ${perk.color}33`,
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    fontSize: '1.4rem', marginBottom: '1.25rem',
+                    marginBottom: '1.25rem',
                   }}>
-                    {perk.icon}
+                    {(() => { const Icon = perk.icon; return <Icon size={22} color={perk.color} /> })()}
                   </div>
                   <h3 style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--text)', marginBottom: '0.6rem', letterSpacing: '-0.02em' }}>
                     {perk.title}

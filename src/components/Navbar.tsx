@@ -3,6 +3,14 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
+import {
+  ShoppingCart, Landmark, GraduationCap, Truck, HeartPulse,
+  Rocket, Building2, Link2, Settings, Heart, FolderOpen,
+  Bot, Sparkles, MailOpen, Smartphone, KeyRound, Hash,
+  Mail, Radio, BookOpen, Mic, Bell, Phone, Upload, Download,
+  PhoneOff, Palette, Newspaper, MessageSquare, Shield,
+  type LucideIcon,
+} from 'lucide-react'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -34,83 +42,83 @@ export default function Navbar() {
     { label: 'Pricing', href: '/#pricing' },
   ]
 
-  const solutionSections = [
+  const solutionSections: { heading: string; links: { label: string; href: string; icon: LucideIcon }[] }[] = [
     {
       heading: 'By Industry',
       links: [
-        { label: 'E-Commerce & D2C', href: '/e-commerce-d2c', emoji: '🛒' },
-        { label: 'BSFI & Fintech', href: '/bsfi-fintech', emoji: '🏦' },
-        { label: 'Edtech', href: '/edtech', emoji: '🎓' },
-        { label: 'Logistics', href: '/logistics', emoji: '🚚' },
-        { label: 'Health Care', href: '/health-care', emoji: '🏥' },
+        { label: 'E-Commerce & D2C', href: '/e-commerce-d2c', icon: ShoppingCart },
+        { label: 'BSFI & Fintech', href: '/bsfi-fintech', icon: Landmark },
+        { label: 'Edtech', href: '/edtech', icon: GraduationCap },
+        { label: 'Logistics', href: '/logistics', icon: Truck },
+        { label: 'Health Care', href: '/health-care', icon: HeartPulse },
       ],
     },
     {
       heading: 'By Business Type',
       links: [
-        { label: 'Startups', href: '/start-ups', emoji: '🚀' },
-        { label: 'Enterprises', href: '/enterprises', emoji: '🏢' },
+        { label: 'Startups', href: '/start-ups', icon: Rocket },
+        { label: 'Enterprises', href: '/enterprises', icon: Building2 },
       ],
     },
   ]
 
-  const productSections = [
+  const productSections: { heading: string; links: { label: string; href: string; icon: LucideIcon }[] }[] = [
     {
       heading: 'Integrations',
       links: [
-        { label: 'Click to WhatsApp Ads', href: '/click-to-whatsapp-ads', emoji: '🔗' },
-        { label: 'SMPP Platform', href: '/smpp-platform', emoji: '⚙️' },
+        { label: 'Click to WhatsApp Ads', href: '/click-to-whatsapp-ads', icon: Link2 },
+        { label: 'SMPP Platform', href: '/smpp-platform', icon: Settings },
       ],
     },
     {
       heading: 'WhatsApp',
       links: [
-        { label: 'WhatsApp Business API', href: '/whatsapp-api', emoji: '💚' },
-        { label: 'WhatsApp CRM', href: '/whatsapp-crm', emoji: '🗂️' },
-        { label: 'WhatsApp Chatbot', href: '/whatsapp-chatbot', emoji: '🤖' },
-        { label: 'Conversational AI Chatbot', href: '/conversational-ai-chatbot', emoji: '✨' },
+        { label: 'WhatsApp Business API', href: '/whatsapp-api', icon: Heart },
+        { label: 'WhatsApp CRM', href: '/whatsapp-crm', icon: FolderOpen },
+        { label: 'WhatsApp Chatbot', href: '/whatsapp-chatbot', icon: Bot },
+        { label: 'Conversational AI Chatbot', href: '/conversational-ai-chatbot', icon: Sparkles },
       ],
     },
     {
       heading: 'SMS Messaging',
       links: [
-        { label: 'RCS Messaging', href: '/rcs-messaging', emoji: '📨' },
-        { label: 'Bulk SMS', href: '/bulk-sms', emoji: '📱' },
-        { label: 'OTP Authenticator', href: '/otp-authenticator', emoji: '🔐' },
-        { label: 'Short Code', href: '/shortcode', emoji: '🔢' },
-        { label: 'Email to SMS', href: '/email-to-sms', emoji: '📧' },
-        { label: 'Long Code', href: '/longcode', emoji: '📟' },
+        { label: 'RCS Messaging', href: '/rcs-messaging', icon: MailOpen },
+        { label: 'Bulk SMS', href: '/bulk-sms', icon: Smartphone },
+        { label: 'OTP Authenticator', href: '/otp-authenticator', icon: KeyRound },
+        { label: 'Short Code', href: '/shortcode', icon: Hash },
+        { label: 'Email to SMS', href: '/email-to-sms', icon: Mail },
+        { label: 'Long Code', href: '/longcode', icon: Radio },
       ],
     },
     {
       heading: 'Voice Solutions',
       links: [
-        { label: 'Voice', href: '/voice', emoji: '🎙️' },
-        { label: 'Voice OTP', href: '/voice-otp', emoji: '🔔' },
-        { label: 'IVR System', href: '/ivr-system', emoji: '📞' },
-        { label: 'Outbound Dialing Service', href: '/outbound-dialing-service', emoji: '📤' },
-        { label: 'Inbound Dialing Service', href: '/inbound-dialing-service', emoji: '📥' },
-        { label: 'Missed Call Service', href: '/missed-call-service', emoji: '📵' },
-        { label: 'Number Masking', href: '/number-masking', emoji: '🎭' },
+        { label: 'Voice', href: '/voice', icon: Mic },
+        { label: 'Voice OTP', href: '/voice-otp', icon: Bell },
+        { label: 'IVR System', href: '/ivr-system', icon: Phone },
+        { label: 'Outbound Dialing Service', href: '/outbound-dialing-service', icon: Upload },
+        { label: 'Inbound Dialing Service', href: '/inbound-dialing-service', icon: Download },
+        { label: 'Missed Call Service', href: '/missed-call-service', icon: PhoneOff },
+        { label: 'Number Masking', href: '/number-masking', icon: Palette },
       ],
     },
   ]
 
-  const companyLinks = [
-    { label: 'About Us', href: '/about', emoji: '🏢' },
-    { label: 'Life at ATPL', href: '/life-at-atpl', emoji: '✨' },
-    { label: 'Career', href: '/career', emoji: '🚀' },
-    { label: 'Media Coverage', href: '/media-coverage', emoji: '📰' },
-    { label: 'Contact Us', href: '/contact', emoji: '💬' },
+  const companyLinks: { label: string; href: string; icon: LucideIcon }[] = [
+    { label: 'About Us', href: '/about', icon: Building2 },
+    { label: 'Life at ATPL', href: '/life-at-atpl', icon: Sparkles },
+    { label: 'Career', href: '/career', icon: Rocket },
+    { label: 'Media Coverage', href: '/media-coverage', icon: Newspaper },
+    { label: 'Contact Us', href: '/contact', icon: MessageSquare },
   ]
 
-  const devLinks = [
-    { label: 'SMS API', href: '/sms-api', emoji: '💬' },
-    { label: 'Voice API', href: '/voice-api', emoji: '🎙️' },
-    { label: 'OTP API', href: '/otp-api', emoji: '🔐' },
-    { label: 'Email API', href: '/email-api', emoji: '✉️' },
-    { label: 'SMS Gateway', href: '/sms-gateway', emoji: '📡' },
-    { label: 'API Docs', href: '/api-docs/sms', emoji: '📖' },
+  const devLinks: { label: string; href: string; icon: LucideIcon }[] = [
+    { label: 'SMS API', href: '/sms-api', icon: MessageSquare },
+    { label: 'Voice API', href: '/voice-api', icon: Mic },
+    { label: 'OTP API', href: '/otp-api', icon: KeyRound },
+    { label: 'Email API', href: '/email-api', icon: Mail },
+    { label: 'SMS Gateway', href: '/sms-gateway', icon: Radio },
+    { label: 'API Docs', href: '/api-docs/sms', icon: BookOpen },
   ]
 
   const dropdownBase = {
@@ -263,36 +271,38 @@ export default function Navbar() {
                 background: 'linear-gradient(90deg, transparent, rgba(99,102,241,0.5), transparent)',
               }} />
 
-              {companyLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  style={dropdownLinkStyle}
-                  onMouseEnter={e => {
-                    e.currentTarget.style.background = 'rgba(255,255,255,0.06)'
-                    e.currentTarget.style.color = '#fff'
-                  }}
-                  onMouseLeave={e => {
-                    e.currentTarget.style.background = 'transparent'
-                    e.currentTarget.style.color = 'var(--text2)'
-                  }}
-                >
-                  <span style={{
-                    width: 28, height: 28,
-                    borderRadius: 8,
-                    background: 'rgba(99,102,241,0.1)',
-                    border: '1px solid rgba(99,102,241,0.2)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '0.8rem',
-                    flexShrink: 0,
-                  }}>
-                    {link.emoji}
-                  </span>
-                  {link.label}
-                </a>
-              ))}
+              {companyLinks.map((link) => {
+                const Icon = link.icon
+                return (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    style={dropdownLinkStyle}
+                    onMouseEnter={e => {
+                      e.currentTarget.style.background = 'rgba(255,255,255,0.06)'
+                      e.currentTarget.style.color = '#fff'
+                    }}
+                    onMouseLeave={e => {
+                      e.currentTarget.style.background = 'transparent'
+                      e.currentTarget.style.color = 'var(--text2)'
+                    }}
+                  >
+                    <span style={{
+                      width: 28, height: 28,
+                      borderRadius: 8,
+                      background: 'rgba(99,102,241,0.1)',
+                      border: '1px solid rgba(99,102,241,0.2)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      flexShrink: 0,
+                    }}>
+                      <Icon size={14} />
+                    </span>
+                    {link.label}
+                  </a>
+                )
+              })}
             </div>
           </li>
 
@@ -342,32 +352,34 @@ export default function Navbar() {
                     }}>
                       {section.heading}
                     </div>
-                    {section.links.map((link) => (
-                      <a
-                        key={link.label}
-                        href={link.href}
-                        style={dropdownLinkStyle}
-                        onMouseEnter={e => {
-                          e.currentTarget.style.background = 'rgba(255,255,255,0.06)'
-                          e.currentTarget.style.color = '#fff'
-                        }}
-                        onMouseLeave={e => {
-                          e.currentTarget.style.background = 'transparent'
-                          e.currentTarget.style.color = 'var(--text2)'
-                        }}
-                      >
-                        <span style={{
-                          width: 26, height: 26, borderRadius: 7, flexShrink: 0,
-                          background: 'rgba(16,185,129,0.08)',
-                          border: '1px solid rgba(16,185,129,0.15)',
-                          display: 'flex', alignItems: 'center', justifyContent: 'center',
-                          fontSize: '0.75rem',
-                        }}>
-                          {link.emoji}
-                        </span>
-                        {link.label}
-                      </a>
-                    ))}
+                    {section.links.map((link) => {
+                      const Icon = link.icon
+                      return (
+                        <a
+                          key={link.label}
+                          href={link.href}
+                          style={dropdownLinkStyle}
+                          onMouseEnter={e => {
+                            e.currentTarget.style.background = 'rgba(255,255,255,0.06)'
+                            e.currentTarget.style.color = '#fff'
+                          }}
+                          onMouseLeave={e => {
+                            e.currentTarget.style.background = 'transparent'
+                            e.currentTarget.style.color = 'var(--text2)'
+                          }}
+                        >
+                          <span style={{
+                            width: 26, height: 26, borderRadius: 7, flexShrink: 0,
+                            background: 'rgba(16,185,129,0.08)',
+                            border: '1px solid rgba(16,185,129,0.15)',
+                            display: 'flex', alignItems: 'center', justifyContent: 'center',
+                          }}>
+                            <Icon size={13} />
+                          </span>
+                          {link.label}
+                        </a>
+                      )
+                    })}
                   </div>
                 ))}
               </div>
@@ -425,32 +437,34 @@ export default function Navbar() {
                     }}>
                       {section.heading}
                     </div>
-                    {section.links.map((link) => (
-                      <a
-                        key={link.label}
-                        href={link.href}
-                        style={dropdownLinkStyle}
-                        onMouseEnter={e => {
-                          e.currentTarget.style.background = 'rgba(255,255,255,0.06)'
-                          e.currentTarget.style.color = '#fff'
-                        }}
-                        onMouseLeave={e => {
-                          e.currentTarget.style.background = 'transparent'
-                          e.currentTarget.style.color = 'var(--text2)'
-                        }}
-                      >
-                        <span style={{
-                          width: 26, height: 26, borderRadius: 7, flexShrink: 0,
-                          background: 'rgba(59,130,246,0.08)',
-                          border: '1px solid rgba(59,130,246,0.15)',
-                          display: 'flex', alignItems: 'center', justifyContent: 'center',
-                          fontSize: '0.75rem',
-                        }}>
-                          {link.emoji}
-                        </span>
-                        {link.label}
-                      </a>
-                    ))}
+                    {section.links.map((link) => {
+                      const Icon = link.icon
+                      return (
+                        <a
+                          key={link.label}
+                          href={link.href}
+                          style={dropdownLinkStyle}
+                          onMouseEnter={e => {
+                            e.currentTarget.style.background = 'rgba(255,255,255,0.06)'
+                            e.currentTarget.style.color = '#fff'
+                          }}
+                          onMouseLeave={e => {
+                            e.currentTarget.style.background = 'transparent'
+                            e.currentTarget.style.color = 'var(--text2)'
+                          }}
+                        >
+                          <span style={{
+                            width: 26, height: 26, borderRadius: 7, flexShrink: 0,
+                            background: 'rgba(59,130,246,0.08)',
+                            border: '1px solid rgba(59,130,246,0.15)',
+                            display: 'flex', alignItems: 'center', justifyContent: 'center',
+                          }}>
+                            <Icon size={13} />
+                          </span>
+                          {link.label}
+                        </a>
+                      )
+                    })}
                   </div>
                 ))}
               </div>
@@ -498,36 +512,38 @@ export default function Navbar() {
                 background: 'linear-gradient(90deg, transparent, rgba(34,211,238,0.5), transparent)',
               }} />
 
-              {devLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  style={dropdownLinkStyle}
-                  onMouseEnter={e => {
-                    e.currentTarget.style.background = 'rgba(255,255,255,0.06)'
-                    e.currentTarget.style.color = '#fff'
-                  }}
-                  onMouseLeave={e => {
-                    e.currentTarget.style.background = 'transparent'
-                    e.currentTarget.style.color = 'var(--text2)'
-                  }}
-                >
-                  <span style={{
-                    width: 28, height: 28,
-                    borderRadius: 8,
-                    background: 'rgba(34,211,238,0.08)',
-                    border: '1px solid rgba(34,211,238,0.15)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '0.8rem',
-                    flexShrink: 0,
-                  }}>
-                    {link.emoji}
-                  </span>
-                  {link.label}
-                </a>
-              ))}
+              {devLinks.map((link) => {
+                const Icon = link.icon
+                return (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    style={dropdownLinkStyle}
+                    onMouseEnter={e => {
+                      e.currentTarget.style.background = 'rgba(255,255,255,0.06)'
+                      e.currentTarget.style.color = '#fff'
+                    }}
+                    onMouseLeave={e => {
+                      e.currentTarget.style.background = 'transparent'
+                      e.currentTarget.style.color = 'var(--text2)'
+                    }}
+                  >
+                    <span style={{
+                      width: 28, height: 28,
+                      borderRadius: 8,
+                      background: 'rgba(34,211,238,0.08)',
+                      border: '1px solid rgba(34,211,238,0.15)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      flexShrink: 0,
+                    }}>
+                      <Icon size={14} />
+                    </span>
+                    {link.label}
+                  </a>
+                )
+              })}
             </div>
           </li>
 
@@ -619,12 +635,15 @@ export default function Navbar() {
             </button>
             {mobileCompanyOpen && (
               <div style={{ paddingBottom: '0.75rem' }}>
-                {companyLinks.map((link) => (
-                  <a key={link.label} href={link.href} onClick={closeMobileMenu} style={mobileLinkStyle}>
-                    <span style={{ fontSize: '1rem', flexShrink: 0 }}>{link.emoji}</span>
-                    {link.label}
-                  </a>
-                ))}
+                {companyLinks.map((link) => {
+                  const Icon = link.icon
+                  return (
+                    <a key={link.label} href={link.href} onClick={closeMobileMenu} style={mobileLinkStyle}>
+                      <Icon size={16} style={{ flexShrink: 0 }} />
+                      {link.label}
+                    </a>
+                  )
+                })}
               </div>
             )}
           </div>
@@ -646,12 +665,15 @@ export default function Navbar() {
                     }}>
                       {section.heading}
                     </div>
-                    {section.links.map((link) => (
-                      <a key={link.label} href={link.href} onClick={closeMobileMenu} style={mobileLinkStyle}>
-                        <span style={{ fontSize: '1rem', flexShrink: 0 }}>{link.emoji}</span>
-                        {link.label}
-                      </a>
-                    ))}
+                    {section.links.map((link) => {
+                      const Icon = link.icon
+                      return (
+                        <a key={link.label} href={link.href} onClick={closeMobileMenu} style={mobileLinkStyle}>
+                          <Icon size={16} style={{ flexShrink: 0 }} />
+                          {link.label}
+                        </a>
+                      )
+                    })}
                   </div>
                 ))}
               </div>
@@ -675,12 +697,15 @@ export default function Navbar() {
                     }}>
                       {section.heading}
                     </div>
-                    {section.links.map((link) => (
-                      <a key={link.label} href={link.href} onClick={closeMobileMenu} style={mobileLinkStyle}>
-                        <span style={{ fontSize: '1rem', flexShrink: 0 }}>{link.emoji}</span>
-                        {link.label}
-                      </a>
-                    ))}
+                    {section.links.map((link) => {
+                      const Icon = link.icon
+                      return (
+                        <a key={link.label} href={link.href} onClick={closeMobileMenu} style={mobileLinkStyle}>
+                          <Icon size={16} style={{ flexShrink: 0 }} />
+                          {link.label}
+                        </a>
+                      )
+                    })}
                   </div>
                 ))}
               </div>
@@ -695,12 +720,15 @@ export default function Navbar() {
             </button>
             {mobileDevOpen && (
               <div style={{ paddingBottom: '0.75rem' }}>
-                {devLinks.map((link) => (
-                  <a key={link.label} href={link.href} onClick={closeMobileMenu} style={mobileLinkStyle}>
-                    <span style={{ fontSize: '1rem', flexShrink: 0 }}>{link.emoji}</span>
-                    {link.label}
-                  </a>
-                ))}
+                {devLinks.map((link) => {
+                  const Icon = link.icon
+                  return (
+                    <a key={link.label} href={link.href} onClick={closeMobileMenu} style={mobileLinkStyle}>
+                      <Icon size={16} style={{ flexShrink: 0 }} />
+                      {link.label}
+                    </a>
+                  )
+                })}
               </div>
             )}
           </div>

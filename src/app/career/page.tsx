@@ -3,6 +3,7 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Image from 'next/image'
+import { MapPin, Clock, DollarSign, Star } from 'lucide-react'
 
 const stats = [
   {
@@ -494,23 +495,26 @@ export default function CareerPage() {
                       flexWrap: 'wrap' as const,
                     }}>
                       {[
-                        { icon: '📍', text: job.location },
-                        { icon: '🕒', text: job.posted },
-                        { icon: '💰', text: job.salary },
-                        { icon: '⭐', text: job.exp },
-                      ].map((item) => (
-                        <span key={item.text} style={{
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: '0.3rem',
-                          fontSize: '0.78rem',
-                          color: 'var(--text3)',
-                          fontWeight: 300,
-                        }}>
-                          <span style={{ fontSize: '0.7rem' }}>{item.icon}</span>
-                          {item.text}
-                        </span>
-                      ))}
+                        { icon: MapPin, text: job.location },
+                        { icon: Clock, text: job.posted },
+                        { icon: DollarSign, text: job.salary },
+                        { icon: Star, text: job.exp },
+                      ].map((item) => {
+                        const Icon = item.icon
+                        return (
+                          <span key={item.text} style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '0.3rem',
+                            fontSize: '0.78rem',
+                            color: 'var(--text3)',
+                            fontWeight: 300,
+                          }}>
+                            <Icon size={12} />
+                            {item.text}
+                          </span>
+                        )
+                      })}
                     </div>
                   </div>
 

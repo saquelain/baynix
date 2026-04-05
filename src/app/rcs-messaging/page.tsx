@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 import PartnerMarquee from '@/components/PartnerMarquee'
 import ImageBox from '@/components/ImageBox'
 import { useState } from 'react'
-import { Users, Puzzle, Palette, ShieldCheck, MessageSquare, ImagePlay, CheckCircle, XCircle } from 'lucide-react'
+import { Users, Puzzle, Palette, ShieldCheck, MessageSquare, ImagePlay, CheckCircle, XCircle, Smartphone, RefreshCw, Sparkles } from 'lucide-react'
 import CTASectionForm from '@/components/CTASectionForm'
 
 const rcsFeatures = [
@@ -123,7 +123,7 @@ const inputStyle = {
 
 
 export default function RcsMessagingPage() {
-  const [openFaq, setOpenFaq] = useState<number | null>(0)
+  const [openFaq, setOpenFaq] = useState<number | null>(0)
 
 
   return (
@@ -167,7 +167,7 @@ export default function RcsMessagingPage() {
 
             {/* Hero image */}
             <ImageBox
-              src="/images/rcs-hero.png"
+              src="/images/rcs-hero.png"
               priority
               alt="RCS Business Messaging"
               background='linear-gradient(135deg, rgba(59,130,246,0.1), rgba(99,102,241,0.08), rgba(34,211,238,0.06))'
@@ -312,7 +312,7 @@ export default function RcsMessagingPage() {
               <div style={{ padding: '2.5rem', background: 'rgba(59,130,246,0.05)', backdropFilter: 'blur(24px)', WebkitBackdropFilter: 'blur(24px)', border: '1px solid rgba(59,130,246,0.2)', borderRadius: 20, position: 'relative', overflow: 'hidden', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)' }}>
                 <div style={{ position: 'absolute', top: 0, left: '15%', right: '15%', height: 1, background: 'linear-gradient(90deg, transparent, rgba(59,130,246,0.6), transparent)' }} />
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '2rem' }}>
-                  <div style={{ width: 36, height: 36, borderRadius: 10, background: 'rgba(59,130,246,0.2)', border: '1px solid rgba(59,130,246,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem' }}>📲</div>
+                  <div style={{ width: 36, height: 36, borderRadius: 10, background: 'rgba(59,130,246,0.2)', border: '1px solid rgba(59,130,246,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Smartphone size={18} color="#60a5fa" /></div>
                   <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#60a5fa', letterSpacing: '-0.02em' }}>RCS Advantages</h3>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column' as const, gap: '0.75rem' }}>
@@ -329,7 +329,7 @@ export default function RcsMessagingPage() {
               <div style={{ padding: '2.5rem', background: 'rgba(255,255,255,0.03)', backdropFilter: 'blur(24px)', WebkitBackdropFilter: 'blur(24px)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 20, position: 'relative', overflow: 'hidden', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.06)' }}>
                 <div style={{ position: 'absolute', top: 0, left: '15%', right: '15%', height: 1, background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)' }} />
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '2rem' }}>
-                  <div style={{ width: 36, height: 36, borderRadius: 10, background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem' }}>💬</div>
+                  <div style={{ width: 36, height: 36, borderRadius: 10, background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><MessageSquare size={18} color="var(--text2)" /></div>
                   <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--text2)', letterSpacing: '-0.02em' }}>SMS Advantages</h3>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column' as const, gap: '0.75rem', marginBottom: '1.5rem' }}>
@@ -392,7 +392,7 @@ export default function RcsMessagingPage() {
                 boxShadow='0 24px 60px rgba(0,0,0,0.4)'
                 imageStyle={{ objectFit: 'cover' }}
               >
-                <div style={{ width: 56, height: 56, borderRadius: 14, background: 'rgba(59,130,246,0.2)', border: '1px solid rgba(59,130,246,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>🔄</div>
+                <div style={{ width: 56, height: 56, borderRadius: 14, background: 'rgba(59,130,246,0.2)', border: '1px solid rgba(59,130,246,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}><RefreshCw size={24} color="#60a5fa" /></div>
                 {/* <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.2)', fontWeight: 500, position: 'absolute', bottom: '1rem', left: 0, right: 0, textAlign: 'center' }}>rcs-fallback.png</div> */}
                 <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 50% 100%, rgba(59,130,246,0.1), transparent 70%)', pointerEvents: 'none' }} />
               </ImageBox>
@@ -420,7 +420,7 @@ export default function RcsMessagingPage() {
                 boxShadow='0 24px 60px rgba(0,0,0,0.4)'
                 imageStyle={{ objectFit: 'cover' }}
               >
-                <div style={{ width: 56, height: 56, borderRadius: 14, background: 'rgba(99,102,241,0.2)', border: '1px solid rgba(99,102,241,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>✨</div>
+                <div style={{ width: 56, height: 56, borderRadius: 14, background: 'rgba(99,102,241,0.2)', border: '1px solid rgba(99,102,241,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}><Sparkles size={24} color="#a78bfa" /></div>
                 {/* <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.2)', fontWeight: 500, position: 'absolute', bottom: '1rem', left: 0, right: 0, textAlign: 'center' }}>rcs-transform.png</div> */}
                 <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 50% 100%, rgba(99,102,241,0.1), transparent 70%)', pointerEvents: 'none' }} />
               </ImageBox>

@@ -5,45 +5,46 @@ import Footer from '@/components/Footer'
 import ImageBox from '@/components/ImageBox'
 import { useState } from 'react'
 import CTASectionForm from '@/components/CTASectionForm'
+import { Phone, Volume2, BarChart2, Laptop, Lock, LifeBuoy } from 'lucide-react'
 
 const features = [
   {
-    icon: '📞',
+    icon: Phone,
     title: 'Code-Based Call Management',
     desc: 'Our Voice API helps you control and direct calls to an app, your phone, or any other destination you choose. It\'s simple to use and quick to set up.',
     color: '#3b82f6',
     illustration: '/images/voice-call-management.svg',
   },
   {
-    icon: '🔊',
+    icon: Volume2,
     title: 'Quality Calls with Clear Voices',
     desc: 'At Baynix, we guarantee that you and your users won\'t experience any disruptions during calls. We prioritize quality to ensure smooth coordination.',
     color: '#6366f1',
     illustration: '/images/voice-quality.svg',
   },
   {
-    icon: '📊',
+    icon: BarChart2,
     title: 'Monitor Your Calls',
     desc: 'Through our partnership, you\'ll have the capability to monitor your calls and gain valuable insights into your campaigns and customers quickly.',
     color: '#22d3ee',
     illustration: '/images/voice-monitor.svg',
   },
   {
-    icon: '💻',
+    icon: Laptop,
     title: 'Use Any Programming Language',
     desc: 'With Baynix\'s expertise and open APIs, you can utilize any programming language you prefer. So, there\'s no need to worry.',
     color: '#10b981',
     illustration: '/images/voice-code.svg',
   },
   {
-    icon: '🔒',
+    icon: Lock,
     title: 'Call Recording and Encryption',
     desc: 'On our platform, all calls get recorded automatically for future use, reference, and training. You can use our APIs to transfer data to your systems.',
     color: '#f59e0b',
     illustration: '/images/voice-recording.svg',
   },
   {
-    icon: '🛟',
+    icon: LifeBuoy,
     title: 'Customer Support 24×7',
     desc: 'By teaming up with us, you can connect with your customers and clients whenever and wherever you need, leading to increased satisfaction.',
     color: '#a78bfa',
@@ -167,7 +168,7 @@ const inputStyle = {
 
 export default function VoiceApiPage() {
   const [activeTab, setActiveTab] = useState('cURL')
-  const [openFaq, setOpenFaq] = useState<number | null>(0)
+  const [openFaq, setOpenFaq] = useState<number | null>(0)
 
 
   return (
@@ -243,7 +244,7 @@ export default function VoiceApiPage() {
 
             {/* Hero illustration */}
             <ImageBox
-              src="/images/voice-api-hero.png"
+              src="/images/voice-api-hero.png"
               priority
               alt="Voice API"
               width={760}
@@ -588,8 +589,8 @@ export default function VoiceApiPage() {
               </p>
               <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' as const }}>
                 <a href="https://app.baynix.ai" className="glass-btn glass-btn-primary">Start Now →</a>
-                <a href="tel:+919004674356" style={{ fontSize: '0.85rem', color: 'var(--text2)', textDecoration: 'none', fontWeight: 400 }}>
-                  📞 +91 90046 74356
+                <a href="tel:+919004674356" style={{ fontSize: '0.85rem', color: 'var(--text2)', textDecoration: 'none', fontWeight: 400, display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+                  <Phone size={14} /> +91 90046 74356
                 </a>
               </div>
             </div>

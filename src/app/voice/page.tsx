@@ -8,13 +8,15 @@ import {
   Globe, Workflow, ShieldCheck, Radio, PhoneCall, Star,
   Rocket, BadgePercent, Lightbulb,
   Languages, Zap, Lock, Network, Phone, Smile,
+  KeyRound, Smartphone, Megaphone, PhoneOff,
+  type LucideIcon,
 } from 'lucide-react'
 import CTASectionForm from '@/components/CTASectionForm'
 
 // ── Voice Platform Cards ──────────────────────────────────────────────
 const voicePlatform = [
   {
-    emoji: '🔐',
+    icon: KeyRound,
     title: 'Voice OTP',
     desc: 'Boost security with Voice SMS as a backup 2FA method, ensuring 100% OTP delivery and minimizing drop-offs for enhanced reliability.',
     href: '/voice-otp',
@@ -22,7 +24,7 @@ const voicePlatform = [
     img: 'voice-otp-card.png',
   },
   {
-    emoji: '📞',
+    icon: Phone,
     title: 'IVR System',
     desc: 'Guarantee 99% message delivery within 15 seconds and secure logins for customers, websites, and applications.',
     href: '/ivr',
@@ -30,7 +32,7 @@ const voicePlatform = [
     img: 'voice-ivr-card.png',
   },
   {
-    emoji: '📲',
+    icon: Smartphone,
     title: 'Inbound Dialing Service',
     desc: 'Develop adaptable inbound services to enhance brand perception and promptly address customer needs, optimizing response time.',
     href: '/ibd',
@@ -38,7 +40,7 @@ const voicePlatform = [
     img: 'voice-inbound-card.png',
   },
   {
-    emoji: '📣',
+    icon: Megaphone,
     title: 'Outbound Dialing Service',
     desc: 'Witness a surge in your conversion rate by deploying pre-recorded messages as part of your campaign strategy.',
     href: '/obd',
@@ -46,7 +48,7 @@ const voicePlatform = [
     img: 'voice-outbound-card.png',
   },
   {
-    emoji: '📵',
+    icon: PhoneOff,
     title: 'Missed Call Service',
     desc: 'A convenient platform for customers to generate service demand, engage in polls, share opinions, and undergo e-KYC processes.',
     href: '/missed-call',
@@ -54,7 +56,7 @@ const voicePlatform = [
     img: 'voice-missedcall-card.png',
   },
   {
-    emoji: '🔒',
+    icon: Lock,
     title: 'Number Masking',
     desc: 'An ideal solution for online marketplaces to link customers and businesses securely while prioritizing data privacy and security.',
     href: '/number-masking',
@@ -142,7 +144,7 @@ const inputStyle = {
 }
 
 export default function VoicePage() {
-  const [openFaq, setOpenFaq]     = useState<number | null>(0)
+  const [openFaq, setOpenFaq]     = useState<number | null>(0)
 
 
   return (
@@ -184,7 +186,7 @@ export default function VoicePage() {
 
             {/* Hero image */}
             <ImageBox
-              src="/images/voice-hero.png"
+              src="/images/voice-hero.png"
               priority
               alt="Voice Call Provider"
               background="linear-gradient(135deg, rgba(245,158,11,0.1), rgba(99,102,241,0.08), rgba(34,211,238,0.06))"
@@ -232,7 +234,7 @@ export default function VoicePage() {
                     {/* Illustration area */}
                     <div style={{ height: 140, background: `linear-gradient(135deg, ${item.color}15, ${item.color}08)`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' as const, gap: '0.5rem', borderBottom: '1px solid rgba(255,255,255,0.06)', position: 'relative', overflow: 'hidden' }}>
                       {/* <Image src={`/images/${item.img}`} alt={item.title} fill style={{ objectFit: 'contain', padding: '1rem' }} /> */}
-                      <div style={{ fontSize: '2.5rem' }}>{item.emoji}</div>
+                      {(() => { const Icon = item.icon as LucideIcon; return <Icon size={40} color={item.color} /> })()}
                       {/* <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.15)', fontWeight: 500 }}>{item.img}</div> */}
                       <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(circle at 50% 100%, ${item.color}18, transparent 70%)`, pointerEvents: 'none' }} />
                     </div>

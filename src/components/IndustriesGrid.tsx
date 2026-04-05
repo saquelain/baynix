@@ -1,11 +1,13 @@
 'use client'
 
-const industries = [
-  { emoji: '🛒', name: 'E-Commerce & D2C', href: '/e-commerce-d2c' },
-  { emoji: '🏦', name: 'BFSI & Fintech', href: '/bsfi-fintech' },
-  { emoji: '🎓', name: 'EdTech', href: '/edtech' },
-  { emoji: '🚚', name: 'Logistics', href: '/logistics' },
-  { emoji: '🏥', name: 'Healthcare', href: '/health-care' },
+import { ShoppingCart, Landmark, GraduationCap, Truck, HeartPulse, type LucideIcon } from 'lucide-react'
+
+const industries: { icon: LucideIcon; name: string; href: string }[] = [
+  { icon: ShoppingCart, name: 'E-Commerce & D2C', href: '/e-commerce-d2c' },
+  { icon: Landmark, name: 'BFSI & Fintech', href: '/bsfi-fintech' },
+  { icon: GraduationCap, name: 'EdTech', href: '/edtech' },
+  { icon: Truck, name: 'Logistics', href: '/logistics' },
+  { icon: HeartPulse, name: 'Healthcare', href: '/health-care' },
 ]
 
 export default function IndustriesGrid() {
@@ -135,12 +137,12 @@ export default function IndustriesGrid() {
             >
 
               <span style={{
-                fontSize: '2rem',
-                display: 'block',
+                display: 'flex',
+                justifyContent: 'center',
                 marginBottom: '0.75rem',
                 filter: 'drop-shadow(0 0 8px rgba(255,255,255,0.3))',
               }}>
-                {ind.emoji}
+                {(() => { const Icon = ind.icon; return <Icon size={32} color="var(--text2)" /> })()}
               </span>
               <div style={{
                 fontSize: '0.82rem',

@@ -5,45 +5,46 @@ import Footer from '@/components/Footer'
 import ImageBox from '@/components/ImageBox'
 import { useState } from 'react'
 import CTASectionForm from '@/components/CTASectionForm'
+import { Phone, CreditCard, MapPin, Clock, Landmark, KeyRound, LifeBuoy } from 'lucide-react'
 
 const features = [
   {
-    icon: '🏧',
+    icon: CreditCard,
     title: 'ATM Alerts and Promotions',
     desc: 'Utilize Baynix\'s Bulk SMS and WhatsApp Business API to seamlessly send withdrawal and deposit alerts, along with updates on government regulations and bank services via SMS, WhatsApp, and email.',
     color: '#3b82f6',
     illustration: '/images/otp-atm-alerts.svg',
   },
   {
-    icon: '💳',
+    icon: CreditCard,
     title: 'Balance Check',
     desc: 'Employ Baynix SMS and Missed Call services to enable customers to effortlessly check their balance and transactions while authenticating through SMS and missed calls.',
     color: '#10b981',
     illustration: '/images/otp-balance.svg',
   },
   {
-    icon: '📍',
+    icon: MapPin,
     title: 'ATM or Branch Locator',
     desc: 'Leverage Baynix\'s Banking and Financial services APIs to enable customers to access branch addresses, Google Maps links, and ATM locations by entering their area code via WhatsApp or SMS.',
     color: '#f59e0b',
     illustration: '/images/otp-locator.svg',
   },
   {
-    icon: '⏰',
+    icon: Clock,
     title: 'Automated Reminders',
     desc: 'Incorporate Baynix\'s SMS and WhatsApp API for banking and financial services to send automated reminders for EMI dues and other deposits, including an Instant Payment link.',
     color: '#22d3ee',
     illustration: '/images/otp-reminders.svg',
   },
   {
-    icon: '🏦',
+    icon: Landmark,
     title: 'Loans and Offers',
     desc: 'Leverage Baynix\'s SMS and Voice broadcasting to inform your audience about offers, bank loans, and festive promotions within Banking and Financial Services.',
     color: '#ec4899',
     illustration: '/images/otp-loans.svg',
   },
   {
-    icon: '🔐',
+    icon: KeyRound,
     title: 'OTP Authentication',
     desc: 'Allow users to transact with ease via mobile banking, and protect them using 2nd factor authentication that uses instantaneous generation and delivery of OTP and SMS.',
     color: '#a78bfa',
@@ -167,7 +168,7 @@ const inputStyle = {
 
 export default function OtpApiPage() {
   const [activeTab, setActiveTab] = useState('cURL')
-  const [openFaq, setOpenFaq] = useState<number | null>(0)
+  const [openFaq, setOpenFaq] = useState<number | null>(0)
 
 
   return (
@@ -241,7 +242,7 @@ export default function OtpApiPage() {
 
             {/* Hero illustration */}
             <ImageBox
-              src="/images/otp-api-hero.png"
+              src="/images/otp-api-hero.png"
               priority
               alt="OTP API"
               width={760}
@@ -581,8 +582,8 @@ export default function OtpApiPage() {
               </p>
               <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' as const }}>
                 <a href="https://app.baynix.ai" className="glass-btn glass-btn-primary">Start Now →</a>
-                <a href="tel:+919004674356" style={{ fontSize: '0.85rem', color: 'var(--text2)', textDecoration: 'none', fontWeight: 400 }}>
-                  📞 +91 90046 74356
+                <a href="tel:+919004674356" style={{ fontSize: '0.85rem', color: 'var(--text2)', textDecoration: 'none', fontWeight: 400, display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+                  <Phone size={14} /> +91 90046 74356
                 </a>
               </div>
             </div>

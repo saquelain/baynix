@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import { Rocket } from 'lucide-react'
 
 
 export default function Hero() {
@@ -80,7 +81,7 @@ export default function Hero() {
             boxShadow: '0 0 8px var(--accent3)',
             display: 'inline-block',
           }} />
-          🚀 WhatsApp Business API now available globally
+          <Rocket size={14} style={{ display: 'inline', verticalAlign: 'middle', marginRight: '0.25rem' }} /> WhatsApp Business API now available globally
         </div>
 
         {/* Headline */}

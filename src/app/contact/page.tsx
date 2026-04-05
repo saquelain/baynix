@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { useState } from 'react'
 import { QRCodeSVG } from 'qrcode.react'
+import { CheckCircle, MessageCircle, Mail, Phone, MapPin } from 'lucide-react'
 
 const industries = [
   'Healthcare', 'Education', 'Financial Services', 'eCommerce',
@@ -202,7 +203,7 @@ export default function ContactPage() {
 
               {status === 'success' ? (
                 <div style={{ textAlign: 'center', padding: '3rem 1rem' }}>
-                  <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>✅</div>
+                  <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}><CheckCircle size={48} color="#10b981" /></div>
                   <h3 style={{ fontSize: '1.4rem', fontWeight: 700, color: 'var(--text)', marginBottom: '0.5rem' }}>
                     Message Sent!
                   </h3>
@@ -418,11 +419,10 @@ export default function ContactPage() {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  fontSize: '1.8rem',
                   margin: '0 auto 1rem',
                   boxShadow: '0 0 24px rgba(37,211,102,0.2)',
                 }}>
-                  💬
+                  <MessageCircle size={32} color="#25d366" />
                 </div>
 
                 <h3 style={{
@@ -556,10 +556,12 @@ export default function ContactPage() {
                 </h3>
 
                 {[
-                  { icon: '✉️', label: 'Email', value: 'hello@baynix.ai', href: 'mailto:hello@baynix.ai' },
-                  { icon: '📞', label: 'Phone', value: '+91 97739 81832', href: 'tel:+919773981832' },
-                  { icon: '📍', label: 'Office', value: 'Noida, Uttar Pradesh, India', href: '#' },
-                ].map((item) => (
+                  { icon: Mail, label: 'Email', value: 'hello@baynix.ai', href: 'mailto:hello@baynix.ai' },
+                  { icon: Phone, label: 'Phone', value: '+91 97739 81832', href: 'tel:+919773981832' },
+                  { icon: MapPin, label: 'Office', value: 'Noida, Uttar Pradesh, India', href: '#' },
+                ].map((item) => {
+                  const Icon = item.icon
+                  return (
                   <a
                     key={item.label}
                     href={item.href}
@@ -588,10 +590,9 @@ export default function ContactPage() {
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      fontSize: '0.9rem',
                       flexShrink: 0,
                     }}>
-                      {item.icon}
+                      <Icon size={16} />
                     </div>
                     <div>
                       <div style={{ fontSize: '0.7rem', color: 'var(--text3)', fontWeight: 400, marginBottom: '0.1rem' }}>
@@ -602,7 +603,8 @@ export default function ContactPage() {
                       </div>
                     </div>
                   </a>
-                ))}
+                  )
+                })}
               </div>
             </div>
           </div>

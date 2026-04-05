@@ -5,6 +5,7 @@ import Footer from '@/components/Footer'
 import ImageBox from '@/components/ImageBox'
 import { useState } from 'react'
 import CTASectionForm from '@/components/CTASectionForm'
+import { Link2, CheckCircle, TrendingUp, LifeBuoy, Phone, type LucideIcon } from 'lucide-react'
 
 const features = [
   {
@@ -45,11 +46,11 @@ const features = [
   },
 ]
 
-const whyChoose = [
-  { label: 'Seamless Integration', icon: '🔗', color: '#3b82f6' },
-  { label: 'Reliable Delivery', icon: '✅', color: '#10b981' },
-  { label: 'Scalable Solutions', icon: '📈', color: '#6366f1' },
-  { label: 'Comprehensive Support', icon: '🛟', color: '#22d3ee' },
+const whyChoose: { label: string; icon: LucideIcon; color: string }[] = [
+  { label: 'Seamless Integration', icon: Link2, color: '#3b82f6' },
+  { label: 'Reliable Delivery', icon: CheckCircle, color: '#10b981' },
+  { label: 'Scalable Solutions', icon: TrendingUp, color: '#6366f1' },
+  { label: 'Comprehensive Support', icon: LifeBuoy, color: '#22d3ee' },
 ]
 
 const codeTabs = ['cURL', 'NodeJS', 'Python', 'PHP']
@@ -162,7 +163,7 @@ const inputStyle = {
 
 export default function SmsGatewayPage() {
   const [activeTab, setActiveTab] = useState('cURL')
-  const [openFaq, setOpenFaq] = useState<number | null>(0)
+  const [openFaq, setOpenFaq] = useState<number | null>(0)
 
 
   return (
@@ -227,7 +228,7 @@ export default function SmsGatewayPage() {
 
             {/* Hero illustration */}
             <ImageBox
-              src="/images/sms-gateway-hero.png"
+              src="/images/sms-gateway-hero.png"
               priority
               alt="SMS Gateway"
               background="linear-gradient(135deg, rgba(99,102,241,0.12), rgba(59,130,246,0.08), rgba(34,211,238,0.06))"
@@ -427,9 +428,8 @@ export default function SmsGatewayPage() {
                       background: `${item.color}15`,
                       border: `1px solid ${item.color}25`,
                       display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      fontSize: '0.9rem',
                     }}>
-                      {item.icon}
+                      {(() => { const Icon = item.icon; return <Icon size={16} color={item.color} /> })()}
                     </span>
                     <span style={{ fontSize: '0.85rem', fontWeight: 500, color: 'var(--text)' }}>
                       {item.label}
@@ -604,8 +604,8 @@ export default function SmsGatewayPage() {
               </p>
               <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' as const }}>
                 <a href="https://app.baynix.ai" className="glass-btn glass-btn-primary">Start Now →</a>
-                <a href="tel:+919004674356" style={{ fontSize: '0.85rem', color: 'var(--text2)', textDecoration: 'none', fontWeight: 400 }}>
-                  📞 +91 90046 74356
+                <a href="tel:+919004674356" style={{ fontSize: '0.85rem', color: 'var(--text2)', textDecoration: 'none', fontWeight: 400, display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+                  <Phone size={14} /> +91 90046 74356
                 </a>
               </div>
             </div>

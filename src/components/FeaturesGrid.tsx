@@ -1,8 +1,18 @@
 'use client'
 
-const features = [
+import { MessageSquare, Smartphone, Globe, Lock, Phone, Mail, type LucideIcon } from 'lucide-react'
+
+const features: {
+  icon: LucideIcon
+  color: string
+  title: string
+  desc: string
+  href: string
+  stat: string
+  btnClass: string
+}[] = [
   {
-    icon: '💬',
+    icon: MessageSquare,
     color: 'blue',
     title: 'Bulk SMS',
     desc: 'Send high-volume transactional and promotional messages with guaranteed delivery rates and real-time tracking.',
@@ -11,7 +21,7 @@ const features = [
     btnClass: 'glass-btn-primary'
   },
   {
-    icon: '📱',
+    icon: Smartphone,
     color: 'green',
     title: 'WhatsApp Business API',
     desc: 'Reach customers on the world\'s most popular messaging platform. Official API with full feature access and chatbot support.',
@@ -20,7 +30,7 @@ const features = [
     btnClass: 'glass-btn-green'
   },
   {
-    icon: '🌐',
+    icon: Globe,
     color: 'purple',
     title: 'RCS Messaging',
     desc: 'Next-generation rich messaging with images, carousels, quick replies, and read receipts — beyond standard SMS.',
@@ -29,7 +39,7 @@ const features = [
     btnClass: 'glass-btn-purple'
   },
   {
-    icon: '🔒',
+    icon: Lock,
     color: 'cyan',
     title: 'OTP Authenticator',
     desc: 'Secure your users with one-time passwords delivered instantly via SMS, Voice, or WhatsApp with 99.9% uptime.',
@@ -38,7 +48,7 @@ const features = [
     btnClass: 'glass-btn-cyan'
   },
   {
-    icon: '📞',
+    icon: Phone,
     color: 'orange',
     title: 'Voice Solutions',
     desc: 'IVR systems, outbound dialing, inbound handling, voice OTP, and number masking — full voice communication stack.',
@@ -47,7 +57,7 @@ const features = [
     btnClass: 'glass-btn-orange'
   },
   {
-    icon: '✉️',
+    icon: Mail,
     color: 'blue',
     title: 'Email API',
     desc: 'Efficient transactional and marketing email delivery at scale. Deep analytics and integration-ready infrastructure.',
@@ -226,12 +236,11 @@ export default function FeaturesGrid() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    fontSize: '1.4rem',
                     background: c.bg,
                     border: `1px solid ${c.border}`,
                     boxShadow: `0 0 20px ${c.glow}`,
                   }}>
-                    {f.icon}
+                    {(() => { const Icon = f.icon; return <Icon size={22} color={c.text} /> })()}
                   </div>
 
                   {/* Stat badge — hidden until hover */}

@@ -4,7 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import ImageBox from '@/components/ImageBox'
 import { useState } from 'react'
-import { Headphones, Bell, RefreshCw, BookOpen, Zap } from 'lucide-react'
+import { Headphones, Bell, RefreshCw, BookOpen, Zap, FolderOpen, ClipboardList, Gift, type LucideIcon } from 'lucide-react'
 import CTASectionForm from '@/components/CTASectionForm'
 
 const features = [
@@ -76,24 +76,24 @@ const splits = [
   },
 ]
 
-const addons = [
+const addons: { title: string; desc: string; color: string; icon: LucideIcon }[] = [
   {
     title: 'WhatsApp-based CRM',
     desc: 'You can improve productivity, optimise your workflow, and deliver unmatched customer care from the comfort of your smartphone with our WhatsApp-powered CRM.',
     color: '#25d366',
-    emoji: '🗂️',
+    icon: FolderOpen,
   },
   {
     title: 'Free DLT Registration',
     desc: 'Register Your Business on the DLT Platform for Commercial Messaging to Ensure Regulatory Compliance. Take Advantage of Easy DLT Registration for Stress-Free Compliance.',
     color: '#6366f1',
-    emoji: '📋',
+    icon: ClipboardList,
   },
   {
     title: 'Get 1000 SMS Free',
     desc: 'Use our special offer to unlock the power of effective communication! When you purchase any of our dynamic plans, you will receive 1000 Free SMS Credits as a bonus.',
     color: '#f59e0b',
-    emoji: '🎁',
+    icon: Gift,
   },
 ]
 
@@ -161,7 +161,7 @@ const inputStyle = {
 }
 
 export default function WhatsAppApiPage() {
-  const [openFaq, setOpenFaq] = useState<number | null>(0)
+  const [openFaq, setOpenFaq] = useState<number | null>(0)
 
 
   return (
@@ -226,7 +226,7 @@ export default function WhatsAppApiPage() {
 
             {/* Hero image */}
             <ImageBox
-              src="/images/wa-hero.png"
+              src="/images/wa-hero.png"
               priority
               alt="WhatsApp Business API"
               background='linear-gradient(135deg, rgba(37,211,102,0.1), rgba(18,140,126,0.08), rgba(99,102,241,0.06))'
@@ -471,9 +471,9 @@ export default function WhatsAppApiPage() {
                     width: 48, height: 48, borderRadius: 14,
                     background: `${a.color}15`, border: `1px solid ${a.color}25`,
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    fontSize: '1.3rem', marginBottom: '1.25rem',
+                    marginBottom: '1.25rem',
                   }}>
-                    {a.emoji}
+                    {(() => { const Icon = a.icon; return <Icon size={22} color={a.color} /> })()}
                   </div>
                   <h3 style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--text)', marginBottom: '0.6rem', letterSpacing: '-0.01em' }}>
                     {a.title}

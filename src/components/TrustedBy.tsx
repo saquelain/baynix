@@ -1,13 +1,15 @@
 'use client'
 
-const industries = [
-  { name: 'E-Commerce', emoji: '🛒', color: '#3b82f6' },
-  { name: 'BFSI & Fintech', emoji: '🏦', color: '#6366f1' },
-  { name: 'EdTech', emoji: '🎓', color: '#22d3ee' },
-  { name: 'Logistics', emoji: '🚚', color: '#f59e0b' },
-  { name: 'Healthcare', emoji: '🏥', color: '#10b981' },
-  { name: 'Enterprises', emoji: '🏢', color: '#a78bfa' },
-  { name: 'Startups', emoji: '🚀', color: '#ec4899' },
+import { ShoppingCart, Landmark, GraduationCap, Truck, HeartPulse, Building2, Rocket, type LucideIcon } from 'lucide-react'
+
+const industries: { name: string; icon: LucideIcon; color: string }[] = [
+  { name: 'E-Commerce', icon: ShoppingCart, color: '#3b82f6' },
+  { name: 'BFSI & Fintech', icon: Landmark, color: '#6366f1' },
+  { name: 'EdTech', icon: GraduationCap, color: '#22d3ee' },
+  { name: 'Logistics', icon: Truck, color: '#f59e0b' },
+  { name: 'Healthcare', icon: HeartPulse, color: '#10b981' },
+  { name: 'Enterprises', icon: Building2, color: '#a78bfa' },
+  { name: 'Startups', icon: Rocket, color: '#ec4899' },
 ]
 
 export default function TrustedBy() {
@@ -152,10 +154,10 @@ export default function TrustedBy() {
               }}
             >
               <span style={{
-                fontSize: '1rem',
                 filter: `drop-shadow(0 0 6px ${ind.color}88)`,
+                display: 'flex',
               }}>
-                {ind.emoji}
+                {(() => { const Icon = ind.icon; return <Icon size={16} color={ind.color} /> })()}
               </span>
               <span>{ind.name}</span>
             </div>
@@ -188,21 +190,23 @@ export default function TrustedBy() {
     alignItems: 'center',
     gap: '0',
   }}>
-    {['#3b82f6','#6366f1','#22d3ee','#10b981','#a78bfa'].map((color, i) => (
-      <div key={i} style={{
-        width: 26, height: 26,
-        borderRadius: '50%',
-        background: `linear-gradient(135deg, ${color}, ${color}88)`,
-        border: '2px solid rgba(7,9,15,0.8)',
-        marginLeft: i === 0 ? 0 : -8,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        fontSize: '0.6rem',
-      }}>
-        {['🛒','🏦','🎓','🚚','🏥'][i]}
-      </div>
-    ))}
+    {([ShoppingCart, Landmark, GraduationCap, Truck, HeartPulse] as const).map((Icon, i) => {
+      const color = ['#3b82f6','#6366f1','#22d3ee','#10b981','#a78bfa'][i]
+      return (
+        <div key={i} style={{
+          width: 26, height: 26,
+          borderRadius: '50%',
+          background: `linear-gradient(135deg, ${color}, ${color}88)`,
+          border: '2px solid rgba(7,9,15,0.8)',
+          marginLeft: i === 0 ? 0 : -8,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}>
+          <Icon size={12} color="white" />
+        </div>
+      )
+    })}
   </div>
   <p style={{
     fontSize: '0.82rem',

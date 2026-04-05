@@ -2,6 +2,8 @@
 
 import Image from 'next/image'
 import { useState } from 'react'
+import React from 'react'
+import { Paperclip, Clipboard } from 'lucide-react'
 
 const splits = [
   {
@@ -107,7 +109,7 @@ const Placeholders = [
           { ch: 'W', color: '#25d366', bg: 'rgba(37,211,102,0.15)', name: 'Rahul M.', msg: 'Hi! What are your SMS prices?', time: '2m' },
           { ch: 'S', color: '#3b82f6', bg: 'rgba(59,130,246,0.15)', name: 'Priya K.', msg: 'Order confirmed ✓', time: '5m' },
           { ch: 'R', color: '#a78bfa', bg: 'rgba(167,139,250,0.15)', name: 'Amit S.', msg: 'Can I get a demo?', time: '12m' },
-          { ch: 'E', color: '#22d3ee', bg: 'rgba(34,211,238,0.15)', name: 'Neha T.', msg: 'Invoice attached 📎', time: '1h' },
+          { ch: 'E', color: '#22d3ee', bg: 'rgba(34,211,238,0.15)', name: 'Neha T.', msg: 'Invoice attached', time: '1h', icon: Paperclip },
         ].map((row, i) => (
           <div key={i} style={{
             padding: '0.75rem 1rem',
@@ -132,8 +134,9 @@ const Placeholders = [
                 <span style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--text)' }}>{row.name}</span>
                 <span style={{ fontSize: '0.65rem', color: 'var(--text3)' }}>{row.time}</span>
               </div>
-              <div style={{ fontSize: '0.72rem', color: 'var(--text3)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+              <div style={{ fontSize: '0.72rem', color: 'var(--text3)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', gap: '0.2rem' }}>
                 {row.msg}
+                {'icon' in row && row.icon && (() => { const Icon = row.icon as React.ElementType; return <Icon size={10} /> })()}
               </div>
             </div>
           </div>
@@ -161,7 +164,7 @@ const Placeholders = [
           marginBottom: '1.5rem',
         }}>
           <span style={{ fontSize: '0.75rem', color: '#22d3ee', fontWeight: 600 }}>bnx.ai/abc123</span>
-          <span style={{ marginLeft: 'auto', fontSize: '0.65rem', color: 'var(--text3)' }}>📋 Copy</span>
+          <span style={{ marginLeft: 'auto', fontSize: '0.65rem', color: 'var(--text3)', display: 'flex', alignItems: 'center', gap: '0.2rem' }}><Clipboard size={10} /> Copy</span>
         </div>
         <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '1.5rem' }}>
           {[

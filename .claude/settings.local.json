@@ -10,7 +10,8 @@
       "Bash(grep -l \"GetInTouchModal\\\\|setModalOpen\\\\|useState.*modal\" /d/baynix/src/app/*/page.tsx)",
       "Bash(grep:*)",
       "Bash(node fix-forms.mjs)",
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "Bash(npx next:*)"
     ]
   }
 }

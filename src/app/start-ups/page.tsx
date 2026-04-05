@@ -9,7 +9,7 @@ import {
   Inbox, Hash, FileText, CheckCircle2,
   MousePointerClick, BadgeCheck, Building2, Wallet, Send,
   Rocket, BarChart3,
-  ArrowRight,
+  ArrowRight, Sparkles,
 } from 'lucide-react'
 import ImageBox from '@/components/ImageBox'
 import CTASectionForm from '@/components/CTASectionForm'
@@ -136,7 +136,7 @@ const inputBase: React.CSSProperties = {
 }
 
 export default function StartupsPage() {
-  const [openFaq, setOpenFaq]     = useState<number | null>(0)
+  const [openFaq, setOpenFaq]     = useState<number | null>(0)
 
 
   return (
@@ -402,7 +402,7 @@ export default function StartupsPage() {
             {/* Congrats message */}
             <div style={{ textAlign: 'center', marginTop: '3rem' }}>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem', padding: '0.75rem 1.5rem', background: `rgba(${accentRgb},0.08)`, border: `1px solid rgba(${accentRgb},0.2)`, borderRadius: 100, fontSize: '0.9rem', fontWeight: 600, color: accent, marginBottom: '2rem' }}>
-                🎉 Congratulations, you are all set to send and serve!
+                <Sparkles size={16} /> Congratulations, you are all set to send and serve!
               </div>
               <div style={{ display: 'block' }}>
                 <a href="https://app.baynix.ai" className="glass-btn glass-btn-primary" style={{ fontSize: '1rem', padding: '0.85rem 2rem' }}>Start for Free →</a>

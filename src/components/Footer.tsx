@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import GetInTouchModal from "@/components/GetInTouchModal";
+import { Mail, Globe } from "lucide-react";
 
 const links = {
   Products: [
@@ -89,7 +90,7 @@ export default function Footer() {
                   color: "var(--text3)",
                 }}
               >
-                📧 hello@baynix.ai &nbsp;|&nbsp; 🌐 baynix.ai
+                <Mail size={12} style={{ display: 'inline', verticalAlign: 'middle', marginRight: '0.2rem' }} /> hello@baynix.ai &nbsp;|&nbsp; <Globe size={12} style={{ display: 'inline', verticalAlign: 'middle', marginRight: '0.2rem' }} /> baynix.ai
               </p>
               {/* Meta Business Partner — prestigious placement */}
               <div

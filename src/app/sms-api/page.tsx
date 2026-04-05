@@ -5,45 +5,46 @@ import Footer from '@/components/Footer'
 import { useState } from 'react'
 import ImageBox from '@/components/ImageBox'
 import CTASectionForm from '@/components/CTASectionForm'
+import { Phone, Globe, Film, BarChart2, CheckCircle, MessageSquare, LifeBuoy } from 'lucide-react'
 
 const features = [
   {
-    icon: '🌍',
+    icon: Globe,
     title: 'Engage across the world',
     desc: 'By teaming up with us, you can talk to target people not just in your own country, but in other countries too.',
     color: '#3b82f6',
     illustration: '/images/sms-global.svg',
   },
   {
-    icon: '🎬',
+    icon: Film,
     title: 'Media Support',
     desc: 'With our online tools, you can send videos, pictures, and fun animations in your text messages, making them more interesting and enjoyable.',
     color: '#6366f1',
     illustration: '/images/sms-media.svg',
   },
   {
-    icon: '📊',
+    icon: BarChart2,
     title: 'Real Time Insights',
     desc: 'Our reporting dashboard lets you see detailed reports and track your messages and links to see how well they\'re working.',
     color: '#22d3ee',
     illustration: '/images/sms-insights.svg',
   },
   {
-    icon: '✅',
+    icon: CheckCircle,
     title: 'More Convenience',
     desc: 'We offer our customers simple options to join and leave our services, so they don\'t receive unwanted spam messages.',
     color: '#10b981',
     illustration: '/images/sms-convenience.svg',
   },
   {
-    icon: '🗣️',
+    icon: MessageSquare,
     title: 'Multilingual Support',
     desc: 'Speak to your customers in a variety of languages so that you may interact with them in their preferred language.',
     color: '#f59e0b',
     illustration: '/images/sms-multilingual.svg',
   },
   {
-    icon: '🛟',
+    icon: LifeBuoy,
     title: 'Support 24 x 7',
     desc: 'Working with us gives you access to our help 24/7. Our quick response teams are here to help you with any problems.',
     color: '#a78bfa',
@@ -167,7 +168,7 @@ const inputStyle = {
 
 export default function SmsApiPage() {
   const [activeTab, setActiveTab] = useState('cURL')
-  const [openFaq, setOpenFaq] = useState<number | null>(0)
+  const [openFaq, setOpenFaq] = useState<number | null>(0)
 
 
   return (
@@ -232,7 +233,7 @@ export default function SmsApiPage() {
 
             {/* Hero illustration placeholder */}
             <ImageBox
-              src="/images/sms-api-hero.png"
+              src="/images/sms-api-hero.png"
               priority
               alt="SMS API"
               width={760}
@@ -563,8 +564,9 @@ export default function SmsApiPage() {
                 <a href="tel:+919004674356" style={{
                   fontSize: '0.85rem', color: 'var(--text2)',
                   textDecoration: 'none', fontWeight: 400,
+                  display: 'flex', alignItems: 'center', gap: '0.3rem',
                 }}>
-                  📞 +91 90046 74356
+                  <Phone size={14} /> +91 90046 74356
                 </a>
               </div>
             </div>

@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import { Newspaper, Rocket, Laptop, TrendingUp, Mail } from 'lucide-react'
 
 type Category = 'All' | 'Product Launch' | 'Technology' | 'Business'
 
@@ -157,7 +158,7 @@ export default function MediaCoveragePage() {
               textTransform: 'uppercase',
               marginBottom: '1.5rem',
             }}>
-              <span>📰</span> Press &amp; Media
+              <Newspaper size={14} style={{ display: 'inline', verticalAlign: 'middle' }} /> Press &amp; Media
             </div>
 
             <h1 style={{
@@ -249,9 +250,9 @@ export default function MediaCoveragePage() {
                     }}
                   >
                     {cat === 'All' && '✦ '}
-                    {cat === 'Product Launch' && '🚀 '}
-                    {cat === 'Technology' && '💻 '}
-                    {cat === 'Business' && '📈 '}
+                    {cat === 'Product Launch' && <Rocket size={13} style={{ display: 'inline', verticalAlign: 'middle', marginRight: '0.3rem' }} />}
+                    {cat === 'Technology' && <Laptop size={13} style={{ display: 'inline', verticalAlign: 'middle', marginRight: '0.3rem' }} />}
+                    {cat === 'Business' && <TrendingUp size={13} style={{ display: 'inline', verticalAlign: 'middle', marginRight: '0.3rem' }} />}
                     {cat}
                   </button>
                 )
@@ -475,7 +476,7 @@ export default function MediaCoveragePage() {
               pointerEvents: 'none',
             }} />
 
-            <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>✉️</div>
+            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '0.75rem' }}><Mail size={32} color="var(--accent)" /></div>
             <h2 style={{
               fontSize: '1.6rem',
               fontWeight: 800,

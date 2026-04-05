@@ -5,45 +5,46 @@ import Footer from '@/components/Footer'
 import ImageBox from '@/components/ImageBox'
 import { useState } from 'react'
 import CTASectionForm from '@/components/CTASectionForm'
+import { Phone, Shield, BarChart2, LifeBuoy, Palette, MailOpen, Zap } from 'lucide-react'
 
 const features = [
   {
-    icon: '🛡️',
+    icon: Shield,
     title: 'Trusted IP Addresses',
     desc: 'Baynix ensures that your brand\'s reputation and safety are safeguarded by providing you with a high-reputation IP address that maximizes inbox placement.',
     color: '#10b981',
     illustration: '/images/email-trusted-ip.svg',
   },
   {
-    icon: '📊',
+    icon: BarChart2,
     title: 'Real-Time Insights',
     desc: 'When you team up with us, you\'ll have your own dashboard giving you detailed reports showing how many people read, opened, received, marked as spam, and clicked on your messages.',
     color: '#3b82f6',
     illustration: '/images/email-insights.svg',
   },
   {
-    icon: '🛟',
+    icon: LifeBuoy,
     title: 'Customer Support 24×7',
     desc: 'By teaming up with us, you can connect with your customers and clients whenever and wherever you need, leading to increased satisfaction and loyalty.',
     color: '#6366f1',
     illustration: '/images/sms-support.svg',
   },
   {
-    icon: '🎨',
+    icon: Palette,
     title: 'Personalize Your Content',
     desc: 'Using our online HTML editor, you have the ability to customize your content by adding images, videos, and GIFs to your emails for maximum engagement.',
     color: '#f59e0b',
     illustration: '/images/email-personalize.svg',
   },
   {
-    icon: '📬',
+    icon: MailOpen,
     title: 'Inbox Delivery Guaranteed',
     desc: 'We use our expert teams and tools to ensure all your emails reach your target audience\'s inbox. We\'ll help you with IP warming and other safe practices.',
     color: '#22d3ee',
     illustration: '/images/email-inbox.svg',
   },
   {
-    icon: '⚡',
+    icon: Zap,
     title: 'Deliver Every Critical Email Fast',
     desc: 'We offer high-speed systems for quick email delivery. Get priority servers for important traffic like OTPs, transactional alerts, and time-sensitive notifications.',
     color: '#ec4899',
@@ -167,7 +168,7 @@ const inputStyle = {
 
 export default function EmailApiPage() {
   const [activeTab, setActiveTab] = useState('cURL')
-  const [openFaq, setOpenFaq] = useState<number | null>(0)
+  const [openFaq, setOpenFaq] = useState<number | null>(0)
 
 
   return (
@@ -242,7 +243,7 @@ export default function EmailApiPage() {
 
             {/* Hero illustration */}
             <ImageBox
-              src="/images/email-api-hero.png"
+              src="/images/email-api-hero.png"
               priority
               alt="Email API"
               width={760}
@@ -571,8 +572,8 @@ export default function EmailApiPage() {
               </p>
               <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' as const }}>
                 <a href="https://app.baynix.ai" className="glass-btn glass-btn-primary">Start Now →</a>
-                <a href="tel:+919004674356" style={{ fontSize: '0.85rem', color: 'var(--text2)', textDecoration: 'none', fontWeight: 400 }}>
-                  📞 +91 90046 74356
+                <a href="tel:+919004674356" style={{ fontSize: '0.85rem', color: 'var(--text2)', textDecoration: 'none', fontWeight: 400, display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+                  <Phone size={14} /> +91 90046 74356
                 </a>
               </div>
             </div>

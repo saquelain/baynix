@@ -3,6 +3,7 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import PartnerMarquee from '@/components/PartnerMarquee'
+import { Target, Search, Gem, type LucideIcon } from 'lucide-react'
 
 const stats = [
   { val: '70M+', label: 'Client Revenue' },
@@ -11,19 +12,19 @@ const stats = [
   { val: '500+', label: 'Trusted Companies' },
 ]
 
-const values = [
+const values: { icon: LucideIcon; title: string; desc: string }[] = [
   {
-    icon: '🎯',
+    icon: Target,
     title: 'Our Mission',
     desc: 'Our goal is to give businesses of all kinds the tools they need to confidently and successfully reach their marketing goals. We use cutting-edge technology, creative strategies, and data-driven insights to create complete and personalized marketing solutions.',
   },
   {
-    icon: '🔭',
+    icon: Search,
     title: 'Our Vision',
     desc: 'To be the most trusted AI-powered communication platform globally — enabling every business, regardless of size, to deliver meaningful, intelligent conversations at scale.',
   },
   {
-    icon: '💎',
+    icon: Gem,
     title: 'Our Values',
     desc: 'Excellence, integrity, and customer happiness are at our core. We believe in being committed to our clients, transparent in our work, and relentless in our pursuit of innovation.',
   },
@@ -204,11 +205,11 @@ export default function AboutPage() {
                     background: 'linear-gradient(90deg, transparent, rgba(99,102,241,0.4), transparent)',
                   }} />
                   <div style={{
-                    fontSize: '2rem',
                     marginBottom: '1rem',
                     filter: 'drop-shadow(0 0 8px rgba(99,102,241,0.4))',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
                   }}>
-                    {v.icon}
+                    {(() => { const Icon = v.icon; return <Icon size={32} color="var(--accent)" /> })()}
                   </div>
                   <h3 style={{
                     fontSize: '1.1rem',
