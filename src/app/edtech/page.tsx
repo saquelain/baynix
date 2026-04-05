@@ -203,7 +203,8 @@ export default function EdtechPage() {
             </div>
 
             <ImageBox
-              src="/images/edtech-hero.png"
+              src="/images/edtech-hero.png"
+              priority
               alt="EdTech"
               width={800} height={440}
               background={`linear-gradient(135deg, rgba(${accentRgb},0.12), rgba(236,72,153,0.08), rgba(16,185,129,0.05))`}

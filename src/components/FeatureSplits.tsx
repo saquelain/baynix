@@ -70,6 +70,7 @@ function ImageWithFallback({
         src={src}
         alt={alt}
         fill
+        sizes="100vw"
         style={{ objectFit: 'cover' }}
         onError={() => setError(true)}
       />

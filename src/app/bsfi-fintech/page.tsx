@@ -200,7 +200,8 @@ export default function BsfiFintechPage() {
 
             {/* Hero image right */}
             <ImageBox
-              src="/images/fintech-hero.png"
+              src="/images/fintech-hero.png"
+              priority
               alt="BFSI Fintech"
               width={800} height={440}
               background={`linear-gradient(135deg, rgba(${accentRgb},0.12), rgba(16,185,129,0.08), rgba(99,102,241,0.06))`}

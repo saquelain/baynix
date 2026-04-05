@@ -153,7 +153,8 @@ export default function EmailToSmsPage() {
 
             {/* Hero image */}
             <ImageBox
-              src="/images/email-sms-hero.png"
+              src="/images/email-sms-hero.png"
+              priority
               alt="Email to SMS"
               width={800}
               height={420}

@@ -197,7 +197,8 @@ export default function LogisticsPage() {
             </div>
 
             <ImageBox
-              src="/images/logistics-hero.png"
+              src="/images/logistics-hero.png"
+              priority
               alt="Logistics"
               width={800} height={440}
               background={`linear-gradient(135deg, rgba(${accentRgb},0.12), rgba(34,211,238,0.08), rgba(16,185,129,0.05))`}

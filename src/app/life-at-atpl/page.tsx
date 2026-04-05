@@ -179,6 +179,7 @@ export default function LifePage() {
               src="/images/life-hero.png"
               alt="Life at Baynix"
               fill
+              sizes="100vw"
               style={{ objectFit: 'cover' }}
               priority
             />
@@ -451,6 +452,7 @@ export default function LifePage() {
                     src={event.src}
                     alt={event.label}
                     fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     style={{ objectFit: 'cover', transition: 'transform 0.4s ease', transform: hoveredEvent === event.src ? 'scale(1.06)' : 'scale(1)' }}
                   />
                   {/* Overlay */}

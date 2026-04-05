@@ -151,7 +151,8 @@ export default function LongCodesPage() {
 
             {/* Hero image */}
             <ImageBox
-              src="/images/longcode-hero.png"
+              src="/images/longcode-hero.png"
+              priority
               alt="Long Codes Service"
               width={800}
               height={420}

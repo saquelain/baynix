@@ -156,7 +156,8 @@ export default function ClickToWhatsAppAdsPage() {
 
             {/* Hero image */}
             <ImageBox
-              src="/images/ctwa-hero.png"
+              src="/images/ctwa-hero.png"
+              priority
               alt="Click to WhatsApp Ads"
               background="linear-gradient(135deg, rgba(37,211,102,0.1), rgba(18,140,126,0.08), rgba(99,102,241,0.06))"
               border="1px solid rgba(255,255,255,0.08)"

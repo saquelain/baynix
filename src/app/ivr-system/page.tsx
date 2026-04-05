@@ -179,7 +179,8 @@ export default function IvrSystemPage() {
 
             {/* Hero image */}
             <ImageBox
-              src="/images/ivr-hero.png"
+              src="/images/ivr-hero.png"
+              priority
               alt="IVR System"
               background="linear-gradient(135deg, rgba(99,102,241,0.12), rgba(16,185,129,0.08), rgba(245,158,11,0.06))"
               border="1px solid rgba(255,255,255,0.08)"

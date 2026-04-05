@@ -192,7 +192,8 @@ export default function ConversationalAiChatbotPage() {
 
             {/* Hero image */}
             <ImageBox
-              src="/images/ai-chatbot-hero.png"
+              src="/images/ai-chatbot-hero.png"
+              priority
               alt="Conversational AI Chatbot"
               background='linear-gradient(135deg, rgba(99,102,241,0.12), rgba(167,139,250,0.08), rgba(34,211,238,0.06))'
               border='1px solid rgba(255,255,255,0.08)'

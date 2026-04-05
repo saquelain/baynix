@@ -16,6 +16,10 @@ interface ImageBoxProps {
   imageStyle?: React.CSSProperties
   /** Optional overlay / badge children rendered on top of the image */
   children?: React.ReactNode
+  /** sizes hint for Next.js responsive image optimisation */
+  sizes?: string
+  /** Mark as LCP/hero image to disable lazy loading */
+  priority?: boolean
 }
 
 /**
@@ -35,6 +39,8 @@ export default function ImageBox({
   style,
   imageStyle,
   children,
+  sizes = '(max-width: 768px) 100vw, 50vw',
+  priority = false,
 }: ImageBoxProps) {
   return (
     <div
@@ -54,6 +60,8 @@ export default function ImageBox({
         alt={alt}
         width={width}
         height={height}
+        sizes={sizes}
+        priority={priority}
         style={{ width: '100%', height: 'auto', display: 'block', ...imageStyle }}
       />
       {children}

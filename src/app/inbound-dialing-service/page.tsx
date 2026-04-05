@@ -132,7 +132,8 @@ export default function InboundDialingPage() {
 
             {/* Hero image right */}
             <ImageBox
-              src="/images/ibd-hero.png"
+              src="/images/ibd-hero.png"
+              priority
               alt="IVR Inbound"
               background="linear-gradient(135deg, rgba(16,185,129,0.12), rgba(99,102,241,0.08), rgba(245,158,11,0.05))"
               border="1px solid rgba(255,255,255,0.08)"

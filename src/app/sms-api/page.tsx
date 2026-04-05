@@ -232,7 +232,8 @@ export default function SmsApiPage() {
 
             {/* Hero illustration placeholder */}
             <ImageBox
-              src="/images/sms-api-hero.png"
+              src="/images/sms-api-hero.png"
+              priority
               alt="SMS API"
               width={760}
               height={380}

@@ -189,7 +189,8 @@ export default function NumberMaskingPage() {
 
             {/* Hero image right */}
             <ImageBox
-              src="/images/masking-hero.png"
+              src="/images/masking-hero.png"
+              priority
               alt="Number Masking"
               width={800}
               height={440}

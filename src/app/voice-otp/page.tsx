@@ -168,7 +168,8 @@ export default function VoiceOtpPage() {
 
             {/* Hero image */}
             <ImageBox
-              src="/images/voice-otp-hero.png"
+              src="/images/voice-otp-hero.png"
+              priority
               alt="Voice OTP"
               background="linear-gradient(135deg, rgba(245,158,11,0.1), rgba(99,102,241,0.08), rgba(34,211,238,0.06))"
               border="1px solid rgba(255,255,255,0.08)"

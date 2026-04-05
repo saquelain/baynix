@@ -196,7 +196,8 @@ export default function HealthCarePage() {
             </div>
 
             <ImageBox
-              src="/images/health-hero.png"
+              src="/images/health-hero.png"
+              priority
               alt="Healthcare"
               width={800} height={440}
               background={`linear-gradient(135deg, rgba(${accentRgb},0.12), rgba(59,130,246,0.08), rgba(245,158,11,0.05))`}

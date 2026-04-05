@@ -167,7 +167,8 @@ export default function RcsMessagingPage() {
 
             {/* Hero image */}
             <ImageBox
-              src="/images/rcs-hero.png"
+              src="/images/rcs-hero.png"
+              priority
               alt="RCS Business Messaging"
               background='linear-gradient(135deg, rgba(59,130,246,0.1), rgba(99,102,241,0.08), rgba(34,211,238,0.06))'
               border='1px solid rgba(255,255,255,0.08)'

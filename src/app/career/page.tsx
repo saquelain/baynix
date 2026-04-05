@@ -113,7 +113,7 @@ export default function CareerPage() {
             zIndex: 0,
           }}>
             {/* Uncomment when you have the image: */}
-            <Image src="/images/career-hero.png" alt="Career at Baynix" fill style={{ objectFit: 'cover', opacity: 2 }} />
+            <Image src="/images/career-hero.png" alt="Career at Baynix" fill sizes="100vw" priority style={{ objectFit: 'cover', opacity: 2 }} />
            
           </div>
 
@@ -327,7 +327,7 @@ export default function CareerPage() {
                 }}>
                     {/* {stat.label === 'Problems Solved' ? '🧩' : stat.label === 'Projects Complete' ? '✅' : '⏱️'} */}
                     {/* Replace emoji with illustration: */}
-                    <Image src={stat.illustration} alt={stat.label} width={120} height={120} style={{ objectFit: 'contain' }} />
+                    <Image src={stat.illustration} alt={stat.label} width={120} height={120} sizes="120px" style={{ objectFit: 'contain' }} />
                    
                 </div>
 

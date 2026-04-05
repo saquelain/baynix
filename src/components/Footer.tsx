@@ -66,6 +66,7 @@ export default function Footer() {
                 alt="Baynix"
                 width={120}
                 height={70}
+                sizes="120px"
                 style={{ objectFit: "contain", marginBottom: "0.75rem" }}
               />
               <p
@@ -123,6 +124,7 @@ export default function Footer() {
                     alt="Meta Business Partner"
                     width={180}
                     height={60}
+                    sizes="180px"
                     style={{ objectFit: "contain" }}
                   />
                 </a>
@@ -314,6 +316,7 @@ export default function Footer() {
                     alt={alt}
                     width={width}
                     height={height}
+                    sizes="96px"
                     style={{
                       objectFit: "contain",
                       borderRadius: circle ? "50%" : 4,

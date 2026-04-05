@@ -171,7 +171,8 @@ export default function OutboundDialingPage() {
 
             {/* Hero image */}
             <ImageBox
-              src="/images/obd-hero.png"
+              src="/images/obd-hero.png"
+              priority
               alt="Outbound Dialing"
               background="linear-gradient(135deg, rgba(99,102,241,0.12), rgba(245,158,11,0.08), rgba(16,185,129,0.06))"
               border="1px solid rgba(255,255,255,0.08)"

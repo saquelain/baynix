@@ -183,7 +183,8 @@ export default function BulkSmsPage() {
 
             {/* Hero image */}
             <ImageBox
-              src="/images/bulk-sms-hero.png"
+              src="/images/bulk-sms-hero.png"
+              priority
               alt="Bulk SMS Solutions"
               background="linear-gradient(135deg, rgba(16,185,129,0.1), rgba(59,130,246,0.08), rgba(99,102,241,0.06))"
               border="1px solid rgba(255,255,255,0.08)"

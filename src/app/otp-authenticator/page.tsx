@@ -166,7 +166,8 @@ export default function OtpAuthenticatorPage() {
 
             {/* Hero image */}
             <ImageBox
-              src="/images/otp-authenticator-hero.png"
+              src="/images/otp-authenticator-hero.png"
+              priority
               alt="OTP Authenticator"
               width={800}
               height={420}

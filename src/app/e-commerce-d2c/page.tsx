@@ -196,7 +196,8 @@ export default function EcommerceD2CPage() {
             </div>
 
             <ImageBox
-              src="/images/ecom-hero.png"
+              src="/images/ecom-hero.png"
+              priority
               alt="E-Commerce"
               width={1200}
               height={900}

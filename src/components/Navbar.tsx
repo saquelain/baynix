@@ -206,6 +206,7 @@ export default function Navbar() {
             alt="Baynix"
             width={140}
             height={72}
+            sizes="140px"
             style={{ objectFit: 'contain' }}
             priority
           />

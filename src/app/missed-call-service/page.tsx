@@ -157,7 +157,8 @@ export default function MissedCallPage() {
 
             {/* Hero image right */}
             <ImageBox
-              src="/images/missed-call-hero.png"
+              src="/images/missed-call-hero.png"
+              priority
               alt="Missed Call Service"
               width={800}
               height={440}

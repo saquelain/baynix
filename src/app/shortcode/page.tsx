@@ -175,7 +175,8 @@ export default function ShortCodePage() {
 
             {/* Hero image */}
             <ImageBox
-              src="/images/shortcode-hero.png"
+              src="/images/shortcode-hero.png"
+              priority
               alt="Short Code Service"
               width={800}
               height={420}

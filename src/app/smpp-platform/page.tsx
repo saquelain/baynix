@@ -180,7 +180,8 @@ export default function SmppPlatformPage() {
 
             {/* Hero illustration placeholder */}
             <ImageBox
-              src="/images/smpp-hero.png"
+              src="/images/smpp-hero.png"
+              priority
               alt="Click to WhatsApp Ads"
               background="linear-gradient(135deg, rgba(99,102,241,0.12), rgba(59,130,246,0.08), rgba(34,211,238,0.06))"
               border="1px solid rgba(255,255,255,0.08)"

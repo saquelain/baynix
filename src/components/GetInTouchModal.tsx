@@ -124,7 +124,7 @@ export default function GetInTouchModal({ isOpen, onClose }: Props) {
             }} />
 
             {/* Placeholder image — replace /images/contact-illustration.png later */}
-            <Image src="/images/contact-illustration.svg" alt="Contact illustration" width={180} height={180} />
+            <Image src="/images/contact-illustration.svg" alt="Contact illustration" width={180} height={180} sizes="180px" />
 
             {/* Copy */}
             <div style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>

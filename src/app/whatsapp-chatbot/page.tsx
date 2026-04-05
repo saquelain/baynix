@@ -192,7 +192,8 @@ export default function WhatsAppChatbotPage() {
 
             {/* Hero image */}
             <ImageBox
-              src="/images/wa-chatbot-hero.png"
+              src="/images/wa-chatbot-hero.png"
+              priority
               alt="WhatsApp Chatbot"
               background='linear-gradient(135deg, rgba(37,211,102,0.1), rgba(18,140,126,0.08), rgba(99,102,241,0.06))'
               border='1px solid rgba(255,255,255,0.08)'
