@@ -1,47 +1,44 @@
-import Image from 'next/image'
+import Image, { ImageProps } from 'next/image'
 
-interface ImageBoxProps {
-  src: string
-  alt: string
-  /** Hint for Next.js image optimisation — does not fix the rendered size */
-  width?: number
-  height?: number
+type DivProps = {
   background?: string
   border?: string
   borderRadius?: number
   boxShadow?: string
-  /** Padding inside the border (useful for SVG illustrations) */
   padding?: string
-  style?: React.CSSProperties
+  /** Style applied to the wrapper div (not the image) */
+  wrapperStyle?: React.CSSProperties
+  /** Style applied directly to the <img> element, merged with layout defaults */
   imageStyle?: React.CSSProperties
-  /** Optional overlay / badge children rendered on top of the image */
   children?: React.ReactNode
-  /** sizes hint for Next.js responsive image optimisation */
-  sizes?: string
-  /** Mark as LCP/hero image to disable lazy loading */
-  priority?: boolean
 }
 
 /**
- * A borderered image container whose border always matches the image size.
+ * A bordered image container whose border always matches the image size.
  * No fixed height — the container grows to fit the image naturally.
+ *
+ * All Next.js ImageProps (sizes, priority, quality, placeholder, …) are
+ * forwarded to <Image> via rest spread, so nothing is silently dropped.
  */
 export default function ImageBox({
-  src,
-  alt,
-  width = 800,
-  height = 600,
+  // ── div wrapper props ───────────────────────────────────────────────
   background,
   border = '1px solid rgba(255,255,255,0.08)',
   borderRadius = 20,
   boxShadow,
   padding,
-  style,
+  wrapperStyle,
   imageStyle,
   children,
-  sizes = '(max-width: 768px) 100vw, 50vw',
+  // ── image defaults (overridable by caller) ──────────────────────────
+  sizes = '(max-width: 640px) 100vw, (max-width: 1280px) 45vw, 516px',
   priority = false,
-}: ImageBoxProps) {
+  width = 800,
+  height = 600,
+  // ── everything else forwarded to <Image> ────────────────────────────
+  style,
+  ...imageProps
+}: ImageProps & DivProps) {
   return (
     <div
       style={{
@@ -52,17 +49,22 @@ export default function ImageBox({
         overflow: 'hidden',
         boxShadow,
         padding,
-        ...style,
+        ...wrapperStyle,
       }}
     >
       <Image
-        src={src}
-        alt={alt}
         width={width}
         height={height}
         sizes={sizes}
         priority={priority}
-        style={{ width: '100%', height: 'auto', display: 'block', ...imageStyle }}
+        style={{
+          width: '100%',
+          height: 'auto',
+          display: 'block',
+          ...imageStyle,
+          ...style,
+        }}
+        {...imageProps}
       />
       {children}
     </div>
