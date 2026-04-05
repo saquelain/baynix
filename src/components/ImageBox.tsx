@@ -57,7 +57,6 @@ export default function ImageBox({
         height={height}
         sizes={sizes}
         priority={priority}
-        loading={priority ? 'eager' : undefined}
         style={{
           width: '100%',
           height: 'auto',
