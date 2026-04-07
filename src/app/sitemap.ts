@@ -72,9 +72,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/blog/what-is-rcs-messaging-and-how-does-it-work-2026-guide', priority: 0.7, changeFrequency: 'monthly' },
     { url: '/blog/why-rcs-messaging-is-the-future-of-customer-engagement-and-what-brands-must-do-next', priority: 0.7, changeFrequency: 'monthly' },
     { url: '/blog/a-cut-above-the-competition-why-azmarq-is-1-chat-commerce-alternative', priority: 0.7, changeFrequency: 'monthly' },
-    { url: '/blog/respond-io-alternative', priority: 0.7, changeFrequency: 'monthly' },
-    { url: '/blog/sleekflow-alternative', priority: 0.7, changeFrequency: 'monthly' },
-    { url: '/blog/wati-alternative', priority: 0.7, changeFrequency: 'monthly' },
+    { url: '/blog/karix-alternative', priority: 0.7, changeFrequency: 'monthly' },
+    { url: '/blog/gupshup-alternative', priority: 0.7, changeFrequency: 'monthly' },
+    { url: '/blog/aisensy-alternative', priority: 0.7, changeFrequency: 'monthly' },
+    { url: '/blog/interakt-alternative', priority: 0.7, changeFrequency: 'monthly' },
   ]
 
   return routes.map(({ url, priority, changeFrequency }) => ({

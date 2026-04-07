@@ -32,9 +32,10 @@ const links = {
     { label: "Pricing", href: "/pricing" },
   ],
   'Why Baynix?': [
-    { label: 'vs WATI',       href: '/blog/wati-alternative' },
-    { label: 'vs Respond.io', href: '/blog/respond-io-alternative' },
-    { label: 'vs SleekFlow',  href: '/blog/sleekflow-alternative' },
+    { label: 'vs Karix',    href: '/blog/karix-alternative' },
+    { label: 'vs Gupshup',  href: '/blog/gupshup-alternative' },
+    { label: 'vs AiSensy',  href: '/blog/aisensy-alternative' },
+    { label: 'vs Interakt', href: '/blog/interakt-alternative' },
   ],
 };
 

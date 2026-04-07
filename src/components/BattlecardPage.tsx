@@ -18,19 +18,31 @@ const iconMap: Record<string, LucideIcon> = {
   GitBranchPlus, MapPin, Layers,
 }
 
-const CheckIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-    <circle cx="8" cy="8" r="8" fill="rgba(34,197,94,0.15)"/>
-    <path d="M5 8l2 2 4-4" stroke="#22c55e" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-)
+const statusStyles = {
+  win:     { bg: 'rgba(15,110,86,0.12)',  color: '#34d399', border: 'rgba(52,211,153,0.25)'  },
+  neutral: { bg: 'rgba(133,79,11,0.12)', color: '#fbbf24', border: 'rgba(251,191,36,0.25)'  },
+  lose:    { bg: 'rgba(163,45,45,0.12)', color: '#f87171', border: 'rgba(248,113,113,0.25)' },
+}
 
-const CrossIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-    <circle cx="8" cy="8" r="8" fill="rgba(239,68,68,0.12)"/>
-    <path d="M5.5 5.5l5 5M10.5 5.5l-5 5" stroke="#ef4444" strokeWidth="1.5" strokeLinecap="round"/>
-  </svg>
-)
+const CellBadge = ({ status, label }: { status: 'win' | 'neutral' | 'lose'; label: string }) => {
+  const s = statusStyles[status]
+  return (
+    <span style={{
+      display: 'inline-block',
+      padding: '3px 9px',
+      borderRadius: 20,
+      fontSize: '0.72rem',
+      fontWeight: 500,
+      background: s.bg,
+      color: s.color,
+      border: `1px solid ${s.border}`,
+      lineHeight: 1.5,
+      whiteSpace: 'nowrap',
+    }}>
+      {label}
+    </span>
+  )
+}
 
 export default function BattlecardPage({ card }: { card: BattleCard }) {
   const others = battlecards.filter(b => b.slug !== card.slug)
@@ -349,14 +361,14 @@ export default function BattlecardPage({ card }: { card: BattleCard }) {
               {/* Table header */}
               <div style={{
                 display: 'grid',
-                gridTemplateColumns: '1fr 140px 140px',
+                gridTemplateColumns: '1fr 1fr 1fr',
                 background: 'rgba(255,255,255,0.04)',
                 borderBottom: '1px solid var(--border)',
               }}>
                 <div style={{ padding: '0.9rem 1.25rem', fontSize: '0.75rem', color: 'var(--text3)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
                   Feature
                 </div>
-                <div style={{ padding: '0.9rem 1rem', fontSize: '0.8rem', fontWeight: 700, color: '#22c55e', textAlign: 'center' }}>
+                <div style={{ padding: '0.9rem 1rem', fontSize: '0.8rem', fontWeight: 700, color: '#34d399', textAlign: 'center' }}>
                   Baynix
                 </div>
                 <div style={{ padding: '0.9rem 1rem', fontSize: '0.8rem', fontWeight: 600, color: card.accentColor, textAlign: 'center' }}>
@@ -370,15 +382,15 @@ export default function BattlecardPage({ card }: { card: BattleCard }) {
                   key={f.name}
                   style={{
                     display: 'grid',
-                    gridTemplateColumns: '1fr 140px 140px',
+                    gridTemplateColumns: '1fr 1fr 1fr',
                     borderBottom: i < card.features.length - 1 ? '1px solid var(--border)' : 'none',
                     background: f.highlight
-                      ? 'rgba(34,197,94,0.04)'
+                      ? 'rgba(52,211,153,0.03)'
                       : i % 2 === 0 ? 'transparent' : 'rgba(255,255,255,0.01)',
                     transition: 'background 0.15s',
                   }}
                   onMouseEnter={e => (e.currentTarget.style.background = 'rgba(255,255,255,0.04)')}
-                  onMouseLeave={e => (e.currentTarget.style.background = f.highlight ? 'rgba(34,197,94,0.04)' : i % 2 === 0 ? 'transparent' : 'rgba(255,255,255,0.01)')}
+                  onMouseLeave={e => (e.currentTarget.style.background = f.highlight ? 'rgba(52,211,153,0.03)' : i % 2 === 0 ? 'transparent' : 'rgba(255,255,255,0.01)')}
                 >
                   <div style={{
                     padding: '0.85rem 1.25rem',
@@ -391,29 +403,21 @@ export default function BattlecardPage({ card }: { card: BattleCard }) {
                     {f.highlight && (
                       <span style={{
                         width: 6, height: 6, borderRadius: '50%',
-                        background: '#22c55e', flexShrink: 0,
-                        boxShadow: '0 0 6px #22c55e',
+                        background: '#34d399', flexShrink: 0,
+                        boxShadow: '0 0 6px #34d399',
                       }} />
                     )}
                     {f.name}
                   </div>
 
-                  {/* Baynix column — always true */}
-                  <div style={{ padding: '0.85rem 1rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <CheckIcon />
+                  {/* Baynix column */}
+                  <div style={{ padding: '0.75rem 1rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <CellBadge status={f.baynix.status} label={f.baynix.label} />
                   </div>
 
                   {/* Competitor column */}
-                  <div style={{ padding: '0.85rem 1rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    {f.competitor === true ? (
-                      <CheckIcon />
-                    ) : f.competitor === false ? (
-                      <CrossIcon />
-                    ) : (
-                      <span style={{ fontSize: '0.72rem', color: '#f59e0b', textAlign: 'center' }}>
-                        {f.competitor}
-                      </span>
-                    )}
+                  <div style={{ padding: '0.75rem 1rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <CellBadge status={f.competitor.status} label={f.competitor.label} />
                   </div>
                 </div>
               ))}
