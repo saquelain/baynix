@@ -68,6 +68,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/bsfi-fintech', priority: 0.8, changeFrequency: 'monthly' },
     { url: '/logistics', priority: 0.8, changeFrequency: 'monthly' },
 
+    // Legal
+    { url: '/terms-of-service', priority: 0.4, changeFrequency: 'yearly' as const },
+    { url: '/privacy-policy',   priority: 0.4, changeFrequency: 'yearly' as const },
+    { url: '/refund-policy',    priority: 0.4, changeFrequency: 'yearly' as const },
+
     // Blog posts
     { url: '/blog/what-is-rcs-messaging-and-how-does-it-work-2026-guide', priority: 0.7, changeFrequency: 'monthly' },
     { url: '/blog/why-rcs-messaging-is-the-future-of-customer-engagement-and-what-brands-must-do-next', priority: 0.7, changeFrequency: 'monthly' },

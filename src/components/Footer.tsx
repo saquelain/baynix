@@ -215,9 +215,27 @@ export default function Footer() {
               gap: "1rem",
             }}
           >
-            <p style={{ fontSize: "0.8rem", color: "var(--text3)", margin: 0 }}>
-              © 2025–2026 Baynix. All Rights Reserved.
-            </p>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+              <p style={{ fontSize: "0.8rem", color: "var(--text3)", margin: 0 }}>
+                © 2025–2026 Baynix. All Rights Reserved.
+              </p>
+              <span style={{ color: 'var(--border)', fontSize: '0.8rem' }}>·</span>
+              {[
+                { label: 'Terms of Service', href: '/terms-of-service' },
+                { label: 'Privacy Policy',   href: '/privacy-policy' },
+                { label: 'Refund Policy',    href: '/refund-policy' },
+              ].map(({ label, href }, i, arr) => (
+                <span key={href} style={{ display: 'inline-flex', alignItems: 'center', gap: '1rem' }}>
+                  <a href={href} style={{ fontSize: '0.8rem', color: 'var(--text3)', textDecoration: 'none', transition: 'color 0.2s' }}
+                    onMouseEnter={e => (e.currentTarget.style.color = 'var(--text2)')}
+                    onMouseLeave={e => (e.currentTarget.style.color = 'var(--text3)')}
+                  >
+                    {label}
+                  </a>
+                  {i < arr.length - 1 && <span style={{ color: 'var(--border)', fontSize: '0.8rem' }}>·</span>}
+                </span>
+              ))}
+            </div>
 
             {/* Trust Bar */}
             <div
