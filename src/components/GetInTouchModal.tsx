@@ -40,12 +40,12 @@ export default function GetInTouchModal({ isOpen, onClose }: Props) {
     e.preventDefault()
     setStatus('sending')
     try {
-      // Replace with your actual API endpoint
-      await fetch('/api/contact', {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...form, source }),
       })
+      if (!res.ok) throw new Error()
       setStatus('success')
       setForm({ name: '', email: '', phone: '', message: '' })
     } catch {
