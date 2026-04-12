@@ -64,13 +64,6 @@ export default function Navbar() {
 
   const productSections: { heading: string; links: { label: string; href: string; icon: LucideIcon }[] }[] = [
     {
-      heading: 'Integrations',
-      links: [
-        { label: 'Click to WhatsApp Ads', href: '/click-to-whatsapp-ads', icon: Link2 },
-        { label: 'SMPP Platform', href: '/smpp-platform', icon: Settings },
-      ],
-    },
-    {
       heading: 'WhatsApp',
       links: [
         { label: 'WhatsApp Business API', href: '/whatsapp-api', icon: Heart },
@@ -112,13 +105,25 @@ export default function Navbar() {
     { label: 'Contact Us', href: '/contact', icon: MessageSquare },
   ]
 
-  const devLinks: { label: string; href: string; icon: LucideIcon }[] = [
-    { label: 'SMS API', href: '/sms-api', icon: MessageSquare },
-    { label: 'Voice API', href: '/voice-api', icon: Mic },
-    { label: 'OTP API', href: '/otp-api', icon: KeyRound },
-    { label: 'Email API', href: '/email-api', icon: Mail },
-    { label: 'SMS Gateway', href: '/sms-gateway', icon: Radio },
-    { label: 'API Docs', href: '/api-docs/sms', icon: BookOpen },
+  const devSections: { heading: string; links: { label: string; href: string; icon: LucideIcon }[] }[] = [
+    {
+      heading: 'APIs',
+      links: [
+        { label: 'SMS API', href: '/sms-api', icon: MessageSquare },
+        { label: 'Voice API', href: '/voice-api', icon: Mic },
+        { label: 'OTP API', href: '/otp-api', icon: KeyRound },
+        { label: 'Email API', href: '/email-api', icon: Mail },
+        { label: 'SMS Gateway', href: '/sms-gateway', icon: Radio },
+        { label: 'API Docs', href: '/api-docs/sms', icon: BookOpen },
+      ],
+    },
+    {
+      heading: 'Integrations',
+      links: [
+        { label: 'Click to WhatsApp Ads', href: '/click-to-whatsapp-ads', icon: Link2 },
+        { label: 'SMPP Platform', href: '/smpp-platform', icon: Settings },
+      ],
+    },
   ]
 
   const dropdownBase = {
@@ -410,7 +415,7 @@ export default function Navbar() {
               transform: productsOpen
                 ? 'translateX(-50%) translateY(0)'
                 : 'translateX(-50%) translateY(-8px)',
-              width: 720,
+              width: 580,
               background: 'rgba(13,18,32,0.95)',
               backdropFilter: 'blur(32px)', WebkitBackdropFilter: 'blur(32px)',
               border: '1px solid rgba(255,255,255,0.1)',
@@ -427,7 +432,7 @@ export default function Navbar() {
                 background: 'linear-gradient(90deg, transparent, rgba(59,130,246,0.5), transparent)',
               }} />
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.25rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.25rem' }}>
                 {productSections.map((section) => (
                   <div key={section.heading}>
                     <div style={{
@@ -498,52 +503,63 @@ export default function Navbar() {
             </button>
 
             <div style={{
-              ...dropdownBase,
-              opacity: devOpen ? 1 : 0,
-              pointerEvents: devOpen ? 'auto' : 'none',
+              position: 'absolute', top: 'calc(100%)', left: '50%',
               transform: devOpen
                 ? 'translateX(-50%) translateY(0)'
                 : 'translateX(-50%) translateY(-8px)',
+              width: 420,
+              background: 'rgba(13,18,32,0.95)',
+              backdropFilter: 'blur(32px)', WebkitBackdropFilter: 'blur(32px)',
+              border: '1px solid rgba(255,255,255,0.1)',
+              borderRadius: 20, padding: '1.5rem',
+              boxShadow: '0 24px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.08)',
+              opacity: devOpen ? 1 : 0,
+              pointerEvents: devOpen ? 'auto' : 'none',
+              transition: 'all 0.2s cubic-bezier(0.34,1.56,0.64,1)',
+              zIndex: 200,
             }}>
-              <div style={{
-                position: 'absolute',
-                top: 0, left: '20%', right: '20%',
-                height: 1,
-                background: 'linear-gradient(90deg, transparent, rgba(34,211,238,0.5), transparent)',
-              }} />
-
-              {devLinks.map((link) => {
-                const Icon = link.icon
-                return (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    style={dropdownLinkStyle}
-                    onMouseEnter={e => {
-                      e.currentTarget.style.background = 'rgba(255,255,255,0.06)'
-                      e.currentTarget.style.color = '#fff'
-                    }}
-                    onMouseLeave={e => {
-                      e.currentTarget.style.background = 'transparent'
-                      e.currentTarget.style.color = 'var(--text2)'
-                    }}
-                  >
-                    <span style={{
-                      width: 28, height: 28,
-                      borderRadius: 8,
-                      background: 'rgba(34,211,238,0.08)',
-                      border: '1px solid rgba(34,211,238,0.15)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      flexShrink: 0,
+              <div style={{ position: 'absolute', top: 0, left: '20%', right: '20%', height: 1, background: 'linear-gradient(90deg, transparent, rgba(34,211,238,0.5), transparent)' }} />
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.25rem' }}>
+                {devSections.map((section) => (
+                  <div key={section.heading}>
+                    <div style={{
+                      fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.1em',
+                      textTransform: 'uppercase' as const, color: 'var(--text3)',
+                      padding: '0.25rem 0.85rem', marginBottom: '0.25rem',
                     }}>
-                      <Icon size={14} />
-                    </span>
-                    {link.label}
-                  </a>
-                )
-              })}
+                      {section.heading}
+                    </div>
+                    {section.links.map((link) => {
+                      const Icon = link.icon
+                      return (
+                        <a
+                          key={link.label}
+                          href={link.href}
+                          style={dropdownLinkStyle}
+                          onMouseEnter={e => {
+                            e.currentTarget.style.background = 'rgba(255,255,255,0.06)'
+                            e.currentTarget.style.color = '#fff'
+                          }}
+                          onMouseLeave={e => {
+                            e.currentTarget.style.background = 'transparent'
+                            e.currentTarget.style.color = 'var(--text2)'
+                          }}
+                        >
+                          <span style={{
+                            width: 26, height: 26, borderRadius: 7, flexShrink: 0,
+                            background: 'rgba(34,211,238,0.08)',
+                            border: '1px solid rgba(34,211,238,0.15)',
+                            display: 'flex', alignItems: 'center', justifyContent: 'center',
+                          }}>
+                            <Icon size={13} />
+                          </span>
+                          {link.label}
+                        </a>
+                      )
+                    })}
+                  </div>
+                ))}
+              </div>
             </div>
           </li>
 
@@ -720,15 +736,26 @@ export default function Navbar() {
             </button>
             {mobileDevOpen && (
               <div style={{ paddingBottom: '0.75rem' }}>
-                {devLinks.map((link) => {
-                  const Icon = link.icon
-                  return (
-                    <a key={link.label} href={link.href} onClick={closeMobileMenu} style={mobileLinkStyle}>
-                      <Icon size={16} style={{ flexShrink: 0 }} />
-                      {link.label}
-                    </a>
-                  )
-                })}
+                {devSections.map((section) => (
+                  <div key={section.heading} style={{ marginBottom: '0.5rem' }}>
+                    <div style={{
+                      fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.1em',
+                      textTransform: 'uppercase' as const, color: 'var(--text3)',
+                      padding: '0.5rem 0.75rem 0.25rem',
+                    }}>
+                      {section.heading}
+                    </div>
+                    {section.links.map((link) => {
+                      const Icon = link.icon
+                      return (
+                        <a key={link.label} href={link.href} onClick={closeMobileMenu} style={mobileLinkStyle}>
+                          <Icon size={16} style={{ flexShrink: 0 }} />
+                          {link.label}
+                        </a>
+                      )
+                    })}
+                  </div>
+                ))}
               </div>
             )}
           </div>

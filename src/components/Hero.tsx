@@ -179,7 +179,7 @@ export default function Hero() {
               { num: '24/7', label: 'Expert Support', color: '#10b981' },
             ].map(({ num, label, color }, i) => (
               <div key={label} style={{ display: 'flex', alignItems: 'center' }}>
-                <div style={{ textAlign: 'center', padding: '0 2rem' }}>
+                <div style={{ textAlign: 'center', padding: '2rem 1rem' }}>
                   <span style={{
                     fontSize: '1.7rem',
                     fontWeight: 800,
