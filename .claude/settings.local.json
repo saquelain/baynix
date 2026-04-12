@@ -12,7 +12,9 @@
       "Bash(node fix-forms.mjs)",
       "Bash(node:*)",
       "Bash(npx next:*)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(mkdir -p \"D:/baynix-admin/src/app/\\(dashboard\\)/news/new\")",
+      "Bash(mkdir -p \"D:/baynix-admin/src/app/\\(dashboard\\)/news/[id]\")"
     ]
   }
 }
