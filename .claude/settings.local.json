@@ -14,7 +14,9 @@
       "Bash(npx next:*)",
       "Bash(npm install:*)",
       "Bash(mkdir -p \"D:/baynix-admin/src/app/\\(dashboard\\)/news/new\")",
-      "Bash(mkdir -p \"D:/baynix-admin/src/app/\\(dashboard\\)/news/[id]\")"
+      "Bash(mkdir -p \"D:/baynix-admin/src/app/\\(dashboard\\)/news/[id]\")",
+      "Bash(mkdir -p \"D:/baynix-admin/src/app/\\(dashboard\\)/blog/new\")",
+      "Bash(mkdir -p \"D:/baynix-admin/src/app/\\(dashboard\\)/blog/[id]\")"
     ]
   }
 }
