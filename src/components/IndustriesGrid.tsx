@@ -20,35 +20,6 @@ export default function IndustriesGrid() {
       overflow: 'hidden',
     }}>
 
-      {/* Aurora blobs */}
-      <div style={{
-        position: 'absolute',
-        width: 600, height: 600,
-        background: 'radial-gradient(circle, rgba(99,102,241,0.2) 0%, transparent 70%)',
-        top: '50%', left: '30%',
-        transform: 'translate(-50%, -50%)',
-        pointerEvents: 'none',
-        zIndex: 0,
-      }} />
-      <div style={{
-        position: 'absolute',
-        width: 500, height: 500,
-        background: 'radial-gradient(circle, rgba(59,130,246,0.15) 0%, transparent 70%)',
-        top: '50%', left: '70%',
-        transform: 'translate(-50%, -50%)',
-        pointerEvents: 'none',
-        zIndex: 0,
-      }} />
-      <div style={{
-        position: 'absolute',
-        width: 300, height: 300,
-        background: 'radial-gradient(circle, rgba(34,211,238,0.12) 0%, transparent 70%)',
-        top: '20%', left: '50%',
-        transform: 'translate(-50%, -50%)',
-        pointerEvents: 'none',
-        zIndex: 0,
-      }} />
-
       <div style={{
         maxWidth: 1100,
         margin: '0 auto',

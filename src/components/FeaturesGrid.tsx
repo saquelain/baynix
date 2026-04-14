@@ -183,9 +183,7 @@ export default function FeaturesGrid() {
                   const el = e.currentTarget as HTMLDivElement
                   el.style.border = `1px solid ${c.border}`
                   el.style.transform = 'translateY(-4px)'
-                  el.style.boxShadow = `0 20px 60px rgba(0,0,0,0.4), 0 0 40px ${c.glow}`
-                  const topBar = el.querySelector('.card-top-bar') as HTMLElement
-                  if (topBar) topBar.style.opacity = '1'
+                  el.style.boxShadow = `0 20px 60px rgba(0,0,0,0.4)`
                   const statBadge = el.querySelector('.card-stat') as HTMLElement
                   if (statBadge) statBadge.style.opacity = '1'
                 }}
@@ -194,35 +192,10 @@ export default function FeaturesGrid() {
                   el.style.border = '1px solid rgba(255,255,255,0.07)'
                   el.style.transform = 'translateY(0)'
                   el.style.boxShadow = 'none'
-                  const topBar = el.querySelector('.card-top-bar') as HTMLElement
-                  if (topBar) topBar.style.opacity = '0'
                   const statBadge = el.querySelector('.card-stat') as HTMLElement
                   if (statBadge) statBadge.style.opacity = '0'
                 }}
               >
-                {/* Top glow bar — hidden until hover */}
-                <div
-                  className="card-top-bar"
-                  style={{
-                    position: 'absolute',
-                    top: 0, left: '10%', right: '10%',
-                    height: 2,
-                    background: `linear-gradient(90deg, transparent, ${c.topBar}, transparent)`,
-                    opacity: 0,
-                    transition: 'opacity 0.3s',
-                    borderRadius: 2,
-                  }}
-                />
-
-                {/* Background glow blob */}
-                <div style={{
-                  position: 'absolute',
-                  top: -40, right: -40,
-                  width: 120, height: 120,
-                  background: `radial-gradient(circle, ${c.glow} 0%, transparent 70%)`,
-                  pointerEvents: 'none',
-                }} />
-
                 {/* Icon + stat row */}
                 <div style={{
                   display: 'flex',
@@ -238,7 +211,7 @@ export default function FeaturesGrid() {
                     justifyContent: 'center',
                     background: c.bg,
                     border: `1px solid ${c.border}`,
-                    boxShadow: `0 0 20px ${c.glow}`,
+                    boxShadow: 'none',
                   }}>
                     {(() => { const Icon = f.icon; return <Icon size={22} color={c.text} /> })()}
                   </div>

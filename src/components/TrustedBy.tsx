@@ -25,30 +25,6 @@ export default function TrustedBy() {
         overflow: 'hidden',
       }}
     >
-      {/* Aurora blobs */}
-      <div style={{
-        position: 'absolute',
-        width: 500, height: 300,
-        background: 'radial-gradient(ellipse, rgba(99,102,241,0.1) 0%, transparent 70%)',
-        top: '50%', left: '50%',
-        transform: 'translate(-50%, -50%)',
-        pointerEvents: 'none',
-      }} />
-      <div style={{
-        position: 'absolute',
-        width: 300, height: 300,
-        background: 'radial-gradient(circle, rgba(34,211,238,0.06) 0%, transparent 70%)',
-        top: '20%', left: '20%',
-        pointerEvents: 'none',
-      }} />
-      <div style={{
-        position: 'absolute',
-        width: 300, height: 300,
-        background: 'radial-gradient(circle, rgba(236,72,153,0.06) 0%, transparent 70%)',
-        top: '30%', right: '15%',
-        pointerEvents: 'none',
-      }} />
-
       {/* Label */}
       <div style={{
         display: 'inline-flex',
@@ -89,14 +65,6 @@ export default function TrustedBy() {
         border: '1px solid rgba(255,255,255,0.08)',
         boxShadow: '0 24px 80px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.08)',
       }}>
-
-        {/* Top glow line on container */}
-        <div style={{
-          position: 'absolute',
-          top: 0, left: '20%', right: '20%',
-          height: 1,
-          background: 'linear-gradient(90deg, transparent, rgba(99,102,241,0.5), transparent)',
-        }} />
 
         <p style={{
           fontSize: '0.82rem',

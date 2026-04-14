@@ -30,26 +30,6 @@ export default function Hero() {
         pointerEvents: 'none',
       }} />
 
-      {/* Center glow orb */}
-      <div style={{
-        position: 'absolute',
-        width: 600, height: 600,
-        background: 'radial-gradient(circle, rgba(59,130,246,0.12) 0%, rgba(99,102,241,0.06) 40%, transparent 70%)',
-        top: '50%', left: '50%',
-        transform: 'translate(-50%, -50%)',
-        pointerEvents: 'none',
-        animation: 'auroraFloat 8s ease-in-out infinite',
-      }} />
-
-      {/* Top glow line */}
-      <div style={{
-        position: 'absolute',
-        top: 64, left: '15%', right: '15%',
-        height: 1,
-        background: 'linear-gradient(90deg, transparent, rgba(59,130,246,0.4), rgba(99,102,241,0.4), transparent)',
-        pointerEvents: 'none',
-      }} />
-
       {/* Hero content */}
       <div style={{
         position: 'relative',

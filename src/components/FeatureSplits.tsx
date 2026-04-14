@@ -292,17 +292,6 @@ export default function FeatureSplits() {
             overflow: 'hidden',
           }}>
 
-            {/* Section background glow */}
-            <div style={{
-              position: 'absolute',
-              width: 600, height: 600,
-              background: `radial-gradient(circle, ${s.glowColor} 0%, transparent 70%)`,
-              top: '50%',
-              left: s.reverse ? '20%' : '80%',
-              transform: 'translate(-50%, -50%)',
-              pointerEvents: 'none',
-            }} />
-
             <div
               style={{
                 maxWidth: 1100,
@@ -414,28 +403,10 @@ export default function FeatureSplits() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    boxShadow: `0 24px 80px rgba(0,0,0,0.5), 0 0 80px ${s.glowColor}, inset 0 1px 0 rgba(255,255,255,0.07)`,
+                    boxShadow: `0 24px 80px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.07)`,
                     position: 'relative',
                   }}
                 >
-                  {/* Top glow line on card */}
-                  <div style={{
-                    position: 'absolute',
-                    top: 0, left: '10%', right: '10%',
-                    height: 1,
-                    background: `linear-gradient(90deg, transparent, ${s.accentColor}88, transparent)`,
-                    pointerEvents: 'none',
-                  }} />
-
-                  {/* Corner glow */}
-                  <div style={{
-                    position: 'absolute',
-                    top: -40, right: -40,
-                    width: 160, height: 160,
-                    background: `radial-gradient(circle, ${s.glowColor} 0%, transparent 70%)`,
-                    pointerEvents: 'none',
-                  }} />
-
                   <ImageWithFallback
                     src={s.image}
                     alt={s.alt}

@@ -76,30 +76,6 @@ export default function Pricing() {
       borderTop: '1px solid var(--border)',
     }}>
 
-      {/* Aurora blobs */}
-      <div style={{
-        position: 'absolute',
-        width: 600, height: 600,
-        background: 'radial-gradient(circle, rgba(99,102,241,0.08) 0%, transparent 70%)',
-        top: '30%', left: '50%',
-        transform: 'translate(-50%, -50%)',
-        pointerEvents: 'none',
-      }} />
-      <div style={{
-        position: 'absolute',
-        width: 400, height: 400,
-        background: 'radial-gradient(circle, rgba(59,130,246,0.07) 0%, transparent 70%)',
-        top: '60%', left: '20%',
-        pointerEvents: 'none',
-      }} />
-      <div style={{
-        position: 'absolute',
-        width: 400, height: 400,
-        background: 'radial-gradient(circle, rgba(167,139,250,0.07) 0%, transparent 70%)',
-        top: '60%', right: '10%',
-        pointerEvents: 'none',
-      }} />
-
       <div style={{ maxWidth: 1100, margin: '0 auto', position: 'relative', zIndex: 1 }}>
 
         {/* Header */}
@@ -213,7 +189,7 @@ export default function Pricing() {
                 WebkitBackdropFilter: 'blur(32px)',
                 border: `1px solid ${plan.borderColor}`,
                 boxShadow: plan.featured
-                  ? `0 32px 80px rgba(0,0,0,0.4), 0 0 60px ${plan.glowColor}, inset 0 1px 0 rgba(255,255,255,0.12)`
+                  ? `0 32px 80px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.12)`
                   : `0 8px 32px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.06)`,
                 transform: plan.featured ? 'scale(1.03)' : 'scale(1)',
                 transition: 'all 0.3s ease',
@@ -221,7 +197,7 @@ export default function Pricing() {
               onMouseEnter={e => {
                 if (!plan.featured) {
                   e.currentTarget.style.transform = 'translateY(-4px)'
-                  e.currentTarget.style.boxShadow = `0 20px 60px rgba(0,0,0,0.3), 0 0 40px ${plan.glowColor}, inset 0 1px 0 rgba(255,255,255,0.1)`
+                  e.currentTarget.style.boxShadow = `0 20px 60px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.1)`
                 }
               }}
               onMouseLeave={e => {
@@ -231,15 +207,6 @@ export default function Pricing() {
                 }
               }}
             >
-              {/* Top glow line */}
-              <div style={{
-                position: 'absolute',
-                top: 0, left: '15%', right: '15%',
-                height: plan.featured ? 2 : 1,
-                background: `linear-gradient(90deg, transparent, ${plan.color}, transparent)`,
-                borderRadius: 2,
-              }} />
-
               {/* Featured badge */}
               {plan.featured && (
                 <div style={{
@@ -255,7 +222,7 @@ export default function Pricing() {
                   color: '#fff',
                   letterSpacing: '0.08em',
                   textTransform: 'uppercase',
-                  boxShadow: `0 4px 20px ${plan.glowColor}`,
+                  boxShadow: `0 4px 20px rgba(0,0,0,0.3)`,
                   whiteSpace: 'nowrap',
                 }}>
                   Most Popular

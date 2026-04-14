@@ -13,22 +13,6 @@ export default function CTABanner() {
           boxShadow: '0 24px 80px rgba(0,0,0,0.5)',
         }}>
 
-          {/* Glow */}
-          <div style={{
-            position: 'absolute',
-            inset: 0,
-            background: 'radial-gradient(ellipse 60% 60% at 50% 50%, rgba(59,130,246,0.12), transparent)',
-            pointerEvents: 'none',
-          }} />
-
-          {/* Top glow line */}
-          <div style={{
-            position: 'absolute',
-            top: 0, left: '20%', right: '20%',
-            height: 1,
-            background: 'linear-gradient(90deg, transparent, rgba(99,102,241,0.5), transparent)',
-          }} />
-
           <h2 style={{
             fontSize: 'clamp(1.8rem, 3.5vw, 3rem)',
             fontWeight: 800,
