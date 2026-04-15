@@ -10,7 +10,7 @@ const splits = [
     tag: 'One Inbox',
     title: 'Use One Inbox to engage with customers directly.',
     desc: 'Efficiently manage all messages from all channels at the same time, using One Inbox. Never miss a conversation — SMS, WhatsApp, RCS, Voice, and Email all in one place.',
-    image: '/images/feature-inbox2.png',
+    image: '/images/feature-inbox5.png',
     alt: 'Baynix One Inbox — unified messaging dashboard',
     channels: [
       { label: 'WhatsApp', color: '#25d366' },
@@ -28,7 +28,7 @@ const splits = [
     tag: 'URL Tracker',
     title: 'Track Your Text Message URLs.',
     desc: 'Shorten your URLs and track click-through rates to see how well your marketing strategy is working. Get real-time analytics on every link you send.',
-    image: '/images/feature-url2.png',
+    image: '/images/feature-url5.png',
     alt: 'Baynix URL Tracker — click through rate analytics',
     channels: [],
     reverse: true,
@@ -40,7 +40,7 @@ const splits = [
     tag: 'Campaigns',
     title: 'Create Campaigns Focused on the Customer.',
     desc: 'Import and segment your audience to target the right customers with your personalized campaigns. Reach the right people at the right time.',
-    image: '/images/feature-campaigns2.png',
+    image: '/images/feature-campaigns5.png',
     alt: 'Baynix Campaigns — audience segmentation',
     channels: [],
     reverse: false,
@@ -73,7 +73,7 @@ function ImageWithFallback({
         alt={alt}
         fill
         sizes="100vw"
-        style={{ objectFit: 'cover' }}
+        style={{ objectFit: 'fill' }}
         onError={() => setError(true)}
       />
     </div>
